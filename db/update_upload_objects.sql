@@ -1,0 +1,1 @@
+ALTER TABLE `upload_objects` CHANGE `object_order` `object_order` INT(11) NULL;

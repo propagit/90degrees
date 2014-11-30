@@ -1,0 +1,122 @@
+/*
+ * It is advised not to edit the smartadmin_production.css
+ * as this will override any changes you make in the 
+ * later versions of this theme. 
+ * 
+ * We advise that you use use this CSS to override 
+ * SmartAdmin styles. 
+ * 
+ * Rename the stylesheet to whatever your liking so it will stay
+ * unique to you with each update of SmartAdmin.
+ */
+
+/*
+ * INDEX
+ * 
+ * - HTML
+ * - BODY
+ * - CUSTOM STYLES
+ */
+.widget-body.no-padding .cke_chrome {
+	border: 1px solid #BDBDBD;
+}
+.cke_chrome {
+	box-shadow: none !important;
+}
+.fa-required {
+	color: #ff0000;
+	font-weight: 100;
+}
+i.fa-has-sub {
+	cursor: pointer;
+}
+.tab-pane.tab-padding {
+	margin: 13px;
+}
+
+.upload_filelist {
+	padding-bottom: 5px;
+}
+#product_images {
+	margin-top: 20px;
+}
+.superbox-list.active {
+	border-color: #ccc;
+}
+
+.fa-admin{
+	font-size: 20px;
+	padding-left: 5px;
+	padding-right: 10px;	
+}
+
+#logo img{
+	width:auto;
+	padding-right:10px;	
+}
+.ui-datepicker{
+	z-index:2 !important;	
+}
+.flare-btn{
+	padding: 6px 12px !important;	
+}
+
+
+/** TREE Custom Styles */
+.tree li.parent_li > span:hover {
+	
+}
+
+/** NESTABLE LIST Custom Styles */
+.dd3-handle span {
+	color: transparent;
+} 
+
+.padding-4 {
+	margin: 4px;
+}
+a {
+	cursor: pointer;
+}
+.center {
+	text-align: center;
+}
+/** INVOICE */
+.fa-user-custom{
+	font-size:20px;
+}
+.msg-txt-custom{
+	margin-left:20px !important;	
+}
+
+.invoice-stat-dd{
+	left:auto;
+	margin-left:-82px;
+}
+/** DATA TABLES */
+.ColVis{
+	margin-left:5px;	
+}
+
+.bar-chart-wrap{
+	padding-top:15px;
+	padding-bottom:15px;	
+}
+
+/** HELPER Classes */
+.pull-text{
+	text-align:right;	
+}
+.no-bottom{
+	margin-bottom:0;
+	padding-bottom:0;	
+}
+.full-width{
+	width:100%;	
+}
+.push{
+	float:left;	
+}
+.btm-padding{
+	padding-bottom:15px;	
+}

@@ -1,0 +1,10 @@
+#extr-page #header {
+    background: none repeat scroll 0% 0% #000 !important;
+}
+#extr-page #header #logo {
+    margin-top: 12px;
+}
+#extr-page #header #logo img {
+    width: 216px;
+}
+

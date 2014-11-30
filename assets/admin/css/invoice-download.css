@@ -1,0 +1,39 @@
+/* CSS Document */
+p,
+table{
+	font-size:14px;
+	font-family:"Open Sans",Arial,Helvetica,Sans-Serif;	
+}
+h1{
+	font-size:38px;
+	font-weight:300;	
+}
+h2{
+	font-size:20px;
+	font-weight:700;	
+}
+table{
+	border-collapse:collapse;	
+}
+.text-center{
+	text-align:center;	
+}
+.pull-text{
+	text-align:right;	
+}
+.pull{
+	float:right;	
+}
+.item-table{
+	
+}
+.item-table th{
+	background-color:#eee;
+}
+.item-table td{
+	border-top:1px solid #ddd;	
+	padding:5px 0;	
+}
+.text-success{
+	color:#468847;
+}

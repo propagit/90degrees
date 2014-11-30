@@ -1,0 +1,11 @@
+/* CSS Document */
+.login-input{
+	height:36px !important;
+	width:100% !important;
+	float:left !important;	
+}
+
+/** HELPERS */
+.show-overflow{
+	overflow:show !important;	
+}
