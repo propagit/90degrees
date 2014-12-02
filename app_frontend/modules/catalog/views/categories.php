@@ -2,20 +2,26 @@
   
   <!-- Main component call to action -->
   
- <?=$breadcrumb;?>
+ <?php #echo $breadcrumb;?>
   
   <div class="row">
+  
+  <div class="col-xs-12">
+  	<div class="w100 clearfix category-top">
+        <h1> SHOP 90 DEGREES</h1>
+      </div><!--/.category-top-->
+  </div>
   
    <!--left column-->
   
     <div class="col-lg-3 col-md-3 col-sm-12">
       <div class="panel-group" id="accordionNo">
        <!--Category--> 
-        <div class="panel panel-default">
+        <div class="panel panel-default panel-alt">
           <div class="panel-heading">
             <h4 class="panel-title"> 
             <a data-toggle="collapse" href="#collapseCategory" class="collapseWill"> 
-            <span class="pull-left"> <i class="fa fa-caret-right"></i></span> Product Categories 
+            	 Shop Categories 
             </a> 
             </h4>
           </div>
@@ -23,41 +29,12 @@
           <div id="collapseCategory" class="panel-collapse collapse in">
             <div class="panel-body">
               
-              <ul class="nav nav-pills nav-stacked tree">
+              <ul class="nav nav-pills nav-stacked tree cat-panel-ul">
               	<?php foreach($parent_categories as $pc) { ?>
               	<li> <a href="<?=base_url()?>category/<?=$pc['uri_path'];?>"> <span class="badge pull-right"></span> <?=$pc['name'];?> </a> </li>
               	<?php } ?>
               </ul>
-              
-              <!-- 
-              
-              Template kept for reference - delete later
-              
-              <ul class="nav nav-pills nav-stacked tree">
-                <li class="dropdown-tree"> <a class="dropdown-tree-a"> <span class="badge pull-right">42</span> WOMEN COLLECTION </a>
-                  <ul class="category-level-2 dropdown-menu-tree">
-                    <li class="dropdown-tree"> <a class="dropdown-tree-a" href="sub-category.html"> Tshirt</a>
-                    </li>
-                    <li><a> Shoes</a> </li>
-                    <li><a> Shirt</a> </li>
-                    <li><a>T shirt</a> </li>
-                    <li><a href="sub-category.html"> Shirt</a> </li>
-                    <li><a href="sub-category.html">Fragrances</a> </li>
-                    <li><a href="sub-category.html">Scarf</a> </li>
-                    <li><a href="sub-category.html">Sandal</a> </li>
-                    <li><a href="sub-category.html">Underwear</a> </li>
-                    <li><a href="sub-category.html">Winter Collection</a> </li>
-                    <li><a href="sub-category.html">Men Accessories</a> </li>
-                  </ul>
-                </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> MEN COLLECTION </a> </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> Baby &amp; Kids </a> </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> Home &amp; Kitchen </a> </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> Baby &amp; Kids </a> </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> More Stores </a> </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> Offers Zone </a> </li>
-              </ul>
-              -->
+
             </div>
           </div>
         </div> <!--/Category menu end--> 
@@ -68,14 +45,9 @@
     
     <!--right column-->
     <div class="col-lg-9 col-md-9 col-sm-12">
-    
-      <div class="w100 clearfix category-top">
-        <h2> MEN COLLECTION </h2>
-      </div><!--/.category-top-->
 
-      
       <div class="w100 productFilter clearfix">
-        <p class="pull-left"> Showing <strong>12</strong> products </p>
+        <h4 class="product-count pull-left"> Showing <strong>12</strong> products </h4>
         <div class="pull-right ">
           <div class="change-order pull-right">
             <select class="form-control" name="orderby">

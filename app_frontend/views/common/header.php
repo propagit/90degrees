@@ -168,7 +168,7 @@
 
 
   
-  <div id="scroll-nav">
+  <div id="scroll-nav" class="top-nav-wrap">
   <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation">
   	<div class="container">
         <a class="navbar-brand remove-left-gutter" href="<?=base_url();?>"> 
@@ -188,7 +188,7 @@
   
   
   <?php if(1){ ?>
-  <div id="normal-nav">
+  <div id="normal-nav" class="top-nav-wrap">
   <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation">
   	<div class="container">
         <a class="navbar-brand remove-left-gutter" href="<?=base_url();?>"> 
@@ -204,6 +204,7 @@
             	<a href="#"><i class="fa fa-instagram"></i></a>
                 <a href="#"><i class="fa fa-facebook"></i></a>
             </div>
+            <div id="menu-cart"></div>
         </div><!--/.nav-collapse -->
     </div><!--/ .container-->
     </div><!-- /.Fixed navbar  -->

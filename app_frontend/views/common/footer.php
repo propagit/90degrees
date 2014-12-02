@@ -69,7 +69,7 @@
 
 
 <!-- include custom script for site  --> 
-<!--<script src="<?=base_url() . ASSETS;?>js/script.js"></script>-->
+<script src="<?=base_url() . ASSETS;?>js/script.js"></script>
 
 <!-- include flare js -->
 <script src="<?=base_url() . ASSETS;?>js/flare.js"></script>
