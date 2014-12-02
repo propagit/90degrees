@@ -84,7 +84,7 @@
                   </div>
                   <div class="action-control">
 					<a class="btn btn-primary add-to-cart" data-pid="<?=$product['product_id'];?>"> 
-                    <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> 
+                    <span class="add2cart"><i class="fa fa-plus"></i> Add to cart </span> 
                     </a>
 				</div>
               </div>
