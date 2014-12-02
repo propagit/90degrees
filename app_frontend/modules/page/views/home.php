@@ -47,13 +47,13 @@
   
   <!-- Main component call to action -->
   
-  <div class="row featuredPostContainer custom-padding style2 tiles-wrap">
+  <div class="row featuredPostContainer custom-padding style2 tiles-wrap fw">
 		 <?php 
 	  	if($tiles){ 
 	  		foreach($tiles as $tile){
 				$tile_image = modules::run('page/get_tiles_first_image',$tile['tile_id']);
 	 	 ?>
-         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 tiles">
+         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tiles">
         	<a <?=$tile['tile_uri'] ? 'href="' . $tile['tile_uri'] . '"' : '';?> <?=$tile['new_window'] ? 'target="_blank"' : '';?>><img src="<?=base_url() . $tile_image['full_path'];?>" data-upload-id="<?=$tile_image['upload_id'];?>" data-img="<?=base_url() . $tile_image['full_path'];?>" alt="<?=$tile_image['orig_name'];?>" title="<?=$tile_image['orig_name'];?>" class="superbox-img"></a>
          </div>
       
