@@ -78,17 +78,7 @@
 <script>
 // fix nav
 $(document).scroll(function() {
-	var y = $(this).scrollTop();
-	if (y > 10) {
-		$('#scroll-nav').fadeIn(function(){
-			$('#scroll-nav-offset').show();		
-		});
-		$('#normal-nav').fadeOut();
-	} else {
-		$('#scroll-nav').fadeOut();
-		$('#normal-nav').fadeIn();
-		$('#scroll-nav-offset').hide();
-	}
+	scroll_fix_nav();
 });
 
 $(function(){
@@ -181,6 +171,22 @@ function menu_cart() {
 		$('#mob-cart').html(html);
 	});
 }
+
+
+function scroll_fix_nav(){
+	var y = $(this).scrollTop();
+	if (y > 10) {
+		$('#scroll-nav').fadeIn(function(){
+			$('#scroll-nav-offset').show();		
+		});
+		$('#normal-nav').fadeOut();
+	} else {
+		$('#scroll-nav').fadeOut();
+		$('#normal-nav').fadeIn();
+		$('#scroll-nav-offset').hide();
+	}
+}
+
 </script>
 
 <!-- Modal Login start -->

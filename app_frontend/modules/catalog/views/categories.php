@@ -6,18 +6,19 @@
   
   <div class="row">
   
-  <div class="col-xs-12">
-  	<div class="w100 clearfix category-top">
-        <h1> SHOP 90 DEGREES</h1>
+    <div class="col-xs-12">
+  	  <div class="w100 clearfix category-top">
+        	<h1> SHOP 90 DEGREES</h1>
+        	<?php echo modules::run('cart/get_mini_cart');?>
       </div><!--/.category-top-->
-  </div>
+    </div>
   
    <!--left column-->
   
     <div class="col-lg-3 col-md-3 col-sm-12">
       <div class="panel-group" id="accordionNo">
        <!--Category--> 
-        <div class="panel panel-default panel-alt">
+        <div class="panel panel-default panel-alt col-xs-10">
           <div class="panel-heading">
             <h4 class="panel-title"> 
             <a data-toggle="collapse" href="#collapseCategory" class="collapseWill"> 
@@ -101,6 +102,8 @@
     </div> <!--/.categoryProduct || product content end-->
       
       <div class="w100 categoryFooter">
+      
+      	<?php if(0){ ?>
         <div class="pagination pull-left no-margin-top">
           <ul class="pagination no-margin-top">
             <li><a href="#">«</a></li>
@@ -115,6 +118,10 @@
         <div class="pull-right pull-right col-sm-4 col-xs-12 no-padding text-right text-left-xs">
           <p>Showing 1–450 of 12 results</p>
         </div>
+        <?php } ?>
+        
+        <?php echo modules::run('common/pagination');?>
+        
       </div> <!--/.categoryFooter-->
     </div><!--/right column end-->
     

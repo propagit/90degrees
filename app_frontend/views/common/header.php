@@ -204,7 +204,6 @@
             	<a href="#"><i class="fa fa-instagram"></i></a>
                 <a href="#"><i class="fa fa-facebook"></i></a>
             </div>
-            <div id="menu-cart"></div>
         </div><!--/.nav-collapse -->
     </div><!--/ .container-->
     </div><!-- /.Fixed navbar  -->

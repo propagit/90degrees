@@ -159,6 +159,11 @@ class Cart extends MX_Controller {
 		return $this->cart->total();	
 	}
 	
+	function get_total_items()
+	{
+		return $this->cart->total_items();	
+	}
+	
 	function destroy()
 	{
 		$this->cart->destroy();	
@@ -170,6 +175,10 @@ class Cart extends MX_Controller {
 		$this->session->unset_userdata('coupon');
 		$this->session->unset_userdata('condition_id');
 		$this->session->unset_userdata('discount_amount');	
+	}
+	
+	function get_mini_cart(){
+		return $this->load->view('mini_cart_container',true);	
 	}
 	
 	

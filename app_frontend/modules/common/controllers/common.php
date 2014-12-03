@@ -75,6 +75,24 @@ class Common extends MX_Controller {
 		}
 		return implode($rand_string); 
 	}
+	
+	/**
+	 * @desc: function to generate pagination
+	 *
+	 */
+	function pagination($params = array())
+	{
+		$data['total_records'] = 300;
+		$data['records_per_page'] = 20;
+		$data['current_page'] = 6;
+		$data['number_of_pages_to_display'] = 5;
+		$data['first_half_of_pages'] = 2;
+		$data['second_half_of_pages'] = 3;
+		$data['url'] = 'http://localhost/90degrees/category/shop/';
+		#$data['params'] = $params;
+		$this->load->view('pagination',isset($data) ? $data : NULL);	
+	}
+	
 
 	
 

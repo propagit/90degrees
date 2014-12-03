@@ -4,6 +4,13 @@
   
   <div class="row transitionfx">
   
+  	<div class="col-xs-12">
+  		<div class="w100 clearfix category-top">
+        	<h1> SHOP 90 DEGREES</h1>
+        	<?php echo modules::run('cart/get_mini_cart');?>
+      </div><!--/.category-top-->
+    </div>
+  
    <!-- left column -->
     <div class="col-lg-6 col-md-6 col-sm-6">
     	<!-- product Image and Zoom -->
