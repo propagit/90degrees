@@ -83,7 +83,10 @@ $(document).scroll(function() {
 
 $(function(){
 	
-	
+	// Delete mini cart item
+	$(document).on('click','.delete-mini-cart-item',function(){
+		delete_item_minicart($(this).attr('data-rowid'));
+	});
 	
 	menu_cart();
 	
@@ -187,6 +190,24 @@ function scroll_fix_nav(){
 	}
 }
 
+
+function delete_item_minicart(rowid){
+	$.ajax({
+		type: "POST",
+		url: "<?=base_url();?>cart/ajax/delete_item",
+		data: {rowid:rowid},
+		dataType: "JSON",
+		success: function(data) {
+				if(data['status']){
+					$('#min-cart-row-'+rowid).remove();
+					//menu_cart();
+				}else{
+					$('#site-errors').html('Deletion failed! Please try again');
+					$('#ModalSiteErrors').modal('show');	
+				}
+		  	}
+	});		
+}
 </script>
 
 <!-- Modal Login start -->

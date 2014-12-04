@@ -8,7 +8,7 @@
       <b class="caret"> </b> 
   </a>
   
-    <div class="dropdown-menu col-lg-6 col-xs-12 col-md-6 ">
+    <div class="dropdown-menu col-lg-6 col-xs-12 col-md-6">
     
       <div class="w100 miniCartTable scroll-pane">
         <table>
@@ -22,17 +22,17 @@
 		 	# shows only three recent
 			$count = 0;
 			foreach($this->cart->contents() as $item) { 
-		 	if($count > 3){
-				break;	
+		 	if($count >= 3){
+				break;
 			}
 			$count++;
 		 ?>
-         	<tr class="miniCartProduct">
+         	<tr class="miniCartProduct" id="min-cart-row-<?=$item['rowid'];?>">
               <td style="width:76px;" class="miniCartProductThumb"><div> <a href="<?=base_url();?>product/<?=$item['uri_path'];?>"><img src="<?=base_url() . modules::run('catalog/product/image', $item['id']);?>" alt="img"></a> </div></td>
               <td><div class="miniCartDescription">
                   <h4> <a href="<?=base_url();?>product/<?=$item['uri_path'];?>"><?=$item['name'];?> </a> </h4>
                   <span class="info"> <?=$item['qty'];?> x $<?=$item['subtotal'];?> </span>
-                  <a href="<?=base_url();?>cart"><div class="trash"> <span>Remove Product <i class="fa fa-times"></i> </span> </div></a>
+                  <div class="delete-mini-cart-item" data-rowid="<?=$item['rowid'];?>"><div class="trash"> <span>Remove Product <i class="fa fa-times"></i> </span> </div></div>
                 </div>
               </td>
               
