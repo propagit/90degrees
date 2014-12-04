@@ -12,6 +12,7 @@ class Category extends MX_Controller {
 	function index($category = "")
 	{
 		$records_per_page = RECORDS_PER_PAGE;
+		$data['records_per_page'] = $records_per_page;
 		$order = isset($_GET['order']) ? $_GET['order'] : 'name';	
 		$cur_page = isset($_GET['p']) ? $_GET['p'] : 1;
 		$data['order'] = $order;
@@ -54,7 +55,7 @@ class Category extends MX_Controller {
 			$url .= '&p=';	
 		}
 		$data['pagination_params'] = array(
-											'records_per_page' => RECORDS_PER_PAGE,
+											'records_per_page' => $records_per_page,
 											'total_records' => count($total_products),
 											'current_page' => $cur_page,
 											'url' => base_url().'category/' . $data['cur_category']  . $url	

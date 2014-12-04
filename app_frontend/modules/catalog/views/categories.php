@@ -48,7 +48,7 @@
     <div class="col-lg-9 col-md-9 col-sm-12">
 
       <div class="w100 productFilter clearfix">
-        <h4 class="product-count pull-left"> Showing <strong>12</strong> products </h4>
+        <h4 class="product-count pull-left"> Showing <strong><?=RECORDS_PER_PAGE;?></strong> products </h4>
         <div class="pull-right ">
           <div class="change-order pull-right">
             <select class="form-control" name="orderby" id="orderby">
