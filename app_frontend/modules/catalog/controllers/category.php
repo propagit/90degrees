@@ -12,11 +12,21 @@ class Category extends MX_Controller {
 	function index($category = "")
 	{
 		$records_per_page = RECORDS_PER_PAGE;
-		$data['records_per_page'] = $records_per_page;
+		
+		if($this->session->userdata('layout')){
+			$layout = $this->session->userdata('layout');
+		}else{
+			$layout = isset($_GET['layout']) ? $_GET['layout'] : 'grid';
+		}
 		$order = isset($_GET['order']) ? $_GET['order'] : 'name';	
 		$cur_page = isset($_GET['p']) ? $_GET['p'] : 1;
+		
 		$data['order'] = $order;
 		$data['cur_category'] = $category;
+		$data['records_per_page'] = $records_per_page;
+		$data['layout'] = $layout;
+		
+		
 		
 		$data['parent_categories'] = $this->category_model->get_parent_categories();	
 		
@@ -48,12 +58,10 @@ class Category extends MX_Controller {
 		
 		# pagination params	
 		$url = '';
-		if($order){
-			$url = '?order=' . $order;		
-		}
-		if($cur_page){
-			$url .= '&p=';	
-		}
+		$url .= '?layout=' . $layout;
+		$url .= '&order=' . $order;	
+		$url .= '&p=';
+	
 		$data['pagination_params'] = array(
 											'records_per_page' => $records_per_page,
 											'total_records' => count($total_products),
