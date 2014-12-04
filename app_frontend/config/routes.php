@@ -66,6 +66,8 @@ $route['cart/checkout/(:any)'] = 'cart/checkout/$1';
 
 $route['(category|product)'] = 'catalog/index/$1';
 $route['(category|product)/(:any)'] = 'catalog/index/$1/$2';
+#$route['(category|product)/(:any)/(:any)'] = 'catalog/index/$1/$2/$3';
+#$route['(category|product)/(:any)/(:any)/(:any)'] = 'catalog/index/$1/$2/$3/$4';
 
 $route['customer/forgot-password'] = 'customer/forgot_password';
 

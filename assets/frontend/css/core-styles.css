@@ -16,10 +16,10 @@ table,td,th,tr,
 h1,h2,h3,h5,h6,
 .cart-actions .wishlist,
 .nav-tabs li a,
-.product-details p,
 .modal,
 .modal-title-site,
 .item h4 a,
+.product-price,
 .miniCartDescription .info,
 .miniCartDescription .trash,
 .subtotal-amount,
@@ -33,18 +33,26 @@ h4 a,
 .cartMenu .cartRespons,
 .description p,
 .miniCartTable th,
-.miniCartFooter .subtotal{
+.miniCartFooter .subtotal,
+.product-short-desc,
+.product-desc p{
 	font-family: 'PT Serif', serif;
 }
 
 /** Text Colors */
 body,
 html,
-.cartMenu a.dropdown-toggle{
+.cartMenu a.dropdown-toggle,
+.nav-pills-alt > li > a,
+.nav-pills-alt > li.active > a{
 	color:#394444;		
 }
 
 
+/** Border Radius*/
+.nav-pills-alt > li > a{
+	border-radius:6px;	
+}
 ::selection{
 	background:#71bf44;
 }
@@ -421,6 +429,29 @@ p.contact-us{
 	color:#363737;	
 }
 
+/** Alternate Class for existing BS classes */
+.nav-pills-alt > li{
+	margin-right:20px;	
+}
+.nav-pills-alt > li > a{
+	border:1px solid #394444;
+	font-size:16px;
+	text-transform:uppercase;
+	padding:5px 13px 3px;	
+	font-weight:700;
+}
+.nav-pills-alt > li.active{
+	background:#fff !important;		
+}
+.nav-pills-alt > li.active > a,
+.nav-pills-alt > li > a:hover,
+.nav-pills-alt > li.active > a:hover{
+	background:#fff !important;	
+	background-color:#fff !important;
+	color:#394444 !important;
+}
+
+
 /** CMS */
 .main-container{
 	min-height:400px;	
@@ -796,8 +827,8 @@ tr.CartProduct td{
 	border-bottom: 2px solid #cdd0d0;	
 }
 .product-price{
-	font-size:54px;
-	font-weight:900;
+	font-size:35px;
+	font-weight:700;
 }
 .cart-actions button, 
 .cart-actions .wishlist{
@@ -844,7 +875,20 @@ tr.CartProduct td{
 .agree-terms{
 	font-size:13px;	
 }
-
+.product-tab .product-details{
+	margin-top:20px;
+}
+.product-desc p,
+.product-short-desc{
+	font-style: italic;
+	font-size: 18px;
+}
+.product-desc p{
+	line-height:21px;	
+}
+.product-short-desc{
+	padding: 10px 0;
+}
 
 /** TABS */
 .nav-tabs li a{
@@ -903,10 +947,6 @@ tr.CartProduct td{
 }
 
 /** PRODUCTS */
-.product-details p{
-	font-size:16px;
-	line-height:22px;	
-}
 .product-desc{
 	min-height:345px;	
 }

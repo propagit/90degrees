@@ -82,14 +82,17 @@ class Common extends MX_Controller {
 	 */
 	function pagination($params = array())
 	{
-		$data['total_records'] = 300;
-		$data['records_per_page'] = 20;
-		$data['current_page'] = 6;
-		$data['number_of_pages_to_display'] = 5;
-		$data['first_half_of_pages'] = 2;
-		$data['second_half_of_pages'] = 3;
-		$data['url'] = 'http://localhost/90degrees/category/shop/';
-		#$data['params'] = $params;
+		# config
+		$data['number_of_pages_to_display'] = TOTAL_DISPLAY_PAGES;
+		$data['first_half_of_pages'] = FIRST_HALF;
+		$data['second_half_of_pages'] = SECOND_HALF;
+		
+		# other vars that are required to be passed in the params array
+		$data['records_per_page'] = $params['records_per_page'];
+		$data['total_records'] = $params['total_records'];
+		$data['current_page'] = $params['current_page'];
+		$data['url'] = $params['url'];
+	
 		$this->load->view('pagination',isset($data) ? $data : NULL);	
 	}
 	

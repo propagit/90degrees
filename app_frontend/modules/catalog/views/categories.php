@@ -51,13 +51,9 @@
         <h4 class="product-count pull-left"> Showing <strong>12</strong> products </h4>
         <div class="pull-right ">
           <div class="change-order pull-right">
-            <select class="form-control" name="orderby">
-              <option selected="selected" >Default sorting</option>
-              <option value="popularity">Sort by popularity</option>
-              <option value="rating">Sort by average rating</option>
-              <option value="date">Sort by newness</option>
-              <option value="price">Sort by price: low to high</option>
-              <option value="price-desc">Sort by price: high to low</option>
+            <select class="form-control" name="orderby" id="orderby">
+              <option <?=$order == 'name' ? 'selected="selected"' : ''; ?> value="name">Sort by name</option>
+              <option <?=$order == 'price' ? 'selected="selected"' : ''; ?> value="price">Sort by price</option>
             </select>
           </div>
           <div class="change-view pull-right"> 
@@ -120,7 +116,7 @@
         </div>
         <?php } ?>
         
-        <?php echo modules::run('common/pagination');?>
+        <?php echo modules::run('common/pagination',$pagination_params);?>
         
       </div> <!--/.categoryFooter-->
     </div><!--/right column end-->
