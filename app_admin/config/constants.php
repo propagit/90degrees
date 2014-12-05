@@ -45,6 +45,9 @@ define('DB_NAME', '90degrees');
 define('ASSETS_PATH', '/assets/admin/');
 define('ROOT_PATH', 'admin/');
 
+# Status
+define('ACTIVE',1);
+define('INACTIVE',0);
 define('TRASHED', -1);
 
 define('SALT','flare-');
@@ -66,9 +69,7 @@ define('NO_REPLY_EMAIL','team@propagate.com.au');
 define('INFO_EMAIL','team@propagate.com.au');
 define('SALES_EMAIL','team@propagate.com.au');
 
-# Status
-define('ACTIVE',1);
-define('INACTIVE',0);
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
