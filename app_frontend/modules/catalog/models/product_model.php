@@ -66,7 +66,8 @@ class Product_model extends CI_Model {
 		$sql = "SELECT p.* FROM catalog_products p
 				   WHERE p.product_id IN 
 				   	 	(SELECT product_id FROM catalog c
-							WHERE c.category_id = ".$params['category_id'].")";
+							WHERE c.category_id = ".$params['category_id']."
+								 AND p.status = " . ACTIVE . ")";
 							
 		# sort records
 		if(isset($params['order']) && $params['order']){

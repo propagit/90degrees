@@ -103,6 +103,25 @@ a {
 	padding-bottom:15px;	
 }
 
+.set-feature{
+	margin-right:5px;
+	background-color:#ac5287!important;	
+	border-color:#ac5287;	
+}
+.feature-image{
+	color: #fff;
+	position: absolute;
+	background-color: rgba(169,3,41,0.9);
+	right: 10px;
+	top: 10px;
+	width: 20px;
+	text-align: center;
+	border-radius: 50%;
+	height: 20px;
+	line-height: 20px;
+}
+
+
 /** HELPER Classes */
 .pull-text{
 	text-align:right;	

@@ -77,18 +77,10 @@
 							<tbody>
 								<? foreach($products as $product) { 
 									# config drop down action palet
-									$fa_status = $product['status'] ? 'fa-thumbs-o-down' : 'fa-thumbs-o-up';
-									$product_id = $product['product_id'];
-									$link_label = $product['status'] ? 'Deactivate' : 'Activate';
 									$dd_params = array(
-													'btn_name' => $product['status'] ? 'Active' : 'Inactive',
-													'btn_class' => $product['status'] ? 'btn-success' : 'btn-warning',
-													'links' => array(
-																	array('label' => $link_label, '' , 'class' => 'change-status', 'data' => $product_id, 'fa' => $fa_status),
-																	array('label' => 'Trash' , 'class' => 'trash', 'data' => $product_id,'fa' => 'fa-trash-o'),
-																)
-												);
-									
+														'status' => $product['status'],
+														'obj_id' => $product['product_id']
+														);
 								?>
 								<tr>
 									<td><?=$product['product_id'];?></td>

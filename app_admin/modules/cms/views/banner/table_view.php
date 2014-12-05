@@ -75,18 +75,10 @@
 							<tbody>
 								<? foreach($banners as $banner) { 
 									# config drop down action palet
-									$fa_status = $banner['status'] ? 'fa-thumbs-o-down' : 'fa-thumbs-o-up';
-									$banner_id = $banner['banner_id'];
-									$link_label = $banner['status'] ? 'Deactivate' : 'Activate';
 									$dd_params = array(
-													'btn_name' => $banner['status'] ? 'Active' : 'Inactive',
-													'btn_class' => $banner['status'] ? 'btn-success' : 'btn-warning',
-													'links' => array(
-																	array('label' => $link_label, '' , 'class' => 'change-status', 'data' => $banner_id, 'fa' => $fa_status),
-																	array('label' => 'Trash' , 'class' => 'trash', 'data' => $banner_id,'fa' => 'fa-trash-o'),
-																)
-												);
-									
+														'status' => $banner['status'],
+														'obj_id' => $banner['banner_id']
+														);
 								?>
 								<tr>
 									<td><?=$banner['banner_id'];?></td>

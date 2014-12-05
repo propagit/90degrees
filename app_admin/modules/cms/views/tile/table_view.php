@@ -4,7 +4,7 @@
 			<i class="fa fa-table fa-fw "></i> 
 				CMS
 			<span>> 
-				Tiles
+				Work Showcase
 			</span>
 		</h1>
 	</div>
@@ -13,7 +13,7 @@
 		
 		<a href="#<?=ajax_url();?>tiles/create" class="btn btn-success btn-lg pull-right header-btn hidden-mobile">
 			<i class="fa fa-circle-arrow-up fa-lg"></i> 
-			Create New Tile
+			Create New Showcase 
 		</a>
 	</div>
 </div>
@@ -75,17 +75,10 @@
 							<tbody>
 								<? foreach($tiles as $tile) { 
 									# config drop down action palet
-									$fa_status = $tile['status'] ? 'fa-thumbs-o-down' : 'fa-thumbs-o-up';
-									$tile_id = $tile['tile_id'];
-									$link_label = $tile['status'] ? 'Deactivate' : 'Activate';
 									$dd_params = array(
-													'btn_name' => $tile['status'] ? 'Active' : 'Inactive',
-													'btn_class' => $tile['status'] ? 'btn-success' : 'btn-warning',
-													'links' => array(
-																	array('label' => $link_label, '' , 'class' => 'change-status', 'data' => $tile_id, 'fa' => $fa_status),
-																	array('label' => 'Trash' , 'class' => 'trash', 'data' => $tile_id,'fa' => 'fa-trash-o'),
-																)
-												);
+														'status' => $tile['status'],
+														'obj_id' => $tile['tile_id']
+														);
 									
 								?>
 								<tr>

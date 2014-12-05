@@ -81,17 +81,10 @@
                             	<?php if($customers){ 
 									foreach($customers as $cust){
 										# config drop down action palet
-										$fa_status = $cust['status'] ? 'fa-thumbs-o-down' : 'fa-thumbs-o-up';
-										$user_id = $cust['u_user_id'];
-										$link_label = $cust['status'] ? 'Deactivate' : 'Activate';
 										$dd_params = array(
-														'btn_name' => $cust['status'] ? 'Active' : 'Inactive',
-														'btn_class' => $cust['status'] ? 'btn-success' : 'btn-warning',
-														'links' => array(
-																		array('label' => $link_label, '' , 'class' => 'change-status', 'data' => $user_id, 'fa' => $fa_status),
-																		array('label' => 'Trash' , 'class' => 'trash', 'data' => $user_id,'fa' => 'fa-trash-o'),
-																	)
-													);
+														'status' => $cust['status'],
+														'obj_id' => $cust['u_user_id']
+														);
 								?>
                                 <tr>
                                 	<td><?=isset($cust['customer_id']) ? 'Customer' : 'Subscriber';?></td>

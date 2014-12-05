@@ -14,7 +14,7 @@ class Ajax extends MX_Controller {
 	*	@return: upload_id
 	*/
 	function uploading()
-	{
+	{	
 		# Make sure file is not cached (as it happens for example on iOS devices)
 		header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 		header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
@@ -43,6 +43,8 @@ class Ajax extends MX_Controller {
 		# Create dir for storing file related to the product
 		$targetDir = "./uploads";
 		
+		$targetThumbDir = "./uploads/thumbnails";
+		
 
 		$cleanupTargetDir = true; // Remove old files
 		$maxFileAge = 5 * 3600; // Temp file age in seconds
@@ -51,6 +53,11 @@ class Ajax extends MX_Controller {
 		// Create target dir
 		if (!file_exists($targetDir)) {
 			@mkdir($targetDir);
+		}
+		
+		// Create target thumb dir
+		if (!file_exists($targetThumbDir)) {
+			@mkdir($targetThumbDir);
 		}
 
 		// Get a file name
@@ -134,6 +141,17 @@ class Ajax extends MX_Controller {
 			);
 			$upload_id = $this->upload_model->insert_upload($upload_data);
 			
+			# Create thumb if necessary
+			if( isset($_REQUEST['height']) && isset($_REQUEST['width']) ){
+				$resize_params = array(
+										'name' => $fileName,
+										'directory' => 'uploads',
+										'sub' => 'thumbnails',
+										'width' => $_REQUEST['width'],
+										'height' => $_REQUEST['height']
+									);
+				modules::run('upload/resize_photo',$resize_params);	
+			}
 		}
 		
 		// Return Success JSON-RPC response
@@ -147,6 +165,9 @@ class Ajax extends MX_Controller {
 		if ($upload) {
 			if (file_exists($upload['full_path'])) {
 				unlink($upload['full_path']);
+			}
+			if (file_exists($upload['file_path'] . '/thumbnails/' . $upload['file_name'])) {
+				unlink($upload['file_path'] . '/thumbnails/' . $upload['file_name']);
 			}
 			$this->upload_model->delete_upload($upload['upload_id']);
 		}

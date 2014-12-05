@@ -76,17 +76,11 @@
 							<tbody>
 								<? foreach($promotions as $promotion) { 
 									# config drop down action palet
-									$fa_status = $promotion['status'] ? 'fa-thumbs-o-down' : 'fa-thumbs-o-up';
-									$promotion_id = $promotion['promotion_id'];
-									$link_label = $promotion['status'] ? 'Deactivate' : 'Activate';
 									$dd_params = array(
-													'btn_name' => $promotion['status'] ? 'Active' : 'Inactive',
-													'btn_class' => $promotion['status'] ? 'btn-success' : 'btn-warning',
-													'links' => array(
-																	array('label' => $link_label, '' , 'class' => 'change-status', 'data' => $promotion_id, 'fa' => $fa_status),
-																	array('label' => 'Trash' , 'class' => 'trash', 'data' => $promotion_id,'fa' => 'fa-trash-o'),
-																)
-												);
+														'status' => $promotion['status'],
+														'obj_id' => $promotion['promotion_id']
+														);
+									
 								?>
 								<tr>
 									<td><?=$promotion['promotion_id'];?></td>

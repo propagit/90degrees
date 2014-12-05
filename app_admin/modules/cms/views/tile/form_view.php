@@ -2,9 +2,9 @@
 	<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 		<h1 class="page-title txt-color-blueDark">
 			<i class="fa fa-edit fa-fw "></i> 
-				Tiles 
+				Work Showcase 
 			<span>> 
-				<?=(isset($tile)) ? 'Edit tile "' . $tile['name'] . '"' : 'Create New tile';?>
+				<?=(isset($tile)) ? 'Edit showcase "' . $tile['name'] . '"' : 'Create New Showcase';?>
 			</span>
 		</h1>
 	</div>
@@ -114,7 +114,25 @@
                                                     <option value="1" <?=isset($tile) ? ($tile['new_window'] == '1' ? 'selected="selected"' : '') : '';?>>Open in New Window</option>
                                                 </select><i></i> </label>
                                             </section>
+                                            
+                                            <section class="col col-6">
+                                                <label class="select">
+                                                <label class="input">
+													<input type="text" name="short_desc" maxlength="255" value="<?=(isset($tile)) ? $tile['short_desc'] : '';?>" />
+												</label>
+                                                <div class="note">
+													<strong>Max characters</strong> 255
+												</div>
+                                            </section>
                                         </div>
+                                        
+                                        <section>
+                                            <label class="label">Content</label>
+                                            <label class="textarea">
+                                                <textarea class="custom-scroll" name="content_text" rows="15"><?=(isset($tile)) ? $tile['content'] : '';?></textarea>
+                                            </label>
+                                            <div class="note"></div>								
+                                        </section>
 									</fieldset>
 									
 									
@@ -138,12 +156,14 @@
                             <? if(isset($tile)) { ?>
 							<!-- tab: Images -->
 							<div class="tab-pane tab-padding fade <?=($tab == 'image') ? ' active in' : '';?>" id="image">
+                            	<p>Images should be of the following dimensions for optimum result. <strong>Width 1170px - Height 820px</strong></p>
 								
 								<?=modules::run('upload/field_upload', 
 									# Uploading options
 									array(
 										'name' => 'tile_images',
-										'allowed_extensions' => array(array('title' => 'Image files', 'extensions' => 'jpg,gif,png'))
+										'allowed_extensions' => array(array('title' => 'Image files', 'extensions' => 'jpg,gif,png')),
+										'resize_params' => array('width' => 768,	'height' => 536)
 									),
 									# Javascript callback function
 									'add_tile_images(' . $tile['tile_id'] . ')');?>
@@ -166,10 +186,19 @@
 	<!-- END ROW -->
 </section>
 <!-- end widget grid -->
-
+<script src="<?=base_url() . ASSETS_PATH;?>js/plugin/ckeditor/ckeditor.js"></script>
+<script src="<?=base_url() . ASSETS_PATH;?>js/plugin/ckeditor/config.js"></script>
+<script src="<?=base_url() . ASSETS_PATH;?>js/plugin/ckeditor/styles.js"></script>
+<script src="<?=base_url() . ASSETS_PATH;?>js/plugin/ckfinder/ckfinder.js"></script>
+<script src="<?=base_url() . ASSETS_PATH;?>js/plugin/ckfinder/config.js"></script>
 
 <!-- SCRIPTS ON PAGE EVENT -->
 <script type="text/javascript">
+
+	var editor = CKEDITOR.replace( 'content_text' );
+
+	CKFinder.setupCKEditor( editor, '<?=base_url() . ASSETS_PATH;?>js/plugin/ckfinder/' );
+	
 	pageSetUp();	
 	
 	var pagefunction = function() {
@@ -181,6 +210,8 @@
 			});
 		})
 		$('#btn-update-tile-basic').click(function(){
+			
+			CKupdate();
 			
 			ajax_submit_form('form-tile-basic', '<?=ajax_url() . 'cms/tiles_ajax/update/basic';?>', function(e){
 				$('#msg-tile').find('span').html('The basic info of tile has been updated successfully!');

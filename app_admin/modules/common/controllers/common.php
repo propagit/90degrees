@@ -48,10 +48,11 @@ class Common extends MX_Controller {
 	{
 		# current fields - update per requirements
 		/*$params = array(
-					'btn_name' => 'required',
+					'status' => 'required',
+					'obj_id' => 'required'
 					'ul_class' => '',
 					'links' => array(
-								'label' => 'required',
+								'label' => '',
 								'url' => '',
 								'id' => '',
 								'class' => '',
@@ -59,6 +60,7 @@ class Common extends MX_Controller {
 								'data' => ''
 								),
 					);*/
+		# the links parameter is now optional which is used to populate any additional action pallete
 		
 		$data['params'] = $params;
 		$this->load->view('dd_action_pallet',isset($data) ? $data : NULL);
