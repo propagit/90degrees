@@ -69,7 +69,7 @@
 
 
 <!-- include custom script for site  --> 
-<!--<script src="<?=base_url() . ASSETS;?>js/script.js"></script>-->
+<script src="<?=base_url() . ASSETS;?>js/script.js"></script>
 
 <!-- include flare js -->
 <script src="<?=base_url() . ASSETS;?>js/flare.js"></script>
@@ -78,22 +78,15 @@
 <script>
 // fix nav
 $(document).scroll(function() {
-	var y = $(this).scrollTop();
-	if (y > 10) {
-		$('#scroll-nav').fadeIn(function(){
-			$('#scroll-nav-offset').show();		
-		});
-		$('#normal-nav').fadeOut();
-	} else {
-		$('#scroll-nav').fadeOut();
-		$('#normal-nav').fadeIn();
-		$('#scroll-nav-offset').hide();
-	}
+	scroll_fix_nav();
 });
 
 $(function(){
 	
-	
+	// Delete mini cart item
+	$(document).on('click','.delete-mini-cart-item',function(){
+		delete_item_minicart($(this).attr('data-rowid'));
+	});
 	
 	menu_cart();
 	
@@ -180,6 +173,40 @@ function menu_cart() {
 	$.post("<?=base_url();?>cart/ajax/mob_cart", function(html) {
 		$('#mob-cart').html(html);
 	});
+}
+
+
+function scroll_fix_nav(){
+	var y = $(this).scrollTop();
+	if (y > 10) {
+		$('#scroll-nav').fadeIn(function(){
+			$('#scroll-nav-offset').show();		
+		});
+		$('#normal-nav').fadeOut();
+	} else {
+		$('#scroll-nav').fadeOut();
+		$('#normal-nav').fadeIn();
+		$('#scroll-nav-offset').hide();
+	}
+}
+
+
+function delete_item_minicart(rowid){
+	$.ajax({
+		type: "POST",
+		url: "<?=base_url();?>cart/ajax/delete_item",
+		data: {rowid:rowid},
+		dataType: "JSON",
+		success: function(data) {
+				if(data['status']){
+					$('#min-cart-row-'+rowid).remove();
+					//menu_cart();
+				}else{
+					$('#site-errors').html('Deletion failed! Please try again');
+					$('#ModalSiteErrors').modal('show');	
+				}
+		  	}
+	});		
 }
 </script>
 

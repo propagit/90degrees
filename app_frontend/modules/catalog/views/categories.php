@@ -2,20 +2,27 @@
   
   <!-- Main component call to action -->
   
- <?=$breadcrumb;?>
+ <?php #echo $breadcrumb;?>
   
   <div class="row">
+  
+    <div class="col-xs-12">
+  	  <div class="w100 clearfix category-top">
+        	<h1> SHOP 90 DEGREES</h1>
+        	<?php echo modules::run('cart/get_mini_cart');?>
+      </div><!--/.category-top-->
+    </div>
   
    <!--left column-->
   
     <div class="col-lg-3 col-md-3 col-sm-12">
       <div class="panel-group" id="accordionNo">
        <!--Category--> 
-        <div class="panel panel-default">
+        <div class="panel panel-default panel-alt col-xs-10">
           <div class="panel-heading">
             <h4 class="panel-title"> 
             <a data-toggle="collapse" href="#collapseCategory" class="collapseWill"> 
-            <span class="pull-left"> <i class="fa fa-caret-right"></i></span> Product Categories 
+            	 Shop Categories 
             </a> 
             </h4>
           </div>
@@ -23,41 +30,12 @@
           <div id="collapseCategory" class="panel-collapse collapse in">
             <div class="panel-body">
               
-              <ul class="nav nav-pills nav-stacked tree">
+              <ul class="nav nav-pills nav-stacked tree cat-panel-ul">
               	<?php foreach($parent_categories as $pc) { ?>
               	<li> <a href="<?=base_url()?>category/<?=$pc['uri_path'];?>"> <span class="badge pull-right"></span> <?=$pc['name'];?> </a> </li>
               	<?php } ?>
               </ul>
-              
-              <!-- 
-              
-              Template kept for reference - delete later
-              
-              <ul class="nav nav-pills nav-stacked tree">
-                <li class="dropdown-tree"> <a class="dropdown-tree-a"> <span class="badge pull-right">42</span> WOMEN COLLECTION </a>
-                  <ul class="category-level-2 dropdown-menu-tree">
-                    <li class="dropdown-tree"> <a class="dropdown-tree-a" href="sub-category.html"> Tshirt</a>
-                    </li>
-                    <li><a> Shoes</a> </li>
-                    <li><a> Shirt</a> </li>
-                    <li><a>T shirt</a> </li>
-                    <li><a href="sub-category.html"> Shirt</a> </li>
-                    <li><a href="sub-category.html">Fragrances</a> </li>
-                    <li><a href="sub-category.html">Scarf</a> </li>
-                    <li><a href="sub-category.html">Sandal</a> </li>
-                    <li><a href="sub-category.html">Underwear</a> </li>
-                    <li><a href="sub-category.html">Winter Collection</a> </li>
-                    <li><a href="sub-category.html">Men Accessories</a> </li>
-                  </ul>
-                </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> MEN COLLECTION </a> </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> Baby &amp; Kids </a> </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> Home &amp; Kitchen </a> </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> Baby &amp; Kids </a> </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> More Stores </a> </li>
-                <li> <a href="#"> <span class="badge pull-right">42</span> Offers Zone </a> </li>
-              </ul>
-              -->
+
             </div>
           </div>
         </div> <!--/Category menu end--> 
@@ -68,33 +46,24 @@
     
     <!--right column-->
     <div class="col-lg-9 col-md-9 col-sm-12">
-    
-      <div class="w100 clearfix category-top">
-        <h2> MEN COLLECTION </h2>
-      </div><!--/.category-top-->
 
-      
       <div class="w100 productFilter clearfix">
-        <p class="pull-left"> Showing <strong>12</strong> products </p>
+        <h4 class="product-count pull-left"> Showing <strong><?=RECORDS_PER_PAGE;?></strong> products </h4>
         <div class="pull-right ">
           <div class="change-order pull-right">
-            <select class="form-control" name="orderby">
-              <option selected="selected" >Default sorting</option>
-              <option value="popularity">Sort by popularity</option>
-              <option value="rating">Sort by average rating</option>
-              <option value="date">Sort by newness</option>
-              <option value="price">Sort by price: low to high</option>
-              <option value="price-desc">Sort by price: high to low</option>
+            <select class="form-control" name="orderby" id="orderby">
+              <option <?=$order == 'name' ? 'selected="selected"' : ''; ?> value="name">Sort by name</option>
+              <option <?=$order == 'price' ? 'selected="selected"' : ''; ?> value="price">Sort by price</option>
             </select>
           </div>
           <div class="change-view pull-right"> 
-          <a href="#" title="Grid" class="grid-view"> <i class="fa fa-th-large"></i> </a> 
-          <a href="#" title="List" class="list-view "><i class="fa fa-th-list"></i></a> </div>
+          <a href="#" title="Grid" class="layout grid-view" data="grid"> <i class="fa fa-th-large"></i> </a> 
+          <a href="#" title="List" class="layout list-view" data="list"><i class="fa fa-th-list"></i></a> </div>
         </div>
       </div> <!--/.productFilter-->
       <div class="row  categoryProduct xsResponse clearfix">
        <?php foreach($products as $product){ ?>
-       		<div class="item col-sm-4 col-lg-4 col-md-4 col-xs-6">
+       		<div class="item col-sm-4 col-lg-4 col-md-4 col-xs-6 <?=$layout == 'list' ? 'list-view' : '';?>">
               <div class="product">
                 <div class="image"> <a href="<?=base_url();?>product/<?=$product['uri_path'];?>"><img src="<?=base_url() . modules::run('catalog/product/image', $product['product_id']);?>" alt="img" class="img-responsive"></a>
                 </div>
@@ -112,7 +81,7 @@
                   </div>
                   <div class="action-control">
 					<a class="btn btn-primary add-to-cart" data-pid="<?=$product['product_id'];?>"> 
-                    <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> 
+                    <span class="add2cart"><i class="fa fa-plus"></i> Add to cart </span> 
                     </a>
 				</div>
               </div>
@@ -129,20 +98,7 @@
     </div> <!--/.categoryProduct || product content end-->
       
       <div class="w100 categoryFooter">
-        <div class="pagination pull-left no-margin-top">
-          <ul class="pagination no-margin-top">
-            <li><a href="#">«</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">»</a></li>
-          </ul>
-        </div>
-        <div class="pull-right pull-right col-sm-4 col-xs-12 no-padding text-right text-left-xs">
-          <p>Showing 1–450 of 12 results</p>
-        </div>
+        <?php echo modules::run('common/pagination',$pagination_params);?>
       </div> <!--/.categoryFooter-->
     </div><!--/right column end-->
     

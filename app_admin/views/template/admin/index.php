@@ -193,7 +193,7 @@
 								<a href="<?=base_url();?>admin/banner">Manage Banners</a>
 							</li>
                             <li>
-								<a href="<?=base_url();?>admin/tiles">Manage Tiles</a>
+								<a href="<?=base_url();?>admin/tiles">Manage Work Showcase</a>
 							</li>
 							<li>
 								<a href="<?=base_url();?>admin/form">Manage Forms</a>

@@ -75,6 +75,27 @@ class Common extends MX_Controller {
 		}
 		return implode($rand_string); 
 	}
+	
+	/**
+	 * @desc: function to generate pagination
+	 *
+	 */
+	function pagination($params = array())
+	{
+		# config
+		$data['number_of_pages_to_display'] = TOTAL_DISPLAY_PAGES;
+		$data['first_half_of_pages'] = FIRST_HALF;
+		$data['second_half_of_pages'] = SECOND_HALF;
+		
+		# other vars that are required to be passed in the params array
+		$data['records_per_page'] = $params['records_per_page'];
+		$data['total_records'] = $params['total_records'];
+		$data['current_page'] = $params['current_page'];
+		$data['url'] = $params['url'];
+	
+		$this->load->view('pagination',isset($data) ? $data : NULL);	
+	}
+	
 
 	
 

@@ -4,6 +4,13 @@
   
   <div class="row transitionfx">
   
+  	<div class="col-xs-12">
+  		<div class="w100 clearfix category-top">
+        	<h1> SHOP 90 DEGREES</h1>
+        	<?php echo modules::run('cart/get_mini_cart');?>
+      </div><!--/.category-top-->
+    </div>
+  
    <!-- left column -->
     <div class="col-lg-6 col-md-6 col-sm-6">
     	<!-- product Image and Zoom -->
@@ -24,15 +31,15 @@
       <h1 class="no-margin no-padding"> <?=$product['name'];?></h1>
      
       
-      <div class="details-description product-details">
-        <p><strong><?=$product['short_desc'];?></strong></p>
+      <div class="product-short-desc product-details">
+        <?=$product['short_desc'];?>
       </div>
       
       <div class="product-tab w100 clearfix">
       
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-pills nav-pills-alt">
           <li class="active"><a href="#details" data-toggle="tab">Description</a></li>
-          <li><a href="#size" data-toggle="tab">Size</a></li>
+          <li><a href="#size" data-toggle="tab">Dimensions</a></li>
         </ul>
         
         <!-- Tab panes -->
@@ -60,7 +67,6 @@
               <? } else { ?>
               <span class="price-sales"> $<?=money_format('%i', $product['price']);?></span> 
               <? } ?>
-              <p><strong>FREE SHIPPING ANYWHERE IN AUSTRALIA</strong></p>
           </div>
           
         </div> <!-- /.tab content -->

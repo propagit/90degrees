@@ -31,7 +31,9 @@ class Tiles_ajax extends MX_Controller {
 		$tile_data = array(
 			'name' => $input['name'],
 			'tile_uri' => $input['tile_uri'],
-			'new_window' => isset($input['new_window']) ? 1 : 0
+			'new_window' => isset($input['new_window']) ? 1 : 0,
+			'content' => $input['content_text'],
+			'short_desc' => $input['short_desc']
 		);
 		$tile_id = $this->tiles_model->insert_tile($tile_data);
 		
@@ -74,8 +76,15 @@ class Tiles_ajax extends MX_Controller {
 			));
 			return;
 		}
+		$tile_data = array(
+			'name' => $input['name'],
+			'tile_uri' => $input['tile_uri'],
+			'new_window' => isset($input['new_window']) ? 1 : 0,
+			'content' => $input['content_text'],
+			'short_desc' => $input['short_desc']
+		);
 		
-		$updated = $this->tiles_model->update_tile($input['tile_id'], $input);
+		$updated = $this->tiles_model->update_tile($input['tile_id'], $tile_data);
 		if ($updated === true)
 		{
 			echo json_encode(array(
@@ -114,6 +123,7 @@ class Tiles_ajax extends MX_Controller {
 	{
 		$input = $this->input->post();
 		$data['images'] = $this->tiles_model->get_images($input['tile_id']);
+		$data['tile'] = $this->tiles_model->get_tile($input['tile_id']);
 		$this->load->view('tile/images_view', isset($data) ? $data : NULL);
 	}
 	
@@ -153,6 +163,18 @@ class Tiles_ajax extends MX_Controller {
 				'success' => false,
 				'msg' => $updated
 			));
+		}
+	}
+	
+	function set_feature()
+	{
+		$upload_id = $this->input->post('upload_id');
+		$tile_id = $this->input->post('tile_id');
+		$updated = $this->tiles_model->set_feature_image($tile_id, $upload_id);
+		if ($updated){
+			echo 'successful';	
+		}else{
+			echo 'failed';	
 		}
 	}
 	

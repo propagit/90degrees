@@ -40,6 +40,10 @@ var uploader_<?=$field_name;?> = new plupload.Uploader({
 			up.settings.multipart_params =
 			{
 				orig_name: file.name // Passing original file name
+				<?php if(isset($resize_params)){	?>,
+				height: '<?=$resize_params['height'];?>',
+	 			width: '<?=$resize_params['width'];?>'
+				<?php } ?>
 			};
 		},
 		
@@ -91,6 +95,5 @@ var uploader_<?=$field_name;?> = new plupload.Uploader({
 		}
 	}
 });
-
 uploader_<?=$field_name;?>.init();
 </script>

@@ -76,17 +76,10 @@
 							<tbody>
 								<? foreach($pages as $page) { 
 									# config drop down action palet
-									$fa_status = $page['status'] ? 'fa-thumbs-o-down' : 'fa-thumbs-o-up';
-									$page_id = $page['page_id'];
-									$link_label = $page['status'] ? 'Deactivate' : 'Activate';
 									$dd_params = array(
-													'btn_name' => $page['status'] ? 'Active' : 'Inactive',
-													'btn_class' => $page['status'] ? 'btn-success' : 'btn-warning',
-													'links' => array(
-																	array('label' => $link_label, '' , 'class' => 'change-status', 'data' => $page_id, 'fa' => $fa_status),
-																	array('label' => 'Trash' , 'class' => 'trash', 'data' => $page_id,'fa' => 'fa-trash-o'),
-																)
-												);
+														'status' => $page['status'],
+														'obj_id' => $page['page_id']
+														);
 								?>
 								<tr>
 									<td><?=$page['page_id'];?></td>

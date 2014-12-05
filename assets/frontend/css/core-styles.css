@@ -1,45 +1,93 @@
 /* CSS Document */
-
 /** Core CSS */
-@import url(//fonts.googleapis.com/css?Oswald:400,300,700|PT+Serif:400,700,400italic,700italic);
+@import url(//fonts.googleapis.com/css?family=Oswald:400,300,700|PT+Serif:400,700,400italic,700italic);
 body,
 html{
-	color:#000;
-	font-family: 'Oswald', sans-serif;
 	font-size:16px;
+}
+/** Font Family */
+body,
+html
+p,
+a,
+span,
+input,select,textarea,
+table,td,th,tr,
+h1,h2,h3,h5,h6,
+.cart-actions .wishlist,
+.nav-tabs li a,
+.modal,
+.modal-title-site,
+.item h4 a,
+.product-price,
+.miniCartDescription .info,
+.miniCartDescription .trash,
+.subtotal-amount,
+.pagination-alt > li > a, 
+.pagination-alt > li > span{
+	font-family:'Oswald', sans-serif;
+}
+
+h4,
+h4 a,
+.cartMenu .cartRespons,
+.description p,
+.miniCartTable th,
+.miniCartFooter .subtotal,
+.product-short-desc,
+.product-desc p{
+	font-family: 'PT Serif', serif;
+}
+
+/** Text Colors */
+body,
+html,
+.cartMenu a.dropdown-toggle,
+.nav-pills-alt > li > a,
+.nav-pills-alt > li.active > a{
+	color:#394444;		
+}
+
+
+/** Border Radius*/
+.nav-pills-alt > li > a{
+	border-radius:6px;	
 }
 ::selection{
 	background:#71bf44;
 }
 a{
-	color:#363737;
+	color:#394444;
 	transition:none !important;	
 }
 h1,h2,h3,h5,h6{
-	font-family:'Oswald', sans-serif;
-	color:#000000;
+	color:#394444;
 }
-h4{
-	font-family: 'PT Serif', serif;
-}
+
 span,
 input,select,textarea,
 a,
 table,td,th,tr{
-	font-family: 'Oswald', sans-serif;	
 	color:#363737;	
 }
 p{
 	color:#363737;
-	font-family: 'Oswald', sans-serif;
 	font-size:16px;	
 	line-height:28px;
 }
 h1{
-	font-size: 90px;
+	text-transform:uppercase;
+	font-size: 75px;
 	font-weight: 700;
 	padding-bottom: 0;
 	line-height: 88px;
+	/*-webkit-text-stroke: 1px #394444;
+    text-shadow:
+       1px 0px 0 #394444, 
+	   0px 0px 0 #394444, 
+	   0px 0px 0 #394444, 
+	   0px 0px 0 #394444, 
+	   0px 0px 0 #394444*/
 }
 h2{
 	font-size:28px;	
@@ -53,7 +101,7 @@ h3{
 	padding-bottom:0;
 }
 h4{
-	font-size:20px;
+	font-size:18px;
 	font-weight:400;
 	line-height:24px;
 	font-style:italic;
@@ -75,7 +123,7 @@ h6{
 .headerOffset{
 	/* Enable top padding for fixed header */
 	/*padding-top:320px;	*/
-	padding-top:0;
+	padding-top:40px;
 }
 .title-big{
 	font-size:31px;
@@ -159,7 +207,10 @@ p.contact-us{
 	padding-right: 0;
 	padding-left: 30px;
 }
-
+.top-nav-wrap{
+	position:relative;
+	z-index:1000;	
+}
 /** Normal Noav */
 #normal-nav{
 	min-height:145px;	
@@ -171,7 +222,7 @@ p.contact-us{
 	line-height:140px;	
 }
 #normal-nav .navbar{
-	margin-bottom:35px;	
+	margin-bottom:0;	
 }
 /** Scroll Nav */
 #scroll-nav{
@@ -292,11 +343,25 @@ p.contact-us{
 }
 .cartMenu{
 	float:right;	
-	background-color: #ebebeb;
 	border-radius:4px;
 	padding-top: 10px;
-	padding-bottom: 10px;
-	min-height:108px;
+}
+.cartMenu .cartRespons{
+	font-size:16px;	
+	font-weight:100;
+	letter-spacing:0.5px;
+	text-transform:none;
+	margin-left:3px;
+}
+.cartMenu .fa{
+	font-size:20px;	
+}
+.cartMenu a.dropdown-toggle{
+	padding-right:0;	
+}
+.cartMenu .dropdown-menu{
+	/*display:block;*/	
+	min-width:280px;	
 }
 .cartMenu .cart-subhead{
 	font-size:20px;
@@ -307,9 +372,85 @@ p.contact-us{
 .cartRespons{
 	color:#363737;	
 }
+.cartMenu .dropdown-menu{
+	border-top:1px solid #cdd0d0;
+	border-radius:5px;	
+}
+.miniCartTable{
+	padding:15px 20px;	
+}
+.miniCartTable th{
+	font-weight:100;
+	font-style:italic;	
+}
+.cartMenu h4{
+	font-size:14px;	
+	padding-top:0;
+}
+.cartMenu table tr{
+	border-bottom:none;	
+}
+.miniCartDescription .info,
+.miniCartDescription .trash{
+	font-size:14px;
+	font-weight:700;
+	text-transform:uppercase;
+}
+.miniCartDescription .trash span:hover{
+	color:#a94442;	
+}
+.miniCartDescription .trash .fa{
+	font-size:14px;	
+}
+.miniCartProductThumb > div{
+	background-color:#000;
+	height:55px;
+	width:55px;	
+}
+.cartMenu img{
+	width:100%;	
+}
+.miniCartFooter{
+	background:none;	
+	padding:15px 20px;
+	float:left;
+}
+.miniCartFooter .subtotal{
+	font-weight: 100;
+	font-style: italic;
+	text-transform: none;
+	font-size: 14px;
+	border-top:1px solid #d7dada;
+	border-bottom:1px solid #d7dada;
+	padding: 10px 0;
+	margin-bottom: 15px;
+}
 .sliderControl{
 	color:#363737;	
 }
+
+/** Alternate Class for existing BS classes */
+.nav-pills-alt > li{
+	margin-right:20px;	
+}
+.nav-pills-alt > li > a{
+	border:1px solid #394444;
+	font-size:16px;
+	text-transform:uppercase;
+	padding:5px 13px 3px;	
+	font-weight:700;
+}
+.nav-pills-alt > li.active{
+	background:#fff !important;		
+}
+.nav-pills-alt > li.active > a,
+.nav-pills-alt > li > a:hover,
+.nav-pills-alt > li.active > a:hover{
+	background:#fff !important;	
+	background-color:#fff !important;
+	color:#394444 !important;
+}
+
 
 /** CMS */
 .main-container{
@@ -421,6 +562,18 @@ input[type="email"]{
 	box-shadow:none;
 	border:none;
 }
+
+/** PAGINATION */
+.pagination-alt > li > a, 
+.pagination-alt > li > span{
+	border: none;
+	color: #2e3838;
+	box-shadow: none;
+	padding: 6px;
+	font-size: 18px;
+	font-weight: 700;
+}
+
 /** TEXT COLORS */
 .text-success{
 	color:#71bf44;
@@ -434,43 +587,31 @@ p.success div.success{
 }
 
 /** BUTTONS AND ICONS */
+.btn{
+	color: #2e3838;
+}
 .btn-addcart{
-	background-image: url(../images/icons/GetKlop.png) !important;
-	background-repeat: no-repeat;
 	width: 205px;
 	height: 48px;
-	background-color: transparent !important;
-	border: none !important;
 }
 .btn-checkout{
-	background-image: url(../images/icons/checkout.png) !important;
-	background-repeat: no-repeat;
 	width: 176px;
 	height: 47px;
-	background-color: transparent !important;
-	border: none !important;
 	text-align:center;
 }
 .btn-addcart{
-	background-image: url(../images/icons/GetKlop.png) !important;
-	background-repeat: no-repeat;
 	width: 205px;
 	height: 48px;
-	background-color: transparent !important;
-	border: none !important;
 }
 .btn-green-checkout{
-	background-image: url(../images/icons/checkout-active.png) !important;
+	
 }
 .btn-keep-shopping{
-	background-image: url(../images/icons/GetKlop-inactive.png) !important;	
+	
 }
 .btn-contact-us{
-	background-image: url(../images/icons/btn-send.png) !important;	
 	width: 143px;
 	height: 46px;
-	background-color: transparent !important;
-	border: none !important;
 	text-align:center;
 	color:#fff;
 }
@@ -489,18 +630,24 @@ p.success div.success{
 	color:#fff;
 }
 span.add2cart{
-	color:#fff;	
+	color: #2e3838;
+	font-size: 14px;
+	font-weight: 700;
 }
 .btn{
-	text-transform:uppercase;	
+	text-transform:uppercase;
+	line-height:1;
+	border-radius:8px;	
 }
 .btn-success{
 	background-color:#71bf44 !important;
 	border-color:#71bf44;
 }
 .btn-primary{
-	background-color:#363737 !important;
-	border-color:#363737;	
+	background-color: #fff !important;
+	border-color: #2e3838 !important;
+	border-width: 1px;
+	border-style: solid;
 }
 .btn-success:hover, 
 .btn-success:focus, 
@@ -521,19 +668,17 @@ span.add2cart{
 .pagination > .active > span:hover, 
 .pagination > .active > a:focus, 
 .pagination > .active > span:focus{
-	background-color: #363737;
-	border-color: #363737;
-	color: #FFFFFF;
-}
+	background-color:#fff;
+	border-color: #fff;
+	color: #94a1a1;
+	box-shadow: none !important;
+} 
 
 .newsLatterBox .btn,
 .newsLatterBox .btn:hover{
 	background:none;
 }
 .susbcribe-btn{
-	background-image:url(../images/icons/JoinKlop.png) !important;
-	background-repeat:no-repeat;	
-	background-color:transparent;
 	width:124px !important;
 	height:46px !important;
 	color:#fff;
@@ -552,6 +697,15 @@ span.add2cart{
 .icon-unlock .fa{
 	color:#fff;	
 }
+#menu-cart{
+	position:absolute;
+	right:0;	
+	top:30px;
+}
+.cart-btn{
+	color:#fff;
+	display:block;	
+}
 
 /** BACKGROUND */
 .bg-success{
@@ -565,6 +719,45 @@ span.add2cart{
 }
 .bg-info{
 	background-color:#3276b1;	
+}
+
+
+/** SHOP CATEGORIES MENU */
+.panel-default > .panel-heading{
+	border-top:none;	
+	padding:0;
+}
+.panel-title > a {
+	font-size: 18px;
+	line-height:21px;
+	padding-bottom:17px;
+	display:block;
+}
+.panel-alt{
+	border:none;	
+}
+.panel-alt > .panel-heading{
+	background-color:transparent;	
+}
+.panel-alt .panel-body{
+	padding-top: 10px;
+	padding-left: 0;	
+	border-top:1px solid #cdd0d0;	
+	border-bottom: 1px solid #cdd0d0;
+}
+.cat-panel-ul li{
+	border-bottom:none;
+	padding-top:5px;
+	padding-bottom:5px;	
+}
+.cat-panel-ul li a{
+	padding:0;
+	font-size:16px;
+	font-weight:700;
+	text-transform:uppercase;
+}
+.category-top{
+	padding-bottom:50px;	
 }
 
 /** TABLES */
@@ -602,6 +795,10 @@ tr.CartProduct td{
 .cartFooter .cart-total{
 	line-height:110px;	
 }
+.subtotal-amount{
+	font-style:normal;
+	font-weight:700;	
+}
 /** PRODUCT DETAILS */
 .sp-large{
 	max-width:100% !important;	
@@ -620,15 +817,21 @@ tr.CartProduct td{
 	width:164px !important;	
 }
 .price{
-	color:#363737;
+	color: #2e3838;
+	font-size: 30px;
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+.product:hover{
+	border: 1px solid #cdd0d0;
+	border-bottom: 2px solid #cdd0d0;	
 }
 .product-price{
-	font-size:54px;
-	font-weight:900;
+	font-size:35px;
+	font-weight:700;
 }
 .cart-actions button, 
 .cart-actions .wishlist{
-	font-family:'Oswald', sans-serif;	
 	margin:0 5px 0 0;
 	font-size:18px;
 	font-weight:400;
@@ -672,11 +875,23 @@ tr.CartProduct td{
 .agree-terms{
 	font-size:13px;	
 }
-
+.product-tab .product-details{
+	margin-top:20px;
+}
+.product-desc p,
+.product-short-desc{
+	font-style: italic;
+	font-size: 18px;
+}
+.product-desc p{
+	line-height:21px;	
+}
+.product-short-desc{
+	padding: 10px 0;
+}
 
 /** TABS */
 .nav-tabs li a{
-	font-family:'Oswald', sans-serif;	
 	font-size:16px;
 	font-weight:400;
 }
@@ -732,11 +947,6 @@ tr.CartProduct td{
 }
 
 /** PRODUCTS */
-.product-details p{
-	font-size:16px;
-	font-family:'Oswald', sans-serif;
-	line-height:22px;	
-}
 .product-desc{
 	min-height:345px;	
 }
@@ -762,20 +972,49 @@ tr.CartProduct td{
 .productFilter{
 	border-bottom: none;
 	border-top: none;	
-	margin-top:60px;
+	margin-top:0;
 	margin-bottom:0;
 }
 .filterBox {
 	max-width: 135px;
 	margin-top:12px;
 }
-
+.product-count{
+	padding-top:0;	
+}
+.product{
+	border:none;	
+}
+.product .image{
+	min-height:266px;
+	background-color:#000;
+}
+.item h4{
+	min-height:22px;
+	max-height:22px;	
+}
+.item h4 a{
+	font-style: normal;
+	font-size: 18px;
+	font-weight: 700;
+	color: #2e3838;		
+}
+.description{
+	min-height:70px;	
+}
+.description p{
+	color: #2e3838;
+	font-size: 18px;
+	min-height: 55px;
+	max-height: 90px;
+	overflow: hidden;
+	line-height: 21px;
+	font-style: italic;
+	font-weight: 400;
+	text-transform:lowercase;
+}
 
 /** MODEL WINDOw */
-.modal,
-.modal-title-site{
-	font-family:'Oswald', sans-serif;	
-}
 .modal-header{
 	background:#fff;	
 }
@@ -993,6 +1232,12 @@ tr.CartProduct td{
 .remove-right-gutter{
 	padding-right:0;
 	margin-right:0;	
+}
+.fw{
+	width:100%;	
+}
+.center{
+	text-align:center;	
 }
 
 

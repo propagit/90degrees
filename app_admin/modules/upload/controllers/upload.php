@@ -26,6 +26,11 @@ class Upload extends MX_Controller {
 			$allowed_extensions = $params['allowed_extensions'];
 		}
 		
+		# resize params
+		if(isset($params['resize_params'])){
+			$data['resize_params'] = $params['resize_params']; 
+		}
+		
 		$data['field_name'] = $field_name;
 		$data['allowed_extensions'] = $allowed_extensions;
 		$data['callback'] = $callback;

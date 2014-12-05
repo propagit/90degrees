@@ -57,12 +57,29 @@ class Product_model extends CI_Model {
 		return $query->first_row('array');	
 	}
 	
-	function get_products_by_category($category_id)
+	function get_products_by_category($params)
 	{
+		if(isset($params['records_per_page'])){
+			$records_per_page = $params['records_per_page'];	
+		}
+		
 		$sql = "SELECT p.* FROM catalog_products p
 				   WHERE p.product_id IN 
 				   	 	(SELECT product_id FROM catalog c
-							WHERE c.category_id = ".$category_id.")";
+							WHERE c.category_id = ".$params['category_id']."
+								 AND p.status = " . ACTIVE . ")";
+							
+		# sort records
+		if(isset($params['order']) && $params['order']){
+			$sql .= "ORDER by " . $params['order'] . " ASC";
+		}
+		
+		# limit the records if necessary						
+		if(isset($params['cur_page']) && $params['records_per_page']){
+			$sql .= " LIMIT ".(($params['cur_page']-1)*$records_per_page)." ,".$records_per_page;	
+		}
+		
+		
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}

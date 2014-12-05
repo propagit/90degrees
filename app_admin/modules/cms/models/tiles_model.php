@@ -102,5 +102,17 @@ class Tiles_model extends CI_Model {
 			return $this->error_message('trash_image', 'There was error while trashing this tile image.');
 		}
 	}
+	
+	function set_feature_image($tile_id,$upload_id){
+		$this->db->where('tile_id', $tile_id);
+		if ($this->db->update('cms_tiles', array('feature_image_id' => $upload_id)))
+		{
+			return true;
+		}
+		else
+		{
+			return $this->error_message('update_tile', 'There was error while updating this tile.');
+		}
+	}
 
 }

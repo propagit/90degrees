@@ -89,6 +89,7 @@ function update_cart(data)
 	
 }
 
+
 function delete_item(rowid)
 {
 	$.ajax({

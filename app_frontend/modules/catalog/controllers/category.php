@@ -11,13 +11,38 @@ class Category extends MX_Controller {
 	
 	function index($category = "")
 	{
+		$records_per_page = RECORDS_PER_PAGE;
+		
+		if($this->session->userdata('layout')){
+			$layout = $this->session->userdata('layout');
+		}else{
+			$layout = isset($_GET['layout']) ? $_GET['layout'] : 'grid';
+		}
+		$order = isset($_GET['order']) ? $_GET['order'] : 'name';	
+		$cur_page = isset($_GET['p']) ? $_GET['p'] : 1;
+		
+		$data['order'] = $order;
+		$data['cur_category'] = $category;
+		$data['records_per_page'] = $records_per_page;
+		$data['layout'] = $layout;
+		
+		
+		
 		$data['parent_categories'] = $this->category_model->get_parent_categories();	
 		
 		if($category){
 			# get category info
 			$category = $this->category_model->get_category_by_slug($category);
 			if($category){
-				$data['products'] = $this->product_model->get_products_by_category($category['category_id']);
+				$params = array(
+									'category_id' => $category['category_id'],
+									'cur_page' => $cur_page,
+									'records_per_page' => $records_per_page,
+									'order' => $order	
+								);
+	
+				$data['products'] = $this->product_model->get_products_by_category($params);
+				$total_products =  $this->product_model->get_products_by_category(array('category_id' => $category['category_id']));
 			}else{
 				show_404();
 			}
@@ -31,8 +56,22 @@ class Category extends MX_Controller {
 					array('url' => '#', 'label' => isset($category['name']) ? $category['name'] : '') # this check is not needed but kept to ensure it does not break
 				));
 		
+		# pagination params	
+		$url = '';
+		$url .= '?layout=' . $layout;
+		$url .= '&order=' . $order;	
+		$url .= '&p=';
+	
+		$data['pagination_params'] = array(
+											'records_per_page' => $records_per_page,
+											'total_records' => count($total_products),
+											'current_page' => $cur_page,
+											'url' => base_url().'category/' . $data['cur_category']  . $url	
+										);
+		
 		$this->load->view('common/header', isset($data) ? $data : NULL);
 		$this->load->view('catalog/categories', isset($data) ? $data : NULL);
+		$data['add_js'] = $this->load->view('catalog/js', isset($data) ? $data : NULL, true);
 		$this->load->view('common/footer', isset($data) ? $data : NULL);
 	}
 		
