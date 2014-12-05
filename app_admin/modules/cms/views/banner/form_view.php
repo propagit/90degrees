@@ -1,9 +1,9 @@
 <div class="row">
 	<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 		<h1 class="page-title txt-color-blueDark">
-			<i class="fa fa-edit fa-fw "></i> 
-				Banners 
-			<span>> 
+			<i class="fa fa-edit fa-fw "></i>
+				Banners
+			<span>>
 				<?=(isset($banner)) ? 'Edit Banner "' . $banner['name'] . '"' : 'Create New Banner';?>
 			</span>
 		</h1>
@@ -52,7 +52,7 @@
 				<header>
 					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
 					<h2>Banner Images</h2>
-					
+
 					<ul class="nav nav-tabs pull-right in" id="myTab">
                     	<li<?=($tab == 'basic') ? ' class="active"' : '';?>>
 							<a data-toggle="tab" href="#basic"><i class="fa fa-info-circle"></i> <span class="hidden-mobile hidden-tablet">Basic Info</span></a>
@@ -85,7 +85,7 @@
 						<!-- content -->
 						<div id="myTabContent" class="tab-content">
 							<!-- new tab: API interface -->
-							<div class="tab-pane fade<?=($tab == 'basic') ? ' active in' : '';?>" id="basic">							
+							<div class="tab-pane fade<?=($tab == 'basic') ? ' active in' : '';?>" id="basic">
 								<form id="form-banner-basic" class="smart-form">
 									<fieldset>
 										<div class="row">
@@ -98,7 +98,7 @@
 													<strong>Max characters</strong> 255
 												</div>
 											</section>
-											
+
 											<section class="col col-6">
 												<label class="label">Banner ULR</label>
 												<label class="input">
@@ -116,8 +116,8 @@
                                             </section>
                                         </div>
 									</fieldset>
-									
-									
+
+
 									<footer>
 										<? if(isset($banner)) { ?>
 										<input type="hidden" name="banner_id" value="<?=$banner['banner_id'];?>" />
@@ -138,8 +138,8 @@
                             <? if(isset($banner)) { ?>
 							<!-- tab: Images -->
 							<div class="tab-pane tab-padding fade <?=($tab == 'image') ? ' active in' : '';?>" id="image">
-								
-								<?=modules::run('upload/field_upload', 
+
+								<?=modules::run('upload/field_upload',
 									# Uploading options
 									array(
 										'name' => 'banner_images',
@@ -147,7 +147,7 @@
 									),
 									# Javascript callback function
 									'add_banner_images(' . $banner['banner_id'] . ')');?>
-								
+
 								<!-- row -->
 								<div class="row" id="banner_images"></div>
 							</div>
@@ -170,18 +170,18 @@
 
 <!-- SCRIPTS ON PAGE EVENT -->
 <script type="text/javascript">
-	pageSetUp();	
-	
+	pageSetUp();
+
 	var pagefunction = function() {
-		
+
 		$('#btn-create-banner-basic').click(function(){
-			
+
 			ajax_submit_form('form-banner-basic', '<?=ajax_url() . 'cms/banner_ajax/create';?>', function(e){
 				window.location.hash = '<?=ajax_url();?>banner/edit/' + e;
 			});
 		})
 		$('#btn-update-banner-basic').click(function(){
-			
+
 			ajax_submit_form('form-banner-basic', '<?=ajax_url() . 'cms/banner_ajax/update/basic';?>', function(e){
 				$('#msg-banner').find('span').html('The basic info of banner has been updated successfully!');
 				$('#msg-banner').removeClass('hide');
@@ -194,17 +194,17 @@
 				}, 2000);
 			});
 		})
-		
+
 		<? if(isset($banner)) { ?>
 			load_banner_images(<?=$banner['banner_id'];?>);
 		<? } ?>
 
 	};
-	
+
 
 	// load bootstrap-progress bar script
 	loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/superbox/superbox.min.js", pagefunction);
-	
+
 function add_banner_images(banner_id) {
 	var upload_ids = $('#banner_images_upload_ids').html();
 	$.ajax({

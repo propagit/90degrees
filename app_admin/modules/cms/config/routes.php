@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$route[ROOT_PATH . 'cms/(page_ajax|menu_ajax|banner_ajax|tiles_ajax)/(:any)'] = 'cms/$1/$2';
+$route[ROOT_PATH . 'cms/(page_ajax|menu_ajax|banner_ajax|tiles_ajax|form_ajax)/(:any)'] = 'cms/$1/$2';
 
 $route[ROOT_PATH . 'page'] = 'cms/page';
 $route[ROOT_PATH . 'page/(:any)'] = 'cms/page/$1';
@@ -10,6 +10,9 @@ $route[ROOT_PATH . 'menu'] = 'cms/menu';
 $route[ROOT_PATH . 'menu/(:any)'] = 'cms/menu/$1';
 $route[ROOT_PATH . 'menu/(:any)/(:any)'] = 'cms/menu/$1/$2';
 
+$route[ROOT_PATH . 'form'] = 'cms/form';
+$route[ROOT_PATH . 'form/(:any)'] = 'cms/form/$1';
+$route[ROOT_PATH . 'form/(:any)/(:any)'] = 'cms/form/$1/$2';
 
 $route[ROOT_PATH . 'banner'] = 'cms/banner';
 $route[ROOT_PATH . 'banner/(:any)'] = 'cms/banner/$1';
