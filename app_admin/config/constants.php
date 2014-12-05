@@ -68,7 +68,6 @@ define('SALES_EMAIL','team@propagate.com.au');
 
 # Status
 define('ACTIVE',1);
-define('TRASHED',-1);
 define('INACTIVE',0);
 
 /* End of file constants.php */
