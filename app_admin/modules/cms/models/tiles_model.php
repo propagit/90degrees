@@ -14,13 +14,10 @@ class Tiles_model extends CI_Model {
 	}	
 	
 	function prepare_data($data) {
-		if($data['tile_uri']) {
-			$url = $data['tile_uri'];
-			if(stripos($url, "http") === false){
-				$data['tile_uri'] = "http://".$url;
-			}
+		if($data['tile_uri'] == '') {
+			$data['tile_uri'] = url_title(strtolower($data['name']));
 		}
-		
+		$data['updated_on'] = date('Y-m-d H:i:s');
 		return $data;
 	}
 	

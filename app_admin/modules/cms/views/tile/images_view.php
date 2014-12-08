@@ -5,13 +5,13 @@
 		$normal_image_list = '';
 		foreach($images as $image) { 
 			if($image['upload_id'] == $tile['feature_image_id']){
-				$feature_img = '<div class="superbox-list">';
+				$feature_img .= '<div class="superbox-list">';
 				$feature_img .= '<span class="feature-image"><i class="fa fa-heart"></i></span>';
 				$feature_img .= '<img src="'. base_url() . $image['full_path'] . '" data-upload-id="' . $image['upload_id'] . '" data-img="' . base_url() . $image['full_path'] .'" alt="' . $image['orig_name'] .'" title="'. $image['orig_name'] . '" class="superbox-img">';
 				$feature_img .= '</div>'	;
 				
 			}else{
-				$normal_image_list = '<div class="superbox-list">';
+				$normal_image_list .= '<div class="superbox-list">';
 				$normal_image_list .= '<img src="'. base_url() . $image['full_path'] . '" data-upload-id="' . $image['upload_id'] . '" data-img="' . base_url() . $image['full_path'] .'" alt="' . $image['orig_name'] .'" title="'. $image['orig_name'] . '" class="superbox-img">';
 				$normal_image_list .= '</div>'	;		
 			}

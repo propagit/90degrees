@@ -178,15 +178,12 @@ function menu_cart() {
 
 function scroll_fix_nav(){
 	var y = $(this).scrollTop();
-	if (y > 10) {
-		$('#scroll-nav').fadeIn(function(){
-			$('#scroll-nav-offset').show();		
-		});
-		$('#normal-nav').fadeOut();
+	if (y > 295) {
+		$('#top-navbar').addClass('fixed');
+		$('#scroll-nav-logo').show();
 	} else {
-		$('#scroll-nav').fadeOut();
-		$('#normal-nav').fadeIn();
-		$('#scroll-nav-offset').hide();
+		$('#top-navbar').removeClass('fixed');
+		$('#scroll-nav-logo').hide();
 	}
 }
 

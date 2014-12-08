@@ -165,50 +165,41 @@
 <!-- /.ModalSignup End --> 
 
 <!-- Fixed navbar start -->
-
-
-  
-  <div id="scroll-nav" class="top-nav-wrap">
-  <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation">
-  	<div class="container">
-        <a class="navbar-brand remove-left-gutter" href="<?=base_url();?>"> 
-            <img src="<?=base_url() . ASSETS;?>images/logo.png" alt="logo.png">
-        </a>
-    
-        <div class="navbar-collapse collapse">
-            <!-- top-menu -->
-            <div class="top-nav"> 
-                <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => base_url() . $this->uri->uri_string()));?>
-            </div>
-        </div><!--/.nav-collapse -->
-    </div><!--/ .container-->
-  </div>
-  </div><!--/ #scroll-nav-->
-  <div id="scroll-nav-offset"></div>
   
   
-  <?php if(1){ ?>
-  <div id="normal-nav" class="top-nav-wrap">
-  <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation">
-  	<div class="container">
-        <a class="navbar-brand remove-left-gutter" href="<?=base_url();?>"> 
-            <img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo-lg.png">
-        </a>
-    
-        <div class="navbar-collapse collapse">
-            <!-- top-menu -->
-            <div class="top-nav"> 
-                <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => base_url() . $this->uri->uri_string()));?>
-            </div>
-            <div class="nav-social">
+  <header>
+  	<div id="header" class="container">
+    	<div class="col-md-4 col-sm-4">
+        	<a class="remove-left-gutter" href="<?=base_url();?>"> 
+            	<img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
+        	</a>		
+        </div>
+        <div class="col-md-8 col-sm-8">
+        	<h1 class="slogan">ART - MURALS - EVENTS</h1>
+            <span class="slogan">graffiti artists for hire  -  events, retail, residential and corporate street art</span>
+        	<div class="header-social">
+           		<a href="#"><i class="fa fa-facebook-square"></i></a>
             	<a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
             </div>
-        </div><!--/.nav-collapse -->
-    </div><!--/ .container-->
-    </div><!-- /.Fixed navbar  -->
-  </div><!-- / #normal-nav-->
-  <?php } ?>
+        </div>
+    </div>
+    
+    <div id="top-navbar">
+        <div class="container top-nav-wrap">
+            <div class="navbar-collapse collapse">
+                <!-- top-menu -->
+                <div class="top-nav"> 
+                	<a id="scroll-nav-logo" class="remove-left-gutter" href="<?=base_url();?>"> 
+                        <img src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
+                    </a>	
+                    <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => base_url() . substr($this->uri->uri_string(),1)));?>
+                </div>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+  </header>	
+  <div class="offset push"></div>
+
 
   
 

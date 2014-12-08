@@ -1,0 +1,1 @@
+ALTER TABLE `cms_banners` ADD `caption` VARCHAR(255) NOT NULL AFTER `new_window`;

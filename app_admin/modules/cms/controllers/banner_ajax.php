@@ -31,7 +31,8 @@ class Banner_ajax extends MX_Controller {
 		$banner_data = array(
 			'name' => $input['name'],
 			'banner_uri' => $input['banner_uri'],
-			'new_window' => isset($input['new_window']) ? 1 : 0
+			'new_window' => isset($input['new_window']) ? 1 : 0,
+			'caption' => $input['caption']
 		);
 		$banner_id = $this->banner_model->insert_banner($banner_data);
 		

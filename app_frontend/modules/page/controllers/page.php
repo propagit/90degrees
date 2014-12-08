@@ -33,6 +33,11 @@ class Page extends MX_Controller {
 		return $this->tiles_model->get_first_image($tile_id);
 	}
 	
+	function get_tiles_feature_image($feature_image_id)
+	{
+		return $this->tiles_model->get_feature_image($feature_image_id);
+	}
+	
 	
 	function details($slug = '')
 	{
@@ -230,5 +235,30 @@ class Page extends MX_Controller {
 	function contact_form()
 	{
 		return $this->load->view('page/contact_form', isset($data) ? $data : NULL, true);
+	}
+	
+	/* Tiles - Our Work */
+	function work($slug)
+	{
+		$work = $this->tiles_model->get_tiles_by_slug($slug);
+		
+		if (!$work)
+		{
+			show_404();
+		}
+		
+		$data['title'] = $work['name'];
+		$data['meta_desc'] = '';
+		$data['meta_keywords'] = '';
+		
+		$data['work'] = $work;
+		$data['work_gallery'] = $this->tiles_model->get_images($work['tile_id']);
+
+		$this->load->view('common/header', isset($data) ? $data : NULL);
+		
+		$this->load->view('page/work_details', isset($data) ? $data : NULL);
+		
+		$data['add_js'] = $this->load->view('page/js', isset($data) ? $data : NULL, true);
+		$this->load->view('common/footer', isset($data) ? $data : NULL);	
 	}
 }

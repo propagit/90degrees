@@ -8,7 +8,7 @@
 <div class="container">
     <div class="banner">
         <div class="slider-content">
-          <ul id="pager2" class="container">
+          <ul id="pager2" class="container hide">
           </ul>
           <!-- prev/next links --> 
           
@@ -27,9 +27,9 @@
                 <a <?=$banner['banner_uri'] ? 'href="' . $banner['banner_uri'] . '"' : '';?> <?=$banner['new_window'] ? 'target="_blank"' : '';?>><img src="<?=base_url() . $banner_image['full_path'];?>" data-upload-id="<?=$banner_image['upload_id'];?>" data-img="<?=base_url() . $banner_image['full_path'];?>" alt="<?=$banner_image['orig_name'];?>" title="<?=$banner_image['orig_name'];?>" class="superbox-img"></a>
                 
                 <div class="container">
-                    <div class="banner-caption">
+                    <div class="col-xs-6 banner-caption">
                         <h1><?=$banner['name'];?></h1>
-                        <h4>retail ~ prahran victoria <i class="fa fa-map-marker"></i></h4>
+                        <h4><?=$banner['caption'];?> <i class="fa fa-map-marker"></i></h4>
                     </div>
                 </div>
             </div>
@@ -48,14 +48,26 @@
   
   <!-- Main component call to action -->
   
-  <div class="row featuredPostContainer custom-padding style2 tiles-wrap fw">
+  <div class="featuredPostContainer style2 tiles-wrap fw">
 		 <?php 
 	  	if($tiles){ 
 	  		foreach($tiles as $tile){
-				$tile_image = modules::run('page/get_tiles_first_image',$tile['tile_id']);
+				if($tile['feature_image_id']){
+					$tile_image = modules::run('page/get_tiles_feature_image',$tile['feature_image_id']);
+				}else{
+					$tile_image = modules::run('page/get_tiles_first_image',$tile['tile_id']);
+				}
 	 	 ?>
-         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tiles">
-        	<a <?=$tile['tile_uri'] ? 'href="' . $tile['tile_uri'] . '"' : '';?> <?=$tile['new_window'] ? 'target="_blank"' : '';?>><img src="<?=base_url() . $tile_image['full_path'];?>" data-upload-id="<?=$tile_image['upload_id'];?>" data-img="<?=base_url() . $tile_image['full_path'];?>" alt="<?=$tile_image['orig_name'];?>" title="<?=$tile_image['orig_name'];?>" class="superbox-img"></a>
+         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 remove-gutters tiles">
+         	<div class="col-xs-12 remove-gutters">
+        	<a <?=$tile['tile_uri'] ? 'href="our-work/' . $tile['tile_uri'] . '"' : '';?> <?=$tile['new_window'] ? 'target="_blank"' : '';?>>
+                <div class="tiles-bg" style="background-image: url('<?=base_url() . substr($tile_image['full_path'],2);?>');">&nbsp;</div>
+                <div class="tiles-caption fadeout">
+                    <h1><?=$tile['name'];?></h1>
+                    <h4><?=$tile['short_desc'];?> <i class="fa fa-map-marker"></i></h4>
+                </div>
+            </a>
+            </div>
          </div>
       
       <?php }} ?>

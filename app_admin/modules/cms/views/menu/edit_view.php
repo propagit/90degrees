@@ -151,7 +151,7 @@
 										<section>
 											<label class="label">Custom Label</label>
 											<label class="input">
-												<input type="text" name="label" maxlength="255" value="<?=(isset($url)) ? $url['label'] : '';?>" />
+												<input type="text" name="label" maxlength="255" value="<?=(isset($url)) ? htmlspecialchars($url['label']) : '';?>" />
 											</label>
 											<div class="note">
 												<strong>Optional</strong> Leave empty if you want to use the default name of the subject
@@ -198,7 +198,7 @@
 										<section>
 											<label class="label">Label</label>
 											<label class="input">
-												<input type="text" name="label" maxlength="255" value="<?=(isset($url)) ? $url['label'] : '';?>" />
+												<input type="text" name="label" maxlength="255" value="<?=(isset($url)) ? htmlspecialchars($url['label']) : '';?>" />
 											</label>
 											<div class="note">
 												<strong>Max characters</strong> 255

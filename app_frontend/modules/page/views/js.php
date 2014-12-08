@@ -4,7 +4,7 @@
 
 <script>
 $(function(){
-	// Contact Klop
+	// Contact 
 	$('#btn-contac-us').click(function(){
 		$.ajax({
 			type: "POST",
@@ -29,6 +29,24 @@ $(function(){
 			}
 		});
 	});
+	
+	
+	// tiles caption
+	$('.tiles').mouseover(function(){
+		$(this).children().children().children('.tiles-caption').addClass('fadein');
+	}).mouseout(function(){
+		$(this).children().children().children('.tiles-caption').removeClass('fadein');
+	});
+	
+	//toggle job info
+	// tiles caption
+	$('#toggle-job-info').click(function(){
+		$('#job-info').toggle().removeClass('hide').addClass('fadein');
+		 $('html, body').animate({
+			scrollTop: $("#job-info").offset().top
+		}, 1000);
+	});
+	
 	
 });	//	Ready
 </script>

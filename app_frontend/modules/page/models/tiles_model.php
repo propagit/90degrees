@@ -35,5 +35,30 @@ class Tiles_model extends CI_Model {
 		$query = $this->db->query($sql);
 		return $query->first_row('array');
 	}
+	
+	function get_feature_image($feature_image_id) {
+		$sql = "SELECT u.* FROM uploads u 
+				WHERE u.upload_id = $feature_image_id";
+		$query = $this->db->query($sql);
+		return $query->first_row('array');
+	}
+	
+	function get_tiles_by_slug($slug){
+		$tile = $this->db->where('tile_uri',$slug)
+						->where('status',ACTIVE)	
+						->get('cms_tiles')
+						->first_row('array');
+		return $tile;
+	}
+	
+	function get_images($tile_id) {
+		$sql = "SELECT u.* FROM upload_objects b
+					LEFT JOIN uploads u ON u.upload_id = b.upload_id
+				WHERE object_name = 'tile_image'
+				AND b.status > " . TRASHED . "
+				AND b.object_id = $tile_id";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
 
 }

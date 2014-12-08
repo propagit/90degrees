@@ -92,7 +92,7 @@
 											<section class="col col-6">
 												<label class="label">Tile Name <i class="fa fa-asterisk fa-required"></i></label>
 												<label class="input">
-													<input type="text" name="name" maxlength="255" value="<?=(isset($tile)) ? $tile['name'] : '';?>" />
+													<input id="name" type="text" name="name" maxlength="255" value="<?=(isset($tile)) ? $tile['name'] : '';?>" />
 												</label>
 												<div class="note">
 													<strong>Max characters</strong> 255
@@ -102,7 +102,7 @@
 											<section class="col col-6">
 												<label class="label">tile ULR</label>
 												<label class="input">
-													<input type="text" name="tile_uri" maxlength="255" value="<?=(isset($tile)) ? $tile['tile_uri'] : '';?>" />
+													<input id="uri-path" type="text" name="tile_uri" maxlength="255" value="<?=(isset($tile)) ? $tile['tile_uri'] : '';?>" />
 												</label>
 											</section>
 										</div>
@@ -205,6 +205,8 @@
 		
 		$('#btn-create-tile-basic').click(function(){
 			
+			CKupdate();
+			
 			ajax_submit_form('form-tile-basic', '<?=ajax_url() . 'cms/tiles_ajax/create';?>', function(e){
 				window.location.hash = '<?=ajax_url();?>tiles/edit/' + e;
 			});
@@ -224,7 +226,16 @@
 					$('#msg-tile').addClass('hide');
 				}, 2000);
 			});
-		})
+		});
+		
+		$('#name').on('keyup',function(){
+			var uri = slugify($('#name').val());
+			$('#uri-path').val(uri);
+		});
+		
+		$('#uri-path').on('keyup',function(){
+			force_lower('#uri-path');
+		});
 		
 		<? if(isset($tile)) { ?>
 			load_tile_images(<?=$tile['tile_id'];?>);

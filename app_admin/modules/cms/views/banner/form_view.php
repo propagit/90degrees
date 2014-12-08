@@ -104,6 +104,7 @@
 												<label class="input">
 													<input type="text" name="banner_uri" maxlength="255" value="<?=(isset($banner)) ? $banner['banner_uri'] : '';?>" />
 												</label>
+                                                
 											</section>
 										</div>
 										<div class="row">
@@ -114,6 +115,15 @@
                                                     <option value="1" <?=isset($banner) ? ($banner['new_window'] == '1' ? 'selected="selected"' : '') : '';?>>Open in New Window</option>
                                                 </select><i></i> </label>
                                             </section>
+                                            
+                                            <section class="col col-6">
+												<label class="input">
+													<input type="text" name="caption" maxlength="255" value="<?=(isset($banner)) ? $banner['caption'] : '';?>" placeholder="banner caption" />
+												</label>
+                                                <div class="note">
+													<strong>Max characters</strong> 255
+												</div>
+											</section>
                                         </div>
 									</fieldset>
 									
