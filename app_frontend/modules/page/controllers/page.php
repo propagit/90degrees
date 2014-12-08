@@ -9,25 +9,25 @@ class Page extends MX_Controller {
 		$this->load->model('banner_model');
 		$this->load->model('tiles_model');
 	}
-	
-	
+
+
 	function index()
 	{
 		$data['new_products'] = modules::run('catalog/product/new_products');
 		$data['banners'] = $this->banner_model->get_banners();
 		$data['tiles'] = $this->tiles_model->get_tiles();
-		
+
 		$this->load->view('common/header');
 		$this->load->view('home', isset($data) ? $data : NULL);
 		$data['add_js'] = $this->load->view('page/js', isset($data) ? $data : NULL, true);
 		$this->load->view('common/footer', isset($data) ? $data : NULL);
-	}	
-	
+	}
+
 	function get_banner_first_image($banner_id)
 	{
 		return $this->banner_model->get_first_image($banner_id);
 	}
-	
+
 	function get_tiles_first_image($tile_id)
 	{
 		return $this->tiles_model->get_first_image($tile_id);
@@ -37,35 +37,45 @@ class Page extends MX_Controller {
 	{
 		return $this->tiles_model->get_feature_image($feature_image_id);
 	}
-	
-	
+
 	function details($slug = '')
 	{
 		$page = $this->page_model->get_page_by_slug($slug);
 		#$page = $this->page_model->get_page(8);
 
-		
+
 		if (!$page)
 		{
 			show_404();
 		}
 		#$data['images'] = $this->page_model->get_images($page['page_id']);
-		
+
 		$data['title'] = $page['title'];
 		$data['meta_desc'] = $page['meta_description'];
 		$data['meta_keywords'] = $page['meta_keywords'];
-		
+
+		# Rending forms
+		$form_patterns = '/\[\bform id=\b\d+\]/';
+		preg_match_all($form_patterns, $page['content'], $matches);
+		foreach($matches[0] as $form_pattern) {
+			$s = explode('=', $form_pattern);
+			$form_id = $s[1]; $form_id = str_replace(']', '', $form_id);
+			$form_view = modules::run('form/index', $form_id);
+			$content = str_replace($form_pattern, $form_view, $page['content']);
+			$page['content'] = $content;
+		}
+
 		$data['page'] = $page;
-		
+
 		#$data['add_css'] = $this->load->view('page/css', isset($data) ? $data : NULL, true);
 		$this->load->view('common/header', isset($data) ? $data : NULL);
-		
+
 		$this->load->view('page/details', isset($data) ? $data : NULL);
-		
+
 		$data['add_js'] = $this->load->view('page/js', isset($data) ? $data : NULL, true);
 		$this->load->view('common/footer', isset($data) ? $data : NULL);
 	}
-	
+
 	function top_menu($params)
 	{
 		$grid = '';
@@ -73,7 +83,7 @@ class Page extends MX_Controller {
 			$grid = 'col-lg-3 col-md-3 col-sm-3 col-xs-3 remove-gutters';
 		}
 		$current_page = $params['cur_page'];
-		
+
 		$menu = $this->menu(1);
 		$html = '<ul class="nav navbar-nav">';
 		foreach($menu as $url) {
@@ -82,26 +92,26 @@ class Page extends MX_Controller {
 		$html .= '</ul>';
 		echo $html;
 	}
-	
+
 	function rec_top_menu($url,$grid,$current_page)
 	{
-		$target = '';		
+		$target = '';
 		# New window icon
-		if ($url['new_window']) 
+		if ($url['new_window'])
 		{
 			$target = ' target="_blank"';
 		}
-		
+
 		$address = '#';
 		if ($url['address'] != '')
 		{
 			$address = $url['address'];
 		}
-		
+
 		if (isset($url['children']))
 		{
 			$html = '<li class="dropdown">
-						<a data-toggle="dropdown" class="dropdown-toggle" href="' . $address . '"' . $target . '>' . 
+						<a data-toggle="dropdown" class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
 							$url['label'] . '<b class="caret"> </b>
 						</a>';
 			$html .= '<ul class="dropdown-menu">';
@@ -115,12 +125,12 @@ class Page extends MX_Controller {
 		{
 			$html = '<li class="' . $grid . '"><a ' . ($address == $current_page ? 'class="active"' : '') . ' href="' . $address . '"' . $target . '>' . $url['label'] . '</a>';
 		}
-		
+
 		$html .= '</li>';
-		
+
 		return $html;
 	}
-	
+
 	function menu($menu_id)
 	{
 		$menu = array();
@@ -129,9 +139,9 @@ class Page extends MX_Controller {
 		{
 			$menu[] = $this->get_child_url($url);
 		}
-		return $menu;	
-	}	
-	
+		return $menu;
+	}
+
 	/**
 	*	@desc: recursive function to get the array of menu url with sub urls
 	*	@param: $url: object of url
@@ -152,23 +162,23 @@ class Page extends MX_Controller {
 		}
 		return $url;
 	}
-	
+
 	function url_details($url)
 	{
 		if ($url['url_type'] == 'system')
 		{
 			switch($url['subject']) {
-				case 'page': 
+				case 'page':
 						$page = modules::run('cms/page/id', $url['subject_id']);
 						$url['label'] = ($url['label']) ? $url['label'] : $page['title'];
 						$url['address'] = base_url() . $page['uri_path'] . '.html';
 					break;
-				case 'category': 
+				case 'category':
 						$category = modules::run('catalog/category/id', $url['subject_id']);
 						$url['label'] = ($url['label']) ? $url['label'] : $category['name'];
 						$url['address'] = base_url() . 'category/' . $category['uri_path'];
 					break;
-				case 'product': 
+				case 'product':
 						$product = modules::run('catalog/product/id', $url['subject_id']);
 						$url['label'] = ($url['label']) ? $url['label'] : $product['name'];
 						$url['address'] = base_url() . 'product/' . $product['uri_path'];
@@ -177,26 +187,26 @@ class Page extends MX_Controller {
 		}
 		return $url;
 	}
-	
+
 	function rec_footer_menu($url)
 	{
-		$target = '';		
+		$target = '';
 		# New window icon
-		if ($url['new_window']) 
+		if ($url['new_window'])
 		{
 			$target = ' target="_blank"';
 		}
-		
+
 		$address = '#';
 		if ($url['address'] != '')
 		{
 			$address = $url['address'];
 		}
-		
+
 		if (isset($url['children']))
 		{
 			$html = '<li class="dropdown">
-						<a data-toggle="dropdown" class="dropdown-toggle" href="' . $address . '"' . $target . '>' . 
+						<a data-toggle="dropdown" class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
 							$url['label'] . '<b class="caret"> </b>
 						</a>';
 			$html .= '<ul class="dropdown-menu">';
@@ -210,12 +220,12 @@ class Page extends MX_Controller {
 		{
 			$html = '<li><a href="' . $address . '"' . $target . '>' . $url['label'] . '</a>';
 		}
-		
+
 		$html .= '</li>';
-		
+
 		return $html;
 	}
-	
+
 	function footer_quicklinks()
 	{
 		$menu = $this->menu(3);
@@ -226,16 +236,17 @@ class Page extends MX_Controller {
 		$html .= '</ul>';
 		echo $html;
 	}
-	
+
 	function id($page_id)
 	{
 		return $this->page_model->get_page($page_id);
 	}
-	
+
 	function contact_form()
 	{
 		return $this->load->view('page/contact_form', isset($data) ? $data : NULL, true);
 	}
+
 	
 	/* Tiles - Our Work */
 	function work($slug)
@@ -262,3 +273,4 @@ class Page extends MX_Controller {
 		$this->load->view('common/footer', isset($data) ? $data : NULL);	
 	}
 }
+

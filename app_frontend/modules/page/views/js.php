@@ -1,21 +1,24 @@
-<!-- include custom script for only homepage  --> 
-<script src="<?=base_url() . ASSETS;?>js/home.js"></script> 
+<!-- include custom script for only homepage  -->
+<script src="<?=base_url() . ASSETS;?>js/home.js"></script>
 
 
 <script>
 $(function(){
+
 	// Contact 
 	$('#btn-contac-us').click(function(){
+
 		$.ajax({
 			type: "POST",
-			url: "<?=base_url();?>page/page_ajax/send_contact_message",
-			data: $('#contact-form').serialize(),
+			url: "<?=base_url();?>form/form_ajax/submit",
+			data: $('#form-' + form_id).serialize(),
 			success: function(output) {
+				//alert(output); return;
 				var data = $.parseJSON(output);
 				if(data.ok){
 					// Contact message sent
 					$('#site-msg').html(data.msg);
-					$('#ModalSiteMsg').modal('show');	
+					$('#ModalSiteMsg').modal('show');
 				}else{
 					var errors = data.errors;
 					var msg = '';
@@ -28,6 +31,7 @@ $(function(){
 				}
 			}
 		});
+
 	});
 	
 	
@@ -49,4 +53,6 @@ $(function(){
 	
 	
 });	//	Ready
+
+
 </script>

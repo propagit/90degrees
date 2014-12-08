@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en-us">	
+<html lang="en-us">
 	<head>
 		<meta charset="utf-8">
 		<title>Admin</title>
 		<meta name="description" content="">
 		<meta name="author" content="">
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		
+
 		<!-- #CSS Links -->
 		<!-- Basic Styles -->
 		<link rel="stylesheet" type="text/css" media="screen" href="<?=base_url() . ASSETS_PATH;?>css/bootstrap.min.css">
@@ -20,16 +20,16 @@
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
 		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-		
-		
+
+
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
 		<link rel="stylesheet" type="text/css" media="screen" href="<?=base_url() . ASSETS_PATH;?>css/demo.min.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="<?=base_url() . ASSETS_PATH;?>css/flare.css">
-		
+
         <!-- #FAVICONS -->
 		<link rel="shortcut icon" href="<?=base_url() . ASSETS_PATH;?>img/favicon/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="<?=base_url() . ASSETS_PATH;?>img/favicon/favicon.ico" type="image/x-icon">
-        
+
 		<!-- #GOOGLE FONT -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
@@ -38,16 +38,16 @@
 		<link rel="apple-touch-icon" sizes="76x76" href="<?=base_url() . ASSETS_PATH;?>img/splash/touch-icon-ipad.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="<?=base_url() . ASSETS_PATH;?>img/splash/touch-icon-iphone-retina.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="<?=base_url() . ASSETS_PATH;?>img/splash/touch-icon-ipad-retina.png">
-		
+
 		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
+
 		<!-- Startup image for web apps -->
 		<link rel="apple-touch-startup-image" href="<?=base_url() . ASSETS_PATH;?>img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
 		<link rel="apple-touch-startup-image" href="<?=base_url() . ASSETS_PATH;?>img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
 		<link rel="apple-touch-startup-image" href="<?=base_url() . ASSETS_PATH;?>img/splash/iphone.png" media="screen and (max-device-width: 320px)">
-
+		<script> var base_url = '<?=base_url();?>';</script>
 	</head>
 
 	<body class="">
@@ -62,23 +62,23 @@
 
 			</div>
 
-			
+
 			<!-- #TOGGLE LAYOUT BUTTONS -->
 			<!-- pulled right: nav area -->
 			<div class="pull-right">
-				
+
 				<!-- collapse menu button -->
 				<div id="hide-menu" class="btn-header pull-right">
 					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
 				</div>
 				<!-- end collapse menu -->
-				
+
 				<!-- #MOBILE -->
 				<!-- Top menu profile link : this shows only when top menu is active -->
 				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
 					<li class="">
-						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
-							<img src="<?=base_url() . ASSETS_PATH;?>img/avatars/sunny.png" alt="Nam Nguyen" class="online" />  
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+							<img src="<?=base_url() . ASSETS_PATH;?>img/avatars/sunny.png" alt="Nam Nguyen" class="online" />
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li>
@@ -115,7 +115,7 @@
 					<span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
 				</div>
 				<!-- end search mobile button -->
-				
+
 				<!-- #SEARCH -->
 				<!-- input: search field -->
 				<form action="#ajax/search.html" class="header-search pull-right">
@@ -134,7 +134,7 @@
 				<!-- end fullscreen button -->
 
 
-				
+
 
 			</div>
 			<!-- end pulled right: nav area -->
@@ -149,16 +149,16 @@
 
 			<!-- User info -->
 			<div class="login-info">
-				<span> <!-- User image size is adjusted inside CSS, it should stay as is --> 
-					
+				<span> <!-- User image size is adjusted inside CSS, it should stay as is -->
+
 					<a href="javascript:void(0);">
 						<!--<img src="<?=base_url() . ASSETS_PATH;?>img/avatars/sunny.png" alt="me" class="online" /> -->
                         <i class="fa fa-user fa-admin"></i>
 						<span>
 							Admin
 						</span>
-					</a> 
-					
+					</a>
+
 				</span>
 			</div>
 			<!-- end user info -->
@@ -170,7 +170,7 @@
 			will not initialize.
 			-->
 			<nav>
-				<!-- 
+				<!--
 				NOTE: Notice the gaps after each icon usage <i></i>..
 				Please note that these links work a bit different than
 				traditional href="" links. See documentation for details.
@@ -194,6 +194,9 @@
 							</li>
                             <li>
 								<a href="<?=base_url();?>admin/tiles">Manage Work Showcase</a>
+							</li>
+							<li>
+								<a href="<?=base_url();?>admin/form">Manage Forms</a>
 							</li>
 						</ul>
 					</li>
@@ -226,7 +229,7 @@
 						<ul>
 							<li>
 								<a href="<?=base_url();?>admin/customer">Customers</a>
-							</li> 
+							</li>
 						</ul>
 					</li>
 					<li class="top-menu-hidden">
@@ -248,8 +251,8 @@
 			<!-- RIBBON -->
 			<div id="ribbon">
 
-				<span class="ribbon-button-alignment"> 
-					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true" data-reset-msg="Would you like to RESET all your saved widgets and clear LocalStorage?"><i class="fa fa-refresh"></i></span> 
+				<span class="ribbon-button-alignment">
+					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true" data-reset-msg="Would you like to RESET all your saved widgets and clear LocalStorage?"><i class="fa fa-refresh"></i></span>
 				</span>
 
 				<!-- breadcrumb -->
@@ -276,7 +279,7 @@
 			<div id="content">
 
 			</div>
-			
+
 			<!-- END #MAIN CONTENT -->
 
 		</div>
@@ -393,14 +396,14 @@
 		<script src="<?=base_url() . ASSETS_PATH;?>js/app.config.js"></script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-		<script src="<?=base_url() . ASSETS_PATH;?>js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+		<script src="<?=base_url() . ASSETS_PATH;?>js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
 
 		<!-- BOOTSTRAP JS -->
 		<script src="<?=base_url() . ASSETS_PATH;?>js/bootstrap/bootstrap.min.js"></script>
 
 		<!-- Bootstrap Confirmation -->
 		<script src="<?=base_url() . ASSETS_PATH;?>js/plugin/bootstrap-confirmation/bootstrap-confirmation.js"></script>
-		
+
 		<!-- CUSTOM NOTIFICATION -->
 		<script src="<?=base_url() . ASSETS_PATH;?>js/notification/SmartNotification.min.js"></script>
 
@@ -449,13 +452,13 @@
 		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
 		<!-- Voice command : plugin -->
 		<script src="<?=base_url() . ASSETS_PATH;?>js/speech/voicecommand.min.js"></script>
-        
-        
-		
+
+
+
 		<!-- Your GOOGLE ANALYTICS CODE Below -->
 		<script type="text/javascript">
-		
-		
+
+
 		</script>
 
 	</body>

@@ -4,7 +4,7 @@ function ajax_submit_form(form_id, post_url, callback) {
 		url: post_url,
 		data: $('#' + form_id).serialize(),
 		success: function(output) {
-			//alert(output); return; // Debug
+			//console.log(output);
 			var data = $.parseJSON(output);
 			if (!data.ok) { // Invalid
 				var errors = data.errors;
@@ -27,6 +27,31 @@ function ajax_submit_form(form_id, post_url, callback) {
 	});
 }
 
+/* Preloading data functions */
+function preloading(obj)
+{
+	var h = $(obj).height();
+	var w = $(obj).width();
+	var id = $(obj).attr('id');
+	var margin = '';
+	if (id == 'wrapper_js') {
+		margin = 'margin-top:-22px';
+	}
+	$(obj).prepend('<div id="wrapper_loading" style="height:' + h + 'px;width:' + w + 'px;line-height:' + h + 'px;' + margin + '"><img src="' + base_url + 'assets/admin/img/loading.gif" /></div>');
+}
+function loaded(obj,html)
+{
+	if (html != null) {
+		setTimeout(function(){
+			//console.log(html);
+			$(obj).html(html);
+		}, 200);
+	} else {
+		setTimeout(function(){
+			$(obj).find('#wrapper_loading').remove();
+		}, 200);
+	}
+}
 
 function CKupdate(){
     for ( instance in CKEDITOR.instances )
@@ -54,7 +79,7 @@ function slug_exist(url,slug,callback){
 		success:function(data){
 			callback(data);
 		}
-	});//ajax		
+	});//ajax
 }
 
 //force input field to lowercase
