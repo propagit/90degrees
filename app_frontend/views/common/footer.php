@@ -8,7 +8,7 @@
             
         </div>
       </div>  
-      <hr>
+      <hr class="alt-hr">
       
       <div class="row">
         
