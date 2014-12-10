@@ -87,3 +87,34 @@ function force_lower(selector){
 	var lower = $(selector).val().toLowerCase();
 	$(selector).val(lower);
 }
+
+// change status
+function change_status(base_url,callback_url,event_obj){
+	  var obj_type = event_obj.attr('data-obj-type');
+	  var obj_id = event_obj.attr('data');
+	  $.ajax({
+		  type: "POST",
+		  url: base_url+'common/common_ajax/change_status',
+		  data: {obj_type:obj_type,obj_id:obj_id},
+		  success: function(output) {
+			  window.location.hash = callback_url+'/#'+(new Date).getTime();
+		  }
+		  
+	  });	
+}
+
+function trash(base_url,callback_url,event_obj){
+	 var obj_type = event_obj.attr('data-obj-type');
+	 var obj_id = event_obj.attr('data');
+	 $.ajax({
+		  type: "POST",
+		  url: base_url+'common/common_ajax/change_status',
+		  data: {obj_type:obj_type,obj_id:obj_id,trashed:1},
+		  success: function(output) {
+			  window.location.hash = callback_url+'/#'+(new Date).getTime();
+		  }
+		  
+	 });	
+}
+
+
