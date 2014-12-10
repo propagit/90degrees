@@ -42,12 +42,23 @@
             </div><!--/.banner style1-->
             <ul id="pager2" class="container gallery-pager"></ul>
             
-            <div id="toggle-job-info" class="job-info pointer push fw">
+            <div id="toggle-job-info" class="pointer push fw">
             	<i class="fa fa-info-circle"></i> <h4>JOB INFO</h4>
             </div>
             
-            <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 job-info hide">
+            <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 remove-gutters job-info hide">
             	<?=$work['content'];?>
+                
+                <div class="share-icons">
+                	<h4>SHARE</h4>
+                	<i class="fa fa-share-alt-square"></i>
+                    <i class="fa fa-facebook-square"></i>
+                    <i class="fa fa-linkedin-square"></i>
+                    <i class="fa fa-twitter-square"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-pinterest-square"></i>
+                    <i class="fa fa-envelope"></i>
+                </div>
             </div>
 
         

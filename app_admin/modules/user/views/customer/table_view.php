@@ -83,7 +83,8 @@
 										# config drop down action palet
 										$dd_params = array(
 														'status' => $cust['status'],
-														'obj_id' => $cust['u_user_id']
+														'obj_id' => $cust['u_user_id'],
+														'obj_type' => 'users'
 														);
 								?>
                                 <tr>
@@ -194,18 +195,14 @@
 		
 		// CHANGE STATUS
 		$('.change-status').click(function(){
-			var user_id = $(this).attr('data');
-			$.ajax({
-				type: "POST",
-				url: '<?=ajax_url();?>user/user_ajax/change_status',
-				data: {user_id:user_id},
-				success: function(output) {
-					window.location.hash = '<?=ajax_url();?>customer/#'+(new Date).getTime();
-				}
-				
-			});
-			
-		});	
+			change_status('<?=ajax_url();?>','<?=ajax_url();?>customer',$(this));
+		});
+		
+		// TRASH
+		$('.trash').click(function(){
+			trash('<?=ajax_url();?>','<?=ajax_url();?>customer',$(this));
+		});
+		
 		
 		/** CONVERT DIALOG TITLE TO HTML
 		* REF: http://stackoverflow.com/questions/14488774/using-html-in-a-dialogs-title-in-jquery-ui-1-10
@@ -219,26 +216,6 @@
 				}
 			}
 		}));
-		
-		// Trash
-		$('.trash').click(function(){
-			trash_id = $(this).attr('data');
-			$('#confirm-modal').dialog('open');
-			return false;
-		});
-		
-		function trash(user_id)
-		{
-			$.ajax({
-				type: "POST",
-				url: '<?=ajax_url();?>user/user_ajax/change_status',
-				data: {user_id:user_id,trashed:1},
-				success: function(output) {
-					$("#confirm-modal").dialog("close")
-					window.location.hash = '<?=ajax_url();?>customer/#'+(new Date).getTime();
-				}
-			});
-		}
 		
 		$('#confirm-modal').dialog({
 			autoOpen : false,

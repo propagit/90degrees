@@ -2,3 +2,17 @@
   color:#736661;
 
 }
+
+#toggle-job-info h4{
+  color:#fff;
+
+}
+
+.share-icons{
+  font-size:25px;
+  .fa{
+    font-size:25px;
+  }
+
+}
+

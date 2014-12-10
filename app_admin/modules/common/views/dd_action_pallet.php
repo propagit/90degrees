@@ -17,8 +17,8 @@
     <a class="btn <?=$btn_class;?> dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><span class="caret"></span></a>
     <ul class="dropdown-menu <?=isset($params['ul_class']) ? $params['ul_class'] : '';?>">
     
-    	<li><a class="change-status" href="javascript:void(0);" data="<?=$params['obj_id']?>"><i class="fa <?=$fa;?>"></i> <?=$link_label;?></a></li>
-        <li><a class="trash" href="javascript:void(0);" data="<?=$params['obj_id']?>"><i class="fa fa-trash-o"></i> Trash</a></li>
+    	<li><a class="change-status" href="javascript:void(0);" data="<?=$params['obj_id']?>" data-obj-type="<?=$params['obj_type'];?>"><i class="fa <?=$fa;?>"></i> <?=$link_label;?></a></li>
+        <li><a class="trash" href="javascript:void(0);" data="<?=$params['obj_id']?>" data-obj-type="<?=$params['obj_type'];?>"><i class="fa fa-trash-o"></i> Trash</a></li>
     	<?php 
 			if($links){
 				foreach($links as $link){ 

@@ -79,7 +79,8 @@
 									# config drop down action palet
 									$dd_params = array(
 														'status' => $product['status'],
-														'obj_id' => $product['product_id']
+														'obj_id' => $product['product_id'],
+														'obj_type' => 'catalog_products'
 														);
 								?>
 								<tr>
@@ -130,8 +131,6 @@
 	
 	var pagefunction = function() {
 		
-		var trash_id = 0;
-		
 		/* BASIC ;*/
 		var responsiveHelper_dt_basic = undefined;
 		
@@ -162,18 +161,14 @@
 		
 		// CHANGE STATUS
 		$('.change-status').click(function(){
-			var product_id = $(this).attr('data');
-			$.ajax({
-				type: "POST",
-				url: '<?=ajax_url();?>catalog/product_ajax/change_status',
-				data: {product_id:product_id},
-				success: function(output) {
-					window.location.hash = '<?=ajax_url();?>product/#'+(new Date).getTime();
-				}
-				
-			});
-			
-		});	
+			change_status('<?=ajax_url();?>','<?=ajax_url();?>product',$(this));
+		});
+		
+		// TRASH
+		$('.trash').click(function(){
+			trash('<?=ajax_url();?>','<?=ajax_url();?>product',$(this));
+		});
+
 		
 		/** CONVERT DIALOG TITLE TO HTML
 		* REF: http://stackoverflow.com/questions/14488774/using-html-in-a-dialogs-title-in-jquery-ui-1-10
@@ -188,27 +183,6 @@
 			}
 		}));
 
-		
-		// Trash
-		$('.trash').click(function(){
-			trash_id = $(this).attr('data');
-			$('#confirm-modal').dialog('open');
-			return false;
-		});
-		
-		function trash(product_id)
-		{
-			$.ajax({
-				type: "POST",
-				url: '<?=ajax_url();?>catalog/product_ajax/change_status',
-				data: {product_id:product_id,trashed:1},
-				success: function(output) {
-					$("#confirm-modal").dialog("close")
-					window.location.hash = '<?=ajax_url();?>product/#'+(new Date).getTime();
-				}
-			});
-		}
-		
 		$('#confirm-modal').dialog({
 			autoOpen : false,
 			width : 600,

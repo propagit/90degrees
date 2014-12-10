@@ -45,3 +45,4 @@ function remove_error_class(form_id)
 		$(this).parent().removeClass('has-error');
 	});
 }
+
