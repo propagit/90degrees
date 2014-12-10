@@ -16,7 +16,7 @@ class Common_ajax extends MX_Controller {
 		$obj_id = $this->input->post('obj_id');
 		$trashed = $this->input->post('trashed');
 	
-		$obj_key = $this->_get_obj_info($obj_type);
+		$obj_key = $this->common_model->get_obj_primary_key($obj_type);
 		
 		# If not trashed
 		if(!$trashed){
@@ -44,31 +44,6 @@ class Common_ajax extends MX_Controller {
 				'success' => false,
 				'msg' => $updated
 			));
-		}
-	}
-	
-	function _get_obj_info($obj_type)
-	{
-		switch($obj_type){
-			case 'catalog_products':
-				return 'product_id';
-			break;	
-			
-			case 'cms_banners':
-				return 'banner_id';
-			break;	
-			
-			case 'cms_pages':
-				return 'page_id';
-			break;	
-			
-			case 'cms_tiles':
-				return 'tile_id';
-			break;
-			
-			case 'users':
-				return 'user_id';
-			break;	
 		}
 	}
 	

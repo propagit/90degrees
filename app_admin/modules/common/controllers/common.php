@@ -49,7 +49,8 @@ class Common extends MX_Controller {
 		# current fields - update per requirements
 		/*$params = array(
 					'status' => 'required',
-					'obj_id' => 'required'
+					'obj_id' => 'required',
+					'obj_type' => 'required - this is the table name'
 					'ul_class' => '',
 					'links' => array(
 								'label' => '',

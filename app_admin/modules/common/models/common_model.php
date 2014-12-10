@@ -32,5 +32,16 @@ class Common_model extends CI_Model {
 			return $this->error_message('update_' . $table_name, 'There was error while updating this record.');
 		}	
 	}
+	
+	function get_obj_primary_key($table_name){
+		$sql = "SELECT COLUMN_NAME as primary_key
+				 FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE 
+				 	WHERE CONSTRAINT_NAME = 'PRIMARY'
+				 		AND TABLE_NAME = '" . $table_name . "' 
+							limit 1";
+		$key = $this->db->query($sql)
+						->row_array();
+		return $key['primary_key'];	
+	}
 
 }
