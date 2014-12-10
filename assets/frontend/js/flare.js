@@ -1,18 +1,21 @@
 // JavaScript Document
 
 function ajax_submit_form(form_id, post_url, callback) {
+	var $btn = $('#' + form_id).find('button[type="button"]');
+	$btn.button('loading');
 	$.ajax({
 		type: "POST",
 		url: post_url,
 		data: $('#' + form_id).serialize(),
 		success: function(output) {
 			//alert(output); return; // Debug
+			$btn.button('reset');
 			var data = $.parseJSON(output);
 			if (!data.ok) { // Invalid
 				var errors = data.errors;
 				//reset error class in form as they will need to be re validated
 				remove_error_class(form_id);
-				
+
 				//add error class where applicable
 				var msg = '';
 				errors.forEach(function(e){
@@ -21,8 +24,8 @@ function ajax_submit_form(form_id, post_url, callback) {
 				});
 				$('#site-errors').html(msg);
 				$('#ModalSiteErrors').modal('show');
-				
-				
+
+
 			} else { // Validated
 				if (data.success) { // Success, fire callback function
 					callback(data.action);

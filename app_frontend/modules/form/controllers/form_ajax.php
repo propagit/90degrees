@@ -39,12 +39,34 @@ class Form_ajax extends MX_Controller {
             return;
         }
 
-        # Now sending the form
+        $form = $this->form_model->get_form($form_id);
+        if ($form['storing']) {
+            # Save to database
+        }
+
+        if ($form['email']) {
+            # Send email
+            $message = '';
+            foreach($fields as $field) {
+                $field_name = 'field-' . $field['field_id'];
+                if (isset($input[$field_name])) {
+                    $message .= '<p>' . $field['label'] . ': ' . $input[$field_name] . '</p>';
+                }
+            }
+            modules::run('email/send_email', array(
+                'to' => $form['email'],
+                'from' => NO_REPLY_EMAIL,
+                'from_text' => SITE_NAME,
+                'subject' => $form['name'],
+                'message' => $message
+                ));
+        }
+
         echo json_encode(array(
-                'ok' => true,
-                'success' => true,
-                'msg' => 'Your message has been successfully sent'
-            ));
+            'ok' => true,
+            'success' => true,
+            'action' => 'Thank You'
+        ));
     }
 
     function send_contact_message()

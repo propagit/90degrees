@@ -9,7 +9,7 @@
         </h1>
     </div>
 </div>
-<div class="alert alert-success fade in hide" id="msg-banner">
+<div class="alert alert-success fade in hide" id="msg-form">
     <button class="close" data-dismiss="alert">
         ×
     </button>
@@ -94,7 +94,7 @@
                                             <section class="col col-6">
                                                 <label class="label">Form Name <i class="fa fa-asterisk fa-required"></i></label>
                                                 <label class="input">
-                                                    <input type="text" name="name" maxlength="255" value="<?=(isset($banner)) ? $banner['name'] : '';?>" />
+                                                    <input type="text" name="name" maxlength="255" value="<?=(isset($form)) ? $form['name'] : '';?>" />
                                                 </label>
                                                 <div class="note">
                                                     <strong>Max characters</strong> 255
@@ -136,7 +136,7 @@
                                     <footer>
                                         <? if(isset($form)) { ?>
                                         <input type="hidden" name="form_id" value="<?=$form['form_id'];?>" />
-                                        <button type="button" id="btn-update-banner-basic" class="btn btn-primary">
+                                        <button type="button" id="btn-update-form-basic" class="btn btn-primary">
                                             Update Basic Info
                                         </button>
                                         <? } else { ?>
@@ -326,66 +326,11 @@
     pageSetUp();
 
     var pagefunction = function() {
-        load_fields();
-        $('.component').draggable({
-            containment: '#build',
-            cursor: 'move',
-            helper: 'clone',
-            scroll: false,
-            connectToSortable: '#build',
-            appendTo: '#build',
-            start: function (e,ui) {
-                $(ui.helper).addClass('ui-draggable-helper');
-            },
-            stop: function (event, ui) {
-                $('.drag-icon-box').remove();
-                $('#build').addClass('build-bottom-padding');
-                var type = ui.helper.attr('data-type');
-                var inline = ui.helper.attr('data-inline');
-                var multiple = ui.helper.attr('data-multiple');
-                var label = ui.helper.find('.label').html();
-                var placeholder = ui.helper.find('.input').find('input').attr('placeholder');
-                $.ajax({
-                    type: "POST",
-                    url: "<?=ajax_url();?>cms/form_ajax/add_field",
-                    data: {form_id: <?=$form['form_id'];?>, type: type, inline: inline, multiple: multiple, label: label, placeholder: placeholder},
-                    success: function(html) {
-                        load_fields();
-                    }
-                })
-            }
-        }).mousedown(function () {});
-        $('#build').sortable({
-            sort: function () {},
-            placeholder: 'ui-state-highlight',
-            receive: function () {},
-            update: function (event, ui) {
-                // Update orders
-                var count = 0;
-                var field_orders = new Array();
-                $('#build').find('.sort-index').each(function(){
-                    var field_id = $(this).attr('data');
-                    field_orders[count++] = JSON.stringify({ 'field_id' : field_id });
-                });
-                $.ajax({
-                    type: "POST",
-                    url: "<?=ajax_url();?>cms/form_ajax/update_field_orders",
-                    data: { field_orders: field_orders},
-                    success: function(html) { }
-                })
-            },
-            over:function(){
-                removeItem = false;
-            },
-            out: function () {
-                removeItem = true;
-            },
-            beforeStop: function (event, ui) {
-                if(removeItem == true){
-                    ui.item.remove();
-                }
-            }
-        });
+        <? if(isset($form)) { ?>
+        init_builder(<?=$form['form_id'];?>);
+        load_fields(<?=$form['form_id'];?>);
+        <? } ?>
+
 
 
         $('#btn-create-form-basic').click(function(){
@@ -394,24 +339,20 @@
                 window.location.hash = '<?=ajax_url();?>form/edit/' + e;
             });
         })
-        $('#btn-update-banner-basic').click(function(){
+        $('#btn-update-form-basic').click(function(){
 
-            ajax_submit_form('form-banner-basic', '<?=ajax_url() . 'cms/banner_ajax/update/basic';?>', function(e){
-                $('#msg-banner').find('span').html('The basic info of banner has been updated successfully!');
-                $('#msg-banner').removeClass('hide');
+            ajax_submit_form('form-form-basic', '<?=ajax_url() . 'cms/form_ajax/update/basic';?>', function(e){
+                $('#msg-form').find('span').html('The basic info of form has been updated successfully!');
+                $('#msg-form').removeClass('hide');
                  // scroll up
                 $("html, body").animate({
                     scrollTop: 0
                 }, "fast");
                 setTimeout(function(){
-                    $('#msg-banner').addClass('hide');
+                    $('#msg-form').addClass('hide');
                 }, 2000);
             });
         })
-
-        <? if(isset($banner)) { ?>
-            load_banner_images(<?=$banner['banner_id'];?>);
-        <? } ?>
 
     };
 
@@ -419,37 +360,73 @@
     // load bootstrap-progress bar script
     loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/superbox/superbox.min.js", pagefunction);
 
-function add_banner_images(banner_id) {
-    var upload_ids = $('#banner_images_upload_ids').html();
-    $.ajax({
-        type: "POST",
-        url: "<?=ajax_url();?>cms/banner_ajax/add_images",
-        data: {banner_id: banner_id, upload_ids: upload_ids},
-        success: function(html) {
-            if (html) {
-                $('#msg-error').find('span').html(html);
-                $('#msg-error').removeClass('hide');
-            } else {
-                load_banner_images(banner_id);
+
+function init_builder(form_id) {
+    $('.component').draggable({
+        containment: '#build',
+        cursor: 'move',
+        helper: 'clone',
+        scroll: false,
+        connectToSortable: '#build',
+        appendTo: '#build',
+        start: function (e,ui) {
+            $(ui.helper).addClass('ui-draggable-helper');
+        },
+        stop: function (event, ui) {
+            $('.drag-icon-box').remove();
+            $('#build').addClass('build-bottom-padding');
+            var type = ui.helper.attr('data-type');
+            var inline = ui.helper.attr('data-inline');
+            var multiple = ui.helper.attr('data-multiple');
+            var label = ui.helper.find('.label').html();
+            var placeholder = ui.helper.find('.input').find('input').attr('placeholder');
+            $.ajax({
+                type: "POST",
+                url: "<?=ajax_url();?>cms/form_ajax/add_field",
+                data: {form_id: form_id, type: type, inline: inline, multiple: multiple, label: label, placeholder: placeholder},
+                success: function(html) {
+                    load_fields(form_id);
+                }
+            })
+        }
+    }).mousedown(function () {});
+    $('#build').sortable({
+        sort: function () {},
+        placeholder: 'ui-state-highlight',
+        receive: function () {},
+        update: function (event, ui) {
+            // Update orders
+            var count = 0;
+            var field_orders = new Array();
+            $('#build').find('.sort-index').each(function(){
+                var field_id = $(this).attr('data');
+                field_orders[count++] = JSON.stringify({ 'field_id' : field_id });
+            });
+            $.ajax({
+                type: "POST",
+                url: "<?=ajax_url();?>cms/form_ajax/update_field_orders",
+                data: { field_orders: field_orders},
+                success: function(html) { }
+            })
+        },
+        over:function(){
+            removeItem = false;
+        },
+        out: function () {
+            removeItem = true;
+        },
+        beforeStop: function (event, ui) {
+            if(removeItem == true){
+                ui.item.remove();
             }
         }
-    })
+    });
 }
-function load_banner_images(banner_id) {
-    $.ajax({
-        type: "POST",
-        url: "<?=ajax_url();?>cms/banner_ajax/load_images",
-        data: {banner_id: banner_id},
-        success: function(html) {
-            $('#banner_images').html(html);
-        }
-    })
-}
-function load_fields() {
+function load_fields(form_id) {
     preloading($('#build'));
     $.ajax({
         type: "POST",
-        data: {form_id: <?=$form['form_id'];?>},
+        data: {form_id: form_id},
         url: "<?=ajax_url();?>cms/form_ajax/load_fields",
         success: function(html) {
             loaded($('#build'), html);

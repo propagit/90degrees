@@ -75,13 +75,13 @@ class Form_ajax extends MX_Controller {
             return;
         }
 
-        $updated = $this->banner_model->update_banner($input['banner_id'], $input);
+        $updated = $this->form_model->update_form($input['form_id'], $input);
         if ($updated === true)
         {
             echo json_encode(array(
                 'ok' => true,
                 'success' => true,
-                'action' => $input['banner_id']
+                'action' => $input['form_id']
             ));
         }
         else
@@ -91,22 +91,6 @@ class Form_ajax extends MX_Controller {
                 'success' => false,
                 'msg' => $updated
             ));
-        }
-    }
-
-    function add_images()
-    {
-        $input = $this->input->post();
-        $upload_ids = explode(',', $input['upload_ids']);
-        if (count($upload_ids) > 0) {
-            foreach($upload_ids as $upload_id) {
-                $id = $this->banner_model->add_image($input['banner_id'], $upload_id);
-                if (!is_int($id))
-                {
-                    echo $id;
-                    return;
-                }
-            }
         }
     }
 

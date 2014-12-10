@@ -20,7 +20,7 @@ class Form extends MX_Controller {
         $this->load->view('form/form_view', isset($data) ? $data : NULL);
     }
 
-    function edit($form_id, $tab = 'fields')
+    function edit($form_id, $tab = 'basic')
     {
         $form = $this->form_model->get_form($form_id);
         if (!$form)

@@ -14,8 +14,7 @@ class Form_model extends CI_Model {
     }
 
     function prepare_data($data) {
-
-
+        $data['updated_on'] = date('Y-m-d H:i:s');
         return $data;
     }
 
@@ -28,6 +27,20 @@ class Form_model extends CI_Model {
         else
         {
             return $this->error_message('insert_form', 'There was error while adding new form.');
+        }
+    }
+
+    function update_form($form_id, $data)
+    {
+        $data = $this->prepare_data($data);
+        $this->db->where('form_id', $form_id);
+        if ($this->db->update('cms_forms', $data))
+        {
+            return true;
+        }
+        else
+        {
+            return $this->error_message('update_form', 'There was error while updating this form.');
         }
     }
 
