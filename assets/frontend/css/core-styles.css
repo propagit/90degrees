@@ -59,7 +59,7 @@ span.slogan,
 .job-info,
 .job-info p,
 .job-info h4{
-	color:#736661;		
+	color:#1a1a1a;		
 }
 
 
@@ -548,7 +548,7 @@ p.contact-us{
 .job-info p{
 	font-size:17px;
 	line-height:21px;
-	font-weight:100;	
+	font-weight:400;	
 }
 #toggle-job-info{
 	position: relative;
