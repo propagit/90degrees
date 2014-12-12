@@ -1,6 +1,6 @@
   
   
-<div class="container">
+<div class="container hide">
       <h1>WE DO STREET ART</h1>
       <h3>HIRE AUSTRALIA’S BEST GRAFFITI & STREET ARTISTS - EVENT, RETAIL, HOME & CORPORATE</h3>
       <h4>our work</h4>
@@ -61,7 +61,10 @@
          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 remove-gutters tiles">
          	<div class="col-xs-12 remove-gutters">
         	<a <?=$tile['tile_uri'] ? 'href="our-work/' . $tile['tile_uri'] . '"' : '';?> <?=$tile['new_window'] ? 'target="_blank"' : '';?>>
-                <div class="tiles-bg" style="background-image: url('<?=base_url() . substr($tile_image['full_path'],2);?>');">&nbsp;</div>
+                <div class="tiles-bg" style="background-image: url('<?=base_url() . substr($tile_image['full_path'],2);?>');">
+                	<span class="hidden-xs">&nbsp;</span>
+                	<img class="visible-xs" src="<?=base_url() . substr($tile_image['full_path'],2);?>" >
+                </div>
                 <div class="tiles-caption fadeout">
                     <h1><?=$tile['name'];?></h1>
                     <h4><?=$tile['short_desc'];?> <i class="fa fa-map-marker"></i></h4>

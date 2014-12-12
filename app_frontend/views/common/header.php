@@ -169,7 +169,7 @@
   
   <header>
   	<div id="header" class="container">
-    	<div class="col-md-4 col-sm-4">
+    	<div class="col-md-4 col-sm-4 hidden-xs">
         	<a class="remove-left-gutter" href="<?=base_url();?>"> 
             	<img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
         	</a>		
@@ -184,7 +184,7 @@
         </div>
     </div>
     
-    <div id="top-navbar">
+    <div id="top-navbar" class="hidden-xs">
         <div class="container top-nav-wrap">
             <div class="navbar-collapse collapse">
                 <!-- top-menu -->
@@ -197,8 +197,26 @@
             </div><!--/.nav-collapse -->
         </div>
     </div>
+    
+    <div id="top-navbar-mob" class="visible-xs">
+    	 <div class="container top-nav-wrap">
+              <!-- top-menu -->
+              <div class="col-xs-12"> 
+                  <a class="remove-left-gutter push" href="<?=base_url();?>"> 
+                      <img class="mob-logo" src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
+                  </a>	
+                  <button type="button" class="navbar-toggle btn-primary mob-nav-btn pull" data-toggle="collapse" data-target=".mob-navbar-collapse"> 
+                      <i class="fa fa-bars"></i>
+                  </button>
+              </div>
+              <div class="mob-navbar-collapse collapse col-xs-12">
+                  <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => base_url() . substr($this->uri->uri_string(),1)));?>
+              </div>
+        </div>
+       
+    </div>
   </header>	
-  <div class="offset push"></div>
+  <div class="offset push fw"></div>
 
 
   

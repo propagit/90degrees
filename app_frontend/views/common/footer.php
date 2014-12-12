@@ -79,6 +79,7 @@
 // fix nav
 $(document).scroll(function() {
 	scroll_fix_nav();
+	scroll_fix_mob_nav();
 });
 
 $(function(){
@@ -185,6 +186,16 @@ function scroll_fix_nav(){
 		$('#top-navbar').removeClass('fixed');
 		$('#scroll-nav-logo').hide();
 	}
+}
+
+function scroll_fix_mob_nav(){
+	var y = $(this).scrollTop();
+	if (y > 235) {
+		$('#top-navbar-mob').addClass('fixed');
+	} else {
+		$('#top-navbar-mob').removeClass('fixed');
+
+	}	
 }
 
 

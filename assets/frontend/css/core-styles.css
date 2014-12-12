@@ -48,6 +48,8 @@ p span,
 /** Text Colors */
 body,
 html,
+.btn-primary,
+.navbar-nav > li > a,
 .cartMenu a.dropdown-toggle,
 .nav-pills-alt > li > a,
 .nav-pills-alt > li.active > a,
@@ -64,12 +66,13 @@ span.slogan,
 
 
 
+
 /** Border Radius*/
 .nav-pills-alt > li > a{
 	border-radius:6px;	
 }
 ::selection{
-	background:#71bf44;
+	background:#dcd9d7;
 }
 a{
 	color:#394444;
@@ -159,7 +162,8 @@ p.contact-us{
 }
 
 /* nav */
-#top-navbar{
+#top-navbar,
+#top-navbar-mob{
 	width: 100%;
 	top: 0;
 	z-index: 2500;
@@ -267,7 +271,12 @@ p.contact-us{
 .mob-nav-btn{
 	padding: 7px 15px !important;
 	font-size: 26px;
+	margin:0;
 }
+.mob-logo{
+	width:64%;	
+}
+
 
 /*
 	
@@ -462,7 +471,7 @@ p.contact-us{
 	min-height:400px;	
 }
 .banner{
-	margin-top:0;
+	margin-top:0 !important;
 	float:left;	
 }
 .banner-img-wrap img{
@@ -1176,6 +1185,7 @@ tr.CartProduct td{
 }
 
 
+
 /* custom responsive */
 @media(max-width:1199px){
 	.tiles-bg{
@@ -1183,14 +1193,24 @@ tr.CartProduct td{
 	}	
 }
 @media (max-width: 1024px){
-	.banner {
-		margin-top: -54px !important;
-	}
 	.top-nav .nav li a{
 		font-size:15px;
 	}
 	.navbar-brand img{
 		width:100%;	
+	}
+	.top-nav .nav li a{
+		font-size:22px;	
+	}
+	.top-nav .nav li a.active:after{
+		top:11px;
+	}
+	h1{
+		font-size:80px;	
+		line-height:90px;
+	}
+	span.slogan{
+		font-size:15px;	
 	}
 	
 }
@@ -1206,10 +1226,22 @@ tr.CartProduct td{
 		text-align:center;	
 	}
 	.tiles-bg{
-		min-height:245px;	
+		min-height:280px;	
 	}
+	
 }
 @media (max-width: 767px) {
+	#header{
+		margin-top:0;	
+	}
+	h1{
+		font-size:60px;	
+		line-height:70px;
+	}
+
+	.top-nav-wrap{
+		padding:10px 0;	
+	}
 	.navbar-brand img{
 		height:51px;
 		width:auto;
@@ -1223,16 +1255,19 @@ tr.CartProduct td{
 	.mob-nav-box{
 		margin-top:15px;	
 	}
-	.mob-navbar-collapse .nav{
-		background: #363737;
-		margin-top: 78px;
-		margin-bottom: 45px;
+	.mob-navbar-collapse .navbar-nav > li > a{
+		font-size: 26px;
+		line-height: 26px;	
+		padding-bottom: 4px;
+	}
+	.mob-navbar-collapse .navbar-nav > li > a.active{
+		background:#dcd9d7;	
 	}
 	.nav > li.active, 
 	.nav > li > a:hover, 
 	.nav > li > a:focus, 
 	.nav > li:hover > a{
-		background:#71bf44;	
+		background: #dcd9d7;	
 	}
 	.mob-cart-btn{
 		padding-left: 10px !important;
@@ -1289,6 +1324,14 @@ tr.CartProduct td{
 		padding-left: 0;
 		padding-right: 0;
 	}
+	.tiles-bg{
+		min-height:0;	
+		background-image:none !important;
+	}
+	.tiles-bg img{
+		width:100%;	
+	}
+	
 }
 
 
