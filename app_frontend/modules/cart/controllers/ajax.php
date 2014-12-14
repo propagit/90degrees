@@ -64,6 +64,11 @@ class Ajax extends MX_Controller {
 		$this->load->view('menu', isset($data) ? $data : NULL);
 	}
 	
+	function menu_cart_items()
+	{
+		$this->load->view('menu_cart_items', isset($data) ? $data : NULL);	
+	}
+	
 	function mob_cart()
 	{
 		$this->load->view('mob_cart', isset($data) ? $data : NULL);	

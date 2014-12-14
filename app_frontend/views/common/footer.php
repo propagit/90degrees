@@ -90,6 +90,7 @@ $(function(){
 	});
 	
 	menu_cart();
+	menu_cart_items();
 	
 	$('.add-to-cart').click(function(){
 		var product_id = $(this).attr('data-pid');
@@ -169,10 +170,14 @@ function add_to_cart(form_id){
 function menu_cart() {
 	$.post("<?=base_url();?>cart/ajax/menu", function(html) {
 		$('#menu-cart').html(html);
+		menu_cart_items();
 	});
 	
-	$.post("<?=base_url();?>cart/ajax/mob_cart", function(html) {
-		$('#mob-cart').html(html);
+}
+
+function menu_cart_items(){
+	$.post("<?=base_url();?>cart/ajax/menu_cart_items", function(html) {
+		$('#menu-cart-items').html(html);
 	});
 }
 
@@ -208,7 +213,7 @@ function delete_item_minicart(rowid){
 		success: function(data) {
 				if(data['status']){
 					$('#min-cart-row-'+rowid).remove();
-					//menu_cart();
+					menu_cart();
 				}else{
 					$('#site-errors').html('Deletion failed! Please try again');
 					$('#ModalSiteErrors').modal('show');	
