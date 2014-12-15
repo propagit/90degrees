@@ -51,8 +51,8 @@
                 
                 <div class="share-icons">
                 	<h4>SHARE</h4>
-                	<i class="fa fa-share-alt-square"></i>
-                    <i class="fa fa-facebook-square"></i>
+                    <div class="fb-share-button" data-href="<?= base_url() . 'our-work/' . $work['tile_uri'];?>" data-layout="icon"></div>
+                    <!--<i class="fa fa-facebook-square"></i>-->
                     <i class="fa fa-linkedin-square"></i>
                     <i class="fa fa-twitter-square"></i>
                     <i class="fa fa-instagram"></i>

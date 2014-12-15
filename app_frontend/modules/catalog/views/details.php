@@ -57,6 +57,16 @@
                     <?=isset($product['weight']) && $product['weight'] ? $product['weight'] : 'NA';?> 
                 </p>
           </div>
+          
+          <div class="product-share clearfix">
+            <div class="socialIcon"> 
+                <p class="inline">SHARE </p>
+                <a target="_blank" href="<?=INSTAGRAM;?>"> <i  class="fa fa-instagram"></i></a> 
+                <a target="_blank" href="<?=FACEBOOK;?>"> <i  class="fa fa-facebook-square"></i></a> 
+            </div>
+          </div>
+          <!--/.product-share--> 
+          
           <div class="product-price"> 
           	  <? if ($discount = modules::run('promotion/apply_product_promotions', $product['product_id'])) { ?>
           	  <span class="price-sales">$<?=money_format('%i', $product['price'] - $discount);?></span> 
@@ -73,23 +83,16 @@
         
       </div><!--/.product-tab-->
       
-      <div class="product-share clearfix">
-      <div class="socialIcon"> 
-          <p class="inline">SHARE </p>
-          <a target="_blank" href="<?=INSTAGRAM;?>"> <i  class="fa fa-instagram"></i></a> 
-          <a target="_blank" href="<?=FACEBOOK;?>"> <i  class="fa fa-facebook-square"></i></a> 
-      </div>
-      </div>
-      <!--/.product-share--> 
+
 
       
       <!-- product-form -->
       <form id="form-product">
       <input type="hidden" name="id" value="<?=$product['product_id'];?>" />
-      <div class="productFilter">
+      <div class="productFilter col-xs-12 remove-gutters">
         <div class="filterBox">
           <div class="form-group required">
-          	<div class="input-group">
+          	<div class="input-group input-group-alt">
           	<span class="input-group-addon">Quantity</span>
             <input required type="text" class="form-control text-center" name="qty" value="1" />
           	</div>
@@ -97,8 +100,8 @@
         </div>
         <div class="cart-actions">
             <div class="addto">
-              <button class="button btn-addcart" title="Add to Cart" type="button" id="btn-add-cart"><i class="fa fa-plus"></i> &nbsp;Add to Cart</button>
-              <a href="<?=base_url();?>cart/checkout" class="link-wishlist wishlist btn-checkout"><i class="fa fa-shopping-cart"></i> &nbsp;Checkout</a> 
+              <a class="btn btn-primary add-to-cart" title="Add to Cart" type="button" id="btn-add-cart"><i class="fa fa-plus"></i> &nbsp;Add to Cart</a>
+              <a href="<?=base_url();?>cart/checkout" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> &nbsp;Checkout</a> 
             </div>
         </div>
       </div>
