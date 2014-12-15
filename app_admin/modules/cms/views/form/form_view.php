@@ -121,6 +121,18 @@
                                                 </label>
                                             </section>
                                         </div>
+
+                                        <div class="row">
+                                            <section class="col col-6">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="captcha" <?=(isset($form) && $form['captcha']) ? 'checked' : '';?>>
+
+                                                    <i></i>Enable CAPTCHA
+                                                </label>
+                                            </section>
+                                        </div>
+
+                                        <? /*
                                         <div class="row">
                                             <section class="col col-6">
                                                 <label class="checkbox">
@@ -129,7 +141,7 @@
                                                     <i></i>Storing submitted data on server
                                                 </label>
                                             </section>
-                                        </div>
+                                        </div> */ ?>
                                     </fieldset>
 
 

@@ -55,7 +55,7 @@ $(function(){
             data: $('#update-field-form').serialize(),
             success: function(html) {
                 $('.popover').hide();
-                load_fields();
+                load_fields(<?=$field['form_id'];?>);
             }
         })
     })

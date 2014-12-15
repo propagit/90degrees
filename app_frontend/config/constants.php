@@ -4,6 +4,7 @@
 include('./app_admin/config/constants.php');
 
 define('ASSETS', '/assets/frontend/');
+define('CAPTCHA_PATH', 'uploads/captcha/');
 define('SITE_NAME', '90degrees');
 
 

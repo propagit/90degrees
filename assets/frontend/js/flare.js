@@ -8,7 +8,7 @@ function ajax_submit_form(form_id, post_url, callback) {
 		url: post_url,
 		data: $('#' + form_id).serialize(),
 		success: function(output) {
-			//alert(output); return; // Debug
+			// alert(output); return; // Debug
 			$btn.button('reset');
 			var data = $.parseJSON(output);
 			if (!data.ok) { // Invalid
