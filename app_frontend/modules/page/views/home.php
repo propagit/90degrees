@@ -5,7 +5,7 @@
       <h3>HIRE AUSTRALIA’S BEST GRAFFITI & STREET ARTISTS - EVENT, RETAIL, HOME & CORPORATE</h3>
       <h4>our work</h4>
 </div>
-<div class="container">
+<div class="container hidden-xs">
     <div class="banner">
         <div class="slider-content">
           <ul id="pager2" class="container hide">
