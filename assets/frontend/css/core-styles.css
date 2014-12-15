@@ -1256,7 +1256,7 @@ tr.CartProduct td{
 		width:100%;	
 	}
 	.top-nav .nav li a{
-		font-size:22px;	
+		font-size:25px;	
 	}
 	.top-nav .nav li a.active:after{
 		top:11px;
@@ -1289,12 +1289,16 @@ tr.CartProduct td{
 @media (max-width: 767px) {
 	#header{
 		margin-top:0;	
+		margin-bottom:10px;
 	}
 	h1{
-		font-size:60px;	
+		font-size:48px;	
 		line-height:70px;
 	}
-
+	h1.slogan{
+		margin-top:10px;	
+	}
+	
 	.top-nav-wrap{
 		padding:10px 0;	
 	}
