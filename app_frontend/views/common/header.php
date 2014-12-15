@@ -193,7 +193,7 @@
                   <a id="scroll-nav-logo" class="remove-left-gutter" href="<?=base_url();?>">
                         <img src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
                     </a>
-                    <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => base_url() . substr($this->uri->uri_string(),1)));?>
+                    <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => base_url() . $this->uri->uri_string()));?>
                 </div>
             </div><!--/.nav-collapse -->
         </div>
