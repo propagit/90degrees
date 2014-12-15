@@ -124,7 +124,7 @@
       <div class="modal-body">
         <!--<div class="control-group"> <a class="fb_button btn  btn-block btn-lg " href="#"> SIGNUP WITH FACEBOOK </a> </div>
         <h5 style="padding:10px 0 10px 0;" class="text-center"> OR </h5>-->
-		<form id="modal-create-account-form">
+    <form id="modal-create-account-form">
         <div class="form-group reg-email">
           <div >
             <input name="email"  class="form-control input"  size="20" placeholder="Enter Email" type="text">
@@ -169,18 +169,18 @@
 
 
   <header>
-  	<div id="header" class="container">
-    	<div class="col-md-4 col-sm-4 hidden-xs">
-        	<a class="remove-left-gutter" href="<?=base_url();?>">
-            	<img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
-        	</a>
+    <div id="header" class="container">
+      <div class="col-md-4 col-sm-4 hidden-xs">
+          <a class="remove-left-gutter" href="<?=base_url();?>">
+              <img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
+          </a>
         </div>
         <div class="col-md-8 col-sm-8">
-        	<h1 class="slogan">ART - MURALS - EVENTS</h1>
+          <h1 class="slogan">ART - MURALS - EVENTS</h1>
             <span class="slogan">graffiti artists for hire  -  events, retail, residential and corporate street art</span>
-        	<div class="header-social">
-           		<a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
-            	<a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+          <div class="header-social">
+              <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
+              <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
             </div>
         </div>
     </div>
@@ -190,7 +190,7 @@
             <div class="navbar-collapse collapse">
                 <!-- top-menu -->
                 <div class="top-nav">
-                	<a id="scroll-nav-logo" class="remove-left-gutter" href="<?=base_url();?>">
+                  <a id="scroll-nav-logo" class="remove-left-gutter" href="<?=base_url();?>">
                         <img src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
                     </a>
                     <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => base_url() . substr($this->uri->uri_string(),1)));?>
@@ -200,7 +200,7 @@
     </div>
 
     <div id="top-navbar-mob" class="visible-xs">
-    	 <div class="container top-nav-wrap">
+       <div class="container top-nav-wrap">
               <!-- top-menu -->
               <div class="col-xs-12">
                   <a class="remove-left-gutter push" href="<?=base_url();?>">
