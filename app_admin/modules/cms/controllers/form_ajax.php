@@ -31,6 +31,7 @@ class Form_ajax extends MX_Controller {
         $form_data = array(
             'name' => $input['name'],
             'email' => $input['email'],
+            'captcha' => isset($input['captcha']) ? 1 : 0,
             'storing' => isset($input['storing']) ? 1 : 0
         );
         $form_id = $this->form_model->insert_form($form_data);
@@ -75,7 +76,14 @@ class Form_ajax extends MX_Controller {
             return;
         }
 
-        $updated = $this->form_model->update_form($input['form_id'], $input);
+        $form_data = array(
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'captcha' => isset($input['captcha']) ? 1 : 0,
+            'storing' => isset($input['storing']) ? 1 : 0
+        );
+
+        $updated = $this->form_model->update_form($input['form_id'], $form_data);
         if ($updated === true)
         {
             echo json_encode(array(

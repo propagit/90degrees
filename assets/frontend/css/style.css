@@ -3072,8 +3072,8 @@ h1.xlarge {
 }
  @media (max-width: 767px) {
 /* phones */
-	 
-	 
+
+
 .userMenu li a {
 	padding-top: 3px;
 	line-height: normal;
@@ -3196,7 +3196,7 @@ h1.xlarge {
 }
  @media (max-width: 580px) {
 	/* phones (portrait and landscape) ----------- */
-	
+
 .xs3Response . {
  width: 50% !important;
 }
@@ -3382,4 +3382,18 @@ h1.x2large {
 	max-width: 320px !important;
 	overflow: hidden !important;
 }
+}
+
+
+.captcha {
+	float: left;
+	margin-left: 15px;
+}
+.btn-refresh-captcha {
+	float: left;
+	margin: 0 10px;
+}
+.input-captcha {
+	width: 300px;
+	float: left;
 }

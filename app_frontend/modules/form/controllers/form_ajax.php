@@ -9,10 +9,26 @@ class Form_ajax extends MX_Controller {
 
     }
 
+    function refresh_captcha()
+    {
+        $this->load->helper('captcha');
+        $vals = array(
+            'img_path' => 'assets/frontend/captcha/',
+            'img_url' => base_url() . 'assets/frontend/captcha/',
+            'img_height' => 34
+        );
+        # Generate the captcha
+        $captcha = create_captcha($vals);
+        # Store the captcha value in a session to retrieve later
+        $this->session->set_userdata('captcha_word', $captcha['word']);
+        echo $captcha['image'];
+    }
+
     function submit()
     {
         $input = $this->input->post();
         $form_id = $input['form_id'];
+        $form = $this->form_model->get_form($form_id);
         $fields = $this->form_model->get_fields($form_id);
 
         $rules = array();
@@ -25,6 +41,14 @@ class Form_ajax extends MX_Controller {
                 );
             }
         }
+        if ($form['captcha']) {
+            $rules[] = array(
+                'field' => 'field-captcha',
+                'label' => 'Code',
+                'rules' => 'required'
+            );
+        }
+
 
         # Validat user data
         $errors =  modules::run('common/validate_input', $input, $rules);
@@ -39,7 +63,18 @@ class Form_ajax extends MX_Controller {
             return;
         }
 
-        $form = $this->form_model->get_form($form_id);
+        $captcha_word = $this->session->userdata('captcha_word');
+        if ($captcha_word != $input['field-captcha']) {
+            # User input error
+            $errors[] = array('field' => 'field-captcha', 'msg' => 'Wrong code');
+            echo json_encode(array(
+                'ok' => false,
+                'errors' => $errors
+            ));
+            return;
+        }
+
+
         if ($form['storing']) {
             # Save to database
         }
