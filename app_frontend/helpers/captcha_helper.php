@@ -146,10 +146,10 @@ if ( ! function_exists('create_captcha'))
 		//  Assign colors
 		// -----------------------------------
 
-		$bg_color		= imagecolorallocate ($im, 255, 255, 255);
-		$border_color	= imagecolorallocate ($im, 153, 102, 102);
+		$bg_color		= imagecolorallocate ($im, 242, 242, 242);
+		$border_color	= imagecolorallocate ($im, 194, 194, 194);
 		$text_color		= imagecolorallocate ($im, 0, 0, 0);
-		$grid_color		= imagecolorallocate($im, 255, 182, 182);
+		$grid_color		= imagecolorallocate($im, 242, 242, 242);
 		$shadow_color	= imagecolorallocate($im, 255, 240, 240);
 
 		// -----------------------------------

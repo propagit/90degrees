@@ -16,19 +16,7 @@ class Form extends MX_Controller {
             show_404();
         }
         if ($form['captcha']) {
-            $this->load->helper('captcha');
-
-            # Setup vals to pass into the create_captcha function
-            $vals = array(
-                'img_path' => CAPTCHA_PATH,
-                'img_url' => base_url() . CAPTCHA_PATH,
-                'img_height' => 34
-            );
-            # Generate the captcha
-            $captcha = create_captcha($vals);
-            $data['captcha'] = $captcha;
-            # Store the captcha value in a session to retrieve later
-            $this->session->set_userdata('captcha_word', $captcha['word']);
+            $data['captcha'] = $this->generate_captcha();
         }
         $fields = $this->form_model->get_fields($form_id);
         $data['form'] = $form;
@@ -40,6 +28,23 @@ class Form extends MX_Controller {
     {
         $data['field'] = $field;
         $this->load->view('field/' . $field['type'], isset($data) ? $data : NULL);
+    }
+
+    function generate_captcha()
+    {
+        $this->load->helper('captcha');
+
+        # Setup vals to pass into the create_captcha function
+        $vals = array(
+            'img_path' => CAPTCHA_PATH,
+            'img_url' => base_url() . CAPTCHA_PATH,
+            'img_height' => 66
+        );
+        # Generate the captcha
+        $captcha = create_captcha($vals);
+        # Store the captcha value in a session to retrieve later
+        $this->session->set_userdata('captcha_word', $captcha['word']);
+        return $captcha;
     }
 
 }
