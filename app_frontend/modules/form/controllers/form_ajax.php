@@ -11,16 +11,7 @@ class Form_ajax extends MX_Controller {
 
     function refresh_captcha()
     {
-        $this->load->helper('captcha');
-        $vals = array(
-            'img_path' => CAPTCHA_PATH,
-            'img_url' => base_url() . CAPTCHA_PATH,
-            'img_height' => 34
-        );
-        # Generate the captcha
-        $captcha = create_captcha($vals);
-        # Store the captcha value in a session to retrieve later
-        $this->session->set_userdata('captcha_word', $captcha['word']);
+        $captcha = modules::run('form/generate_captcha');
         echo $captcha['image'];
     }
 
