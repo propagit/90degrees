@@ -1,6 +1,5 @@
 .tiles a,.tiles a:hover{
-  color:#736661;
-
+  color:#1a1a1a;
 }
 
 #toggle-job-info h4{
@@ -11,7 +10,6 @@
 .share-icons{
   font-size:25px;
   margin-top:45px;
-
 }
 
 .alt-hr{

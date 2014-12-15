@@ -2,16 +2,20 @@
   <div class="footer" id="footer">
   	
     <div class="container">
-      <div class="row">
-      	<div class="col-lg-12 col-md-12 col-sm-12">
-        	
-            
-        </div>
-      </div>  
       <hr class="alt-hr">
       
       <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        	<div id="back-to-top">
+            	<span>TOP</span>
+            </div>
+        </div>
         
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+         	<span id="quick-links" class="pull">
+            	FAST LINK MENU <i class="fa fa-plus-square-o"></i>
+         	</span>
+        </div>
        
         
       </div>
@@ -87,6 +91,10 @@ $(function(){
 	// Delete mini cart item
 	$(document).on('click','.delete-mini-cart-item',function(){
 		delete_item_minicart($(this).attr('data-rowid'));
+	});
+	
+	$('#back-to-top').click(function(){
+		scroll_top();
 	});
 	
 	menu_cart();
@@ -221,6 +229,11 @@ function delete_item_minicart(rowid){
 		  	}
 	});		
 }
+
+function scroll_top(){
+	$('html,body').animate({scrollTop:0},300);	
+}
+
 </script>
 
 <!-- Modal Login start -->

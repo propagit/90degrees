@@ -29,11 +29,10 @@
                   <?php 
                     if($work_gallery){ 
                         $increment = 1;
-                        foreach($work_gallery as $gallery){   
+                        foreach($work_gallery as $gallery){  
                   ?>
                     <div class="slider-item slider-item-img<?=$increment++;?> gallery-img-wrap text-center">
                         <img src="<?=base_url() . $gallery['full_path'];?>" title="<?=$gallery['orig_name'];?>" >
-
                     </div>
                     
                   <?php }} ?>
@@ -50,14 +49,26 @@
             	<?=$work['content'];?>
                 
                 <div class="share-icons">
+                	<?php
+						# config 
+						$share_url = urlencode(base_url() . 'our-work/' . $work['tile_uri']);
+						$title = $work['name'];
+						$path = parse_url(base_url());
+						$domain = $path['host'];
+						if($work['feature_image_id']){
+							$feature_img = modules::run('page/get_tiles_feature_image',$work['feature_image_id']);
+						}else{
+							$feature_img = modules::run('page/get_tiles_first_image',$work['tile_id']);
+						} 
+						$share_img_uri = urlencode(base_url() . substr($feature_img['full_path'],2));
+					?>
                 	<h4>SHARE</h4>
-                    <div class="fb-share-button" data-href="<?= base_url() . 'our-work/' . $work['tile_uri'];?>" data-layout="icon"></div>
-                    <!--<i class="fa fa-facebook-square"></i>-->
-                    <i class="fa fa-linkedin-square"></i>
-                    <i class="fa fa-twitter-square"></i>
-                    <i class="fa fa-instagram"></i>
-                    <i class="fa fa-pinterest-square"></i>
-                    <i class="fa fa-envelope"></i>
+                    <a href="http://www.facebook.com/sharer/sharer.php?u=<?=$share_url;?>&title=<?=$title;?>" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=<?=$share_url;?>&title=<?=$title;?>&source=<?='www.'.$domain;?>" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="http://twitter.com/intent/tweet?status=<?=$work['name'];?>+<?=$share_url;?>" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="http://pinterest.com/pin/create/bookmarklet/?media=<?=$share_img_uri;?>&url=<?=$share_url;?>&is_video=false&description=<?=$title;?>" target="_blank"><i class="fa fa-pinterest-square"></i></a>
+                    <a href="mailto:info@<?=$domain;?>"><i class="fa fa-envelope"></i></a>
                 </div>
             </div>
 
