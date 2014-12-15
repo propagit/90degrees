@@ -60,7 +60,7 @@
 	 	 ?>
          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 remove-gutters tiles">
          	<div class="col-xs-12 remove-gutters">
-        	<a <?=$tile['tile_uri'] ? 'href="our-work/' . $tile['tile_uri'] . '"' : '';?> <?=$tile['new_window'] ? 'target="_blank"' : '';?>>
+        	<a <?=$tile['tile_uri'] ? 'href="' . base_url() . 'our-work/' . $tile['tile_uri'] . '"' : '';?> <?=$tile['new_window'] ? 'target="_blank"' : '';?>>
                 <div class="tiles-bg" style="background-image: url('<?=base_url() . substr($tile_image['full_path'],2);?>');">
                 	<span class="hidden-xs">&nbsp;</span>
                 	<img class="visible-xs" src="<?=base_url() . substr($tile_image['full_path'],2);?>" >
