@@ -1394,6 +1394,9 @@ tr.CartProduct td{
 		min-height:0;	
 		background-image:none !important;
 	}
+	.tiles-wrap .tiles{
+		margin-bottom:15px;	
+	}
 	.tiles-bg img{
 		width:100%;	
 	}
