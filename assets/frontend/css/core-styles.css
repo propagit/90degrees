@@ -1,7 +1,6 @@
 /* CSS Document */
 /** Core CSS */
 @import url(//fonts.googleapis.com/css?family=Oswald:400,300,700|PT+Serif:400,700,400italic,700italic);
-@import url('core_styles_sass.css');
 @font-face {
     font-family: Dharma;
 	src:url(../fonts/DharmaGothicE_Thin_R.otf);
@@ -26,7 +25,8 @@ h1,h2,h4,h3,h5,h6,
 .miniCartDescription .trash,
 .subtotal-amount,
 .pagination-alt > li > a, 
-.pagination-alt > li > span{
+.pagination-alt > li > span,
+.footer{
 	font-family:'Dharma', sans-serif;
 }
 
@@ -41,7 +41,9 @@ p,
 .product-desc p,
 span.slogan,
 p span,
-.job-info p{
+.job-info p,
+.banner-caption h4,
+.tiles-caption h4{
 	font-family: 'PT Serif', serif;
 }
 
@@ -60,14 +62,50 @@ span.slogan,
 .top-nav .nav li a.active:after,
 .job-info,
 .job-info p,
-.job-info h4{
+.job-info h4,
+.share-icons a,
+.tiles a,
+.tiles a:hover{
+  color:#1a1a1a;
+}
+
+.share-icons a:hover{
 	color:#1a1a1a;		
 }
 
 .modal{
 	z-index:3000;	
 }
-
+.footer{
+	font-size:30px;			
+}
+#back-to-top{
+	cursor:pointer;
+}
+#back-to-top span:before{
+	content: "\f0d8";
+	font-family: FontAwesome;
+	display: block;
+	line-height: normal;
+	right: 0;
+	font-size: 36px;
+	left: 0;
+	font-size: 20px;
+	top: 0;
+	overflow: hidden;
+	height: 20px;
+	text-align: center;
+	width: 21px;	
+}
+#quick-links{
+	display:inline;
+	margin-top:16px;	
+}
+#quick-links .fa{
+	font-size: 20px;
+	margin-bottom: 6px;
+	vertical-align: middle;
+}
 
 /** Border Radius*/
 .nav-pills-alt > li > a{
@@ -251,8 +289,8 @@ p.contact-us{
 	letter-spacing: 1.5px;
 }
 .top-nav-wrap{
-	border-top: 1px solid #736661;
-	border-bottom: 1px solid #736661;
+	border-top: 1px solid #1a1a1a;
+	border-bottom: 1px solid #1a1a1a;
 	padding: 30px 0 10px;
 }
 
@@ -498,6 +536,7 @@ p.contact-us{
 	font-size:16px;
 	line-height:18px;
 	padding:5px 0 0 0;
+	font-style:italic;
 }
 .tiles-caption{
 	background-color: rgba(255,255,255,0.75);
@@ -514,7 +553,7 @@ p.contact-us{
 	background: #dcd9d7 !important;	
 }
 #pager2 span.cycle-pager-active {
-	background-color:#736661 !important;
+	background-color:#1a1a1a !important;
 }
 .innerPage{
 	/* Enable top padding for fixed header */
@@ -767,7 +806,7 @@ span.add2cart{
 .pagination > .active > span:focus{
 	background-color:#fff;
 	border-color: #fff;
-	color: #94a1a1;
+	color: #1a1a1a;
 	box-shadow: none !important;
 } 
 
@@ -1113,6 +1152,10 @@ tr.CartProduct td{
 	font-weight: 400;
 	text-transform:lowercase;
 }
+.share-icons{
+  font-size:25px;
+  margin-top:45px;
+}
 
 /** MODEL WINDOw */
 .modal-header{
@@ -1213,7 +1256,7 @@ tr.CartProduct td{
 		width:100%;	
 	}
 	.top-nav .nav li a{
-		font-size:22px;	
+		font-size:25px;	
 	}
 	.top-nav .nav li a.active:after{
 		top:11px;
@@ -1246,12 +1289,16 @@ tr.CartProduct td{
 @media (max-width: 767px) {
 	#header{
 		margin-top:0;	
+		margin-bottom:10px;
 	}
 	h1{
-		font-size:60px;	
+		font-size:48px;	
 		line-height:70px;
 	}
-
+	h1.slogan{
+		margin-top:10px;	
+	}
+	
 	.top-nav-wrap{
 		padding:10px 0;	
 	}
@@ -1412,7 +1459,12 @@ tr.CartProduct td{
 .pointer{
 	cursor:pointer;	
 }
+.alt-hr{
+  margin-top:20px;
+  margin-bottom:20px;
+  border-top:1px solid #1a1a1a !important;
 
+}
 
 
 
