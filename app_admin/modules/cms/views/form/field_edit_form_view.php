@@ -9,7 +9,7 @@
             <input type="text" name="label" value="<?=$field['label'];?>" />
         </label>
     </section>
-    <? if($field['type'] == 'text') { ?>
+    <? if($field['type'] == 'text' || $field['type'] == 'textarea') { ?>
     <section>
         <label class="label">Placeholder</label>
         <label class="input">

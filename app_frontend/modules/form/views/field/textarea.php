@@ -3,5 +3,5 @@
         <?=$field['label'];?>
         <? if($field['required']) { ?><span class="text-danger">*</span><? } ?>
     </label>
-    <textarea id="field-<?=$field['field_id'];?>" name="field-<?=$field['field_id'];?>" class="form-control" rows="6"></textarea>
+    <textarea id="field-<?=$field['field_id'];?>" name="field-<?=$field['field_id'];?>" placeholder="<?=$field['placeholder'];?>" class="form-control" rows="6"></textarea>
 </div>
