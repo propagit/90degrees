@@ -20,8 +20,8 @@ class Form extends MX_Controller {
 
             # Setup vals to pass into the create_captcha function
             $vals = array(
-                'img_path' => 'assets/frontend/captcha/',
-                'img_url' => base_url() . 'assets/frontend/captcha/',
+                'img_path' => CAPTCHA_PATH,
+                'img_url' => base_url() . CAPTCHA_PATH,
                 'img_height' => 34
             );
             # Generate the captcha
