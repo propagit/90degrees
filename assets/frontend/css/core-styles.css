@@ -1390,6 +1390,9 @@ tr.CartProduct td{
 		padding-left: 0;
 		padding-right: 0;
 	}
+	.tiles-wrap{
+		margin-top:10px;	
+	}
 	.tiles-bg{
 		min-height:0;	
 		background-image:none !important;
