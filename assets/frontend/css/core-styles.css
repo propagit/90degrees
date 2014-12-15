@@ -271,7 +271,7 @@ p.contact-us{
 #scroll-nav-logo{
 	position: absolute;
 	top: 10px;
-	margin-left: 86px !important;
+	margin-left: 5.5% !important;
 	display:none;
 }
 #scroll-nav-logo img{
@@ -1274,6 +1274,9 @@ tr.CartProduct td{
 	
 }
 @media (max-width: 991px) {
+	#scroll-nav-logo{
+		margin-left:1% !important;	
+	}
 	.cart-action-wrap{
 		margin-top:20px;	
 		text-align:center !important;	
