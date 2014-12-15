@@ -9,7 +9,7 @@
     <div class="row">
         <div class="captcha" id="captcha-img"><? echo $captcha['image'];?></div>
         <div class="btn btn-default btn-refresh-captcha" onclick="refresh_captcha()"><i class="fa fa-refresh"></i></div>
-        <div class="input-captcha"><input id="field-captcha" name="field-captcha" class="form-control" placeholder="Please type the code shown in the image" /></div>
+        <div class="input-captcha"><input id="field-captcha" name="field-captcha" class="form-control" placeholder="* Enter code to submit message" /></div>
     </div>
 </div>
 <? } ?>

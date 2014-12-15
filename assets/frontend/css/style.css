@@ -3403,6 +3403,9 @@ h1.x2large {
 .btn-refresh-captcha {
 	float: left;
 	margin: 0 10px;
+	border: 1px solid #ccc;
+	background: #fff;
+	color: #000;
 }
 .input-captcha {
 	width: 300px;

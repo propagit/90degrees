@@ -38,7 +38,8 @@ class Form extends MX_Controller {
         $vals = array(
             'img_path' => CAPTCHA_PATH,
             'img_url' => base_url() . CAPTCHA_PATH,
-            'img_height' => 66
+            'img_height' => 66,
+            'img_width' => 225
         );
         # Generate the captcha
         $captcha = create_captcha($vals);
