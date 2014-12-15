@@ -3396,6 +3396,9 @@ h1.x2large {
 	font-size: 17px;
 	font-style: italic;
 }
+.form-contact .btn-primary {
+	font-size: 25px;
+}
 .captcha {
 	float: left;
 	margin-left: 15px;
@@ -3408,6 +3411,6 @@ h1.x2large {
 	color: #000;
 }
 .input-captcha {
-	width: 300px;
+	width: 290px;
 	float: left;
 }
