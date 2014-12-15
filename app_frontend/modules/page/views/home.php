@@ -27,7 +27,7 @@
                 <a <?=$banner['banner_uri'] ? 'href="' . $banner['banner_uri'] . '"' : '';?> <?=$banner['new_window'] ? 'target="_blank"' : '';?>><img src="<?=base_url() . $banner_image['full_path'];?>" data-upload-id="<?=$banner_image['upload_id'];?>" data-img="<?=base_url() . $banner_image['full_path'];?>" alt="<?=$banner_image['orig_name'];?>" title="<?=$banner_image['orig_name'];?>" class="superbox-img"></a>
                 
                 <div class="container">
-                    <div class="col-xs-6 banner-caption">
+                    <div class="col-xs-6 banner-caption hidden-xs">
                         <h1><?=$banner['name'];?></h1>
                         <h4><?=$banner['caption'];?> <i class="fa fa-map-marker"></i></h4>
                     </div>
