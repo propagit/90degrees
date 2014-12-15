@@ -8,7 +8,7 @@
         #map-canvas { height: 100% }
     </style>
     <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCJLXHwzgv6qUZ8qtQhYvKm03173zJ2kyQ&sensor=false">
+    src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBhFF24SOwCt4JgrzQY6T9Wv7oEjzUXh38&sensor=false">
     </script>
     <script type="text/javascript">
         var geocoder;
