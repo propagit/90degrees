@@ -1,4 +1,4 @@
-<form id="form-<?=$form['form_id'];?>">
+<form id="form-<?=$form['form_id'];?>" class="form-contact">
 <input type="hidden" name="form_id" value="<?=$form['form_id'];?>">
 <? foreach($fields as $field) { echo modules::run('form/field', $field); } ?>
 

@@ -3385,6 +3385,17 @@ h1.x2large {
 }
 
 
+.form-contact {
+
+}
+.form-contact label {
+	display: none;
+}
+.form-contact .form-control {
+	font-family: "PT Serif",serif;
+	font-size: 17px;
+	font-style: italic;
+}
 .captcha {
 	float: left;
 	margin-left: 15px;
