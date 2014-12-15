@@ -9,7 +9,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="row userInfo">
         <div class="col-xs-12 col-sm-12">
-          <h1 class="title-big text-center section-title-style2">
+          <h1 class="title-big section-title-style2">
             <span >
               <?=$page['title'];?>
             </span>

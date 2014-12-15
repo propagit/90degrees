@@ -1501,7 +1501,6 @@ legend {
 	position: relative;
 }
 .style2 .section-title:after, .section-title-style2:after, .section-title.style2:after, .section-title-style2:after {
-	background: #DDDDDD;
 	content: "";
 	display: block;
 	height: 1px;
@@ -1514,7 +1513,6 @@ legend {
 .section-title-style2 span, .section-title.style2 span {
 	background: #FFFFFF;
 	display: inline-block;
-	padding: 10px;
 	position: relative;
 	width: auto;
 	z-index: 2;
@@ -2873,7 +2871,7 @@ tr.CartProduct td {
 	padding: 150px 0;
 }
 .title-big {
-	font-size: 48px;
+	font-size: 75px;
 	font-weight: bold;
 	margin-bottom: 15px;
 }
