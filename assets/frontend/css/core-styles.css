@@ -1400,6 +1400,9 @@ tr.CartProduct td{
 	.tiles-bg img{
 		width:100%;	
 	}
+	.offset{
+		margin-top:0;
+	}	
 	
 }
 
