@@ -47,6 +47,14 @@ class Product extends MX_Controller {
 		}
 	}
 	
+	function thumbnail($product_id)
+	{
+		$images = $this->product_model->get_images($product_id);
+		if (count($images) > 0) {
+			return 'uploads/thumbnails/' . $images[0]['file_name'];
+		}
+	}
+	
 	function category($category = "")
 	{
 		$data['parent_categories'] = $this->category_model->get_parent_categories();	

@@ -35,7 +35,11 @@ class Page extends MX_Controller {
 
 	function get_tiles_feature_image($feature_image_id)
 	{
-		return $this->tiles_model->get_feature_image($feature_image_id);
+		$feature_image = $this->tiles_model->get_feature_image($feature_image_id);
+		if($feature_image){
+			return $feature_image;	
+		}
+		return false;
 	}
 
 	function details($slug = '')

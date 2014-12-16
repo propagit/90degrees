@@ -37,8 +37,11 @@ class Tiles_model extends CI_Model {
 	}
 	
 	function get_feature_image($feature_image_id) {
-		$sql = "SELECT u.* FROM uploads u 
-				WHERE u.upload_id = $feature_image_id";
+		$sql = "SELECT u.* FROM upload_objects t
+					LEFT JOIN uploads u ON u.upload_id = t.upload_id
+				WHERE object_name = 'tile_image'
+				AND t.status > " . TRASHED . "
+				AND u.upload_id = $feature_image_id";
 		$query = $this->db->query($sql);
 		return $query->first_row('array');
 	}

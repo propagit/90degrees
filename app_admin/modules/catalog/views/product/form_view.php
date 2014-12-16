@@ -212,7 +212,8 @@
 									# Uploading options
 									array(
 										'name' => 'product_image',
-										'allowed_extensions' => array(array('title' => 'Image files', 'extensions' => 'jpg,gif,png'))
+										'allowed_extensions' => array(array('title' => 'Image files', 'extensions' => 'jpg,gif,png')),
+										'resize_params' => array('width' => 768,	'height' => 768)
 									),
 									# Javascript callback function
 									'add_product_images(' . $product['product_id'] . ')');?>

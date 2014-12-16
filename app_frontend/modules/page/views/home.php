@@ -52,18 +52,17 @@
 		 <?php 
 	  	if($tiles){ 
 	  		foreach($tiles as $tile){
-				if($tile['feature_image_id']){
-					$tile_image = modules::run('page/get_tiles_feature_image',$tile['feature_image_id']);
-				}else{
+				$tile_image = modules::run('page/get_tiles_feature_image',$tile['feature_image_id']);
+				if(!$tile_image){
 					$tile_image = modules::run('page/get_tiles_first_image',$tile['tile_id']);
 				}
 	 	 ?>
          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 remove-gutters tiles">
          	<div class="col-xs-12 remove-gutters">
         	<a <?=$tile['tile_uri'] ? 'href="' . base_url() . 'our-work/' . $tile['tile_uri'] . '"' : '';?> <?=$tile['new_window'] ? 'target="_blank"' : '';?>>
-                <div class="tiles-bg" style="background-image: url('<?=base_url() . substr($tile_image['full_path'],2);?>');">
+                <div class="tiles-bg" style="background-image: url('<?=base_url() . 'uploads/thumbnails/' . $tile_image['file_name'];?>');">
                 	<span class="hidden-xs">&nbsp;</span>
-                	<img class="visible-xs" src="<?=base_url() . substr($tile_image['full_path'],2);?>" >
+                	<img class="visible-xs" src="<?=base_url() . 'uploads/thumbnails/' . $tile_image['file_name'];?>" >
                 </div>
                 <div class="tiles-caption fadeout">
                     <h1><?=$tile['name'];?></h1>

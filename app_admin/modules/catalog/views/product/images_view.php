@@ -14,7 +14,6 @@
 <script>
 $(function(){
 	$('.superbox').SuperBox();
-	
 })
 function delete_image() {
 	var src = $('.superbox-current-img').attr('src');
