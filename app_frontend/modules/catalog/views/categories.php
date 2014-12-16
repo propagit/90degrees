@@ -67,6 +67,10 @@
               <div class="product">
                 <div class="image"> <a href="<?=base_url();?>product/<?=$product['uri_path'];?>"><img src="<?=base_url() . modules::run('catalog/product/image', $product['product_id']);?>" alt="img" class="img-responsive"></a>
                 </div>
+                <!--<a href="<?=base_url();?>product/<?=$product['uri_path'];?>">
+                <div style="background-image:url('<?=base_url() . modules::run('catalog/product/image', $product['product_id']);?>'); background-position:center center; height:268px; width:268px; background-size:cover; overflow:hidden;"></div>
+                </a>-->
+                
                 <div class="description">
                   <h4><a href="product-details.html"><?=$product['name'];?></a></h4>
                   <p><?=$product['short_desc'];?></p>

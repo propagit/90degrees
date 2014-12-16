@@ -81,7 +81,7 @@
 
 <script>
 // fix nav
-var nav_y = $('#top-navbar').offset().top;
+var nav_y = $('#top-navbar').offset().top - $('#top-navbar').height();
 var nav_mob_y = $('#top-navbar-mob').offset().top;
 $(document).scroll(function() {
 	scroll_fix_nav(nav_y);
@@ -203,10 +203,10 @@ function menu_cart_items(){
 function scroll_fix_nav(nav_pos){
 	var y = $(this).scrollTop();
 	if (y >= nav_pos) {
-		$('#top-navbar').addClass('fixed');
+		$('#top-navbar').addClass('fixed').children().removeClass('container');
 		$('#scroll-nav-logo').show();
 	} else {
-		$('#top-navbar').removeClass('fixed');
+		$('#top-navbar').removeClass('fixed').children().addClass('container');
 		$('#scroll-nav-logo').hide();
 	}
 }

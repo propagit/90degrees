@@ -170,12 +170,12 @@
 
   <header>
     <div id="header" class="container">
-      <div class="col-md-4 col-sm-4 hidden-xs">
+      <div class="col-md-4 col-sm-4 hidden-xs remove-gutters">
           <a class="remove-left-gutter" href="<?=base_url();?>">
               <img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
           </a>
         </div>
-        <div class="col-md-8 col-sm-8">
+        <div class="col-md-8 col-sm-8 remove-gutters">
           <h1 class="slogan">ART - MURALS - EVENTS</h1>
             <span class="slogan">graffiti artists for hire  -  events, retail, residential and corporate street art</span>
           <div class="header-social">
@@ -186,17 +186,19 @@
     </div>
 
     <div id="top-navbar" class="hidden-xs">
-        <div class="top-nav-wrap">
-            <div class="container">
-                <div class="navbar-collapse collapse">
-                	<a id="scroll-nav-logo" class="remove-left-gutter" href="<?=base_url();?>">
-                        <img src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
-                    </a>
-                    <!-- top-menu -->
-                    <div class="top-nav">
-                        <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => current_url()));?>
-                    </div>
-                </div><!--/.nav-collapse -->
+    	<div class="container">
+            <div class="top-nav-wrap">
+                <div class="container">
+                    <div class="navbar-collapse collapse">
+                        <a id="scroll-nav-logo" class="remove-left-gutter" href="<?=base_url();?>">
+                            <img src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
+                        </a>
+                        <!-- top-menu -->
+                        <div class="top-nav">
+                            <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => current_url()));?>
+                        </div>
+                    </div><!--/.nav-collapse -->
+                </div>
             </div>
         </div>
     </div>
