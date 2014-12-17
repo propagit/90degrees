@@ -31,7 +31,7 @@ class Tiles_ajax extends MX_Controller {
 		$tile_data = array(
 			'name' => $input['name'],
 			'tile_uri' => $input['tile_uri'],
-			'new_window' => isset($input['new_window']) ? 1 : 0,
+			'new_window' => $input['new_window'],
 			'content' => $input['content_text'],
 			'short_desc' => $input['short_desc']
 		);
@@ -79,7 +79,7 @@ class Tiles_ajax extends MX_Controller {
 		$tile_data = array(
 			'name' => $input['name'],
 			'tile_uri' => $input['tile_uri'],
-			'new_window' => isset($input['new_window']) ? 1 : 0,
+			'new_window' => $input['new_window'],
 			'content' => $input['content_text'],
 			'short_desc' => $input['short_desc']
 		);
