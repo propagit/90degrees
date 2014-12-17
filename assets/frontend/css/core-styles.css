@@ -127,10 +127,11 @@ table,td,th,tr{
 	color:#363737;	
 }
 p{
-	font-size:17px;
+	font-size:16px;
 	line-height:21px;
 	font-style:italic;	
 	font-weight:100;
+	margin-bottom: 21px;
 }
 h1{
 	text-transform:uppercase;
@@ -604,12 +605,6 @@ p.contact-us{
 	font-size:25px;
 	font-weight:100;
 	display:inline;
-}
-#toggle-job-info p,
-.job-info p{
-	font-size:17px;
-	line-height:21px;
-	font-weight:400;	
 }
 #toggle-job-info{
 	position: relative;
