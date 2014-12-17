@@ -81,11 +81,9 @@
 
 <script>
 // fix nav
-var nav_y = $('#top-navbar').offset().top - $('#top-navbar').height();
-var nav_mob_y = $('#top-navbar-mob').offset().top;
 $(document).scroll(function() {
-	scroll_fix_nav(nav_y);
-	scroll_fix_mob_nav(nav_mob_y);
+	scroll_fix_nav();
+	scroll_fix_mob_nav();
 });
 
 $(function(){
@@ -200,9 +198,10 @@ function menu_cart_items(){
 }
 
 
-function scroll_fix_nav(nav_pos){
+function scroll_fix_nav(){
+	var header_height = $('#header').height();
 	var y = $(this).scrollTop();
-	if (y >= nav_pos) {
+	if (y >= header_height) {
 		$('#top-navbar').addClass('fixed').children().removeClass('container');
 		$('#scroll-nav-logo').show();
 	} else {
@@ -211,9 +210,10 @@ function scroll_fix_nav(nav_pos){
 	}
 }
 
-function scroll_fix_mob_nav(nav_pos){
+function scroll_fix_mob_nav(){
+	var header_height = $('#header').height();
 	var y = $(this).scrollTop();
-	if (y > nav_y) {
+	if (y > header_height) {
 		$('#top-navbar-mob').addClass('fixed');
 	} else {
 		$('#top-navbar-mob').removeClass('fixed');

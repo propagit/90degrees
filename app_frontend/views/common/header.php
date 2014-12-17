@@ -188,7 +188,8 @@
     <div id="top-navbar" class="hidden-xs">
     	<div class="container">
             <div class="top-nav-wrap">
-                <div class="container">
+            	<div class="row">
+              		  <div class="container">
                     <div class="navbar-collapse collapse">
                         <a id="scroll-nav-logo" class="remove-left-gutter" href="<?=base_url();?>">
                             <img src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
@@ -198,6 +199,7 @@
                             <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => current_url()));?>
                         </div>
                     </div><!--/.nav-collapse -->
+                </div>
                 </div>
             </div>
         </div>
