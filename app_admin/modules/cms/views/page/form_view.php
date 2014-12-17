@@ -166,14 +166,12 @@
 <script src="<?=base_url() . ASSETS_PATH;?>js/plugin/ckfinder/config.js"></script>
 
 
-
 <!-- SCRIPTS ON PAGE EVENT -->
 <script type="text/javascript">
 
 	var editor = CKEDITOR.replace( 'content_text' );
 
 	CKFinder.setupCKEditor( editor, '<?=base_url() . ASSETS_PATH;?>js/plugin/ckfinder/' );
-	
 	pageSetUp();	
 	
 	var pagefunction = function() {

@@ -14,10 +14,10 @@
               <?=$page['title'];?>
             </span>
           </h1>
-
-          <p class="lead text-center">
-            <?php echo isset($page['content']) ? $page['content'] : ''; ?>
-          </p>
+		  
+          <div class="page-content">	
+             <?php echo isset($page['content']) ? $page['content'] : ''; ?>
+          </div>
           <hr class="hr hr30">
         </div>
       </div>  <!--/row end-->

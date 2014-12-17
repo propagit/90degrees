@@ -9,7 +9,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.uiColor = '#AADC6E';
 	config.allowedContent = true;
 	config.extraPlugins = 'youtube';
-	
+    //config.extraPlugins = 'fontawesome';
 
 };
 
