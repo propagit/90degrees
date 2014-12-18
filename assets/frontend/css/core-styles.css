@@ -162,7 +162,7 @@ h3{
 	font-size:35px;	
 	font-weight:100;
 	padding-bottom:0;
-	line-height:38px;
+	line-height:30px;
 }
 h4{
 	font-size:28px;
@@ -1086,6 +1086,9 @@ tr.CartProduct td{
 	font-size:16px;
 	line-height:21px;
 	margin-bottom:21px;
+}
+p.sub-title{
+	margin-bottom:10px;	
 }
 .page-content h2{
 	font-size:40px;
