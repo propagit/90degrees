@@ -11,6 +11,7 @@ html{
 }
 /** Font Family */
 a,
+a:hover,
 span,
 input,select,textarea,
 table,td,th,tr,
