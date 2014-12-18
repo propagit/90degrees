@@ -56,6 +56,8 @@
 				if(!$tile_image){
 					$tile_image = modules::run('page/get_tiles_first_image',$tile['tile_id']);
 				}
+				# if image has not been uploaded yet don't show this tile.
+				if($tile_image){
 	 	 ?>
          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 remove-gutters tiles">
          	<div class="col-xs-12 remove-gutters">
@@ -72,7 +74,7 @@
             </div>
          </div>
       
-      <?php }} ?>
+      <?php }}} ?>
   </div>
   <!--/.featuredPostContainer--> 
 </div>

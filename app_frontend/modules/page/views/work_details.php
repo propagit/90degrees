@@ -9,7 +9,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="row userInfo">
         <div class="col-xs-12 col-sm-12">
-          <h1>
+          <h1 class="title-big">
               <?=$work['name'];?>
           </h1>
           <span class="slogan push-txt"><?=$work['short_desc'];?> <i class="fa fa-map-marker"></i></span>
@@ -32,7 +32,7 @@
                         foreach($work_gallery as $gallery){  
                   ?>
                     <div class="slider-item slider-item-img<?=$increment++;?> gallery-img-wrap text-center">
-                        <img src="<?=base_url() . $gallery['full_path'];?>" title="<?=$gallery['orig_name'];?>" >
+                        <img src="<?=base_url() . $gallery['full_path'];?>" title="<?=$gallery['orig_name'];?>">
                     </div>
                     
                   <?php }} ?>
@@ -41,11 +41,13 @@
             </div><!--/.banner style1-->
             <ul id="pager2" class="container gallery-pager"></ul>
             
-            <div id="toggle-job-info" class="pointer push fw">
-            	<i class="fa fa-info-circle"></i> <h4>JOB INFO</h4>
+            <div id="toggle-job-info" class="job-info-btn-bg pointer push">
+            	<div class="job-info-btn"><i class="fa fa-info-circle"></i> <h4>JOB INFO</h4></div>
+                <div class="job-info-btn primary-color" style="display:none;"><i class="fa fa-minus-square-o"></i><h4>HIDE</h4></div>
             </div>
             
             <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 remove-gutters job-info hide">
+            
             	<?=$work['content'];?>
                 
                 <div class="share-icons">

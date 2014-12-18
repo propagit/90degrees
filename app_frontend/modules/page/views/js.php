@@ -46,6 +46,8 @@ $(function(){
 	// tiles caption
 	$('#toggle-job-info').click(function(){
 		$('#job-info').toggle().removeClass('hide').addClass('fadein');
+		$('.job-info-btn').toggle();
+		$(this).toggleClass('job-info-btn-bg');
 		 $('html, body').animate({
 			scrollTop: $("#job-info").offset().top
 		}, 1000);

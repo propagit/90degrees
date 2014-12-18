@@ -169,8 +169,8 @@
 
 
   <header>
-    <div id="header" class="container">
-      <div class="col-md-4 col-sm-4 hidden-xs remove-gutters">
+    <div id="header" class="container hidden-xs">
+      <div class="col-md-4 col-sm-4 remove-gutters">
           <a class="remove-left-gutter" href="<?=base_url();?>">
               <img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
           </a>

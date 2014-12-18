@@ -66,9 +66,11 @@ span.slogan,
 .job-info h4,
 .share-icons a,
 .tiles a,
-.tiles a:hover{
+.tiles a:hover,
+.primary-color{
   color:#1a1a1a;
 }
+
 
 .share-icons a:hover{
 	color:#1a1a1a;		
@@ -212,8 +214,10 @@ p.contact-us{
 	top: 0;
 	z-index: 2500;
 	background-color: #fff;	
-	padding-bottom:5px;
-	padding-top:5px;
+	/*padding-bottom:5px;*/
+}
+#top-navbar{
+	padding-top:5px;	
 }
 
 .offset{
@@ -274,7 +278,7 @@ p.contact-us{
 }
 #scroll-nav-logo{
 	position: absolute;
-	top: 10px;
+	top: 5px;
 	margin-left:0 !important;
 	display:none;
 	margin-left:4% !important;
@@ -305,6 +309,10 @@ p.contact-us{
 
 .fixed .top-nav-wrap{
 	width:100%;	
+	border-top:0;
+	margin-top:-5px;
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.5);
+	border-bottom: 1px solid rgba(26,26,26,0.5);
 }
 
 
@@ -600,6 +608,11 @@ p.contact-us{
 .job-info{
 	padding-top:70px;	
 }
+.toggle-job-info .fa{
+	font-size:20px;	
+	margin-right:5px;
+	margin-bottom:50px;
+}
 #toggle-job-info h4,
 .job-info h4{
 	font-size:25px;
@@ -608,7 +621,6 @@ p.contact-us{
 }
 #toggle-job-info{
 	position: relative;
-	background-color: #887d79;
 	width: 100px;
 	text-align: center;
 	border-radius: 0 0 4px 4px;
@@ -617,9 +629,23 @@ p.contact-us{
 	color: #fff;
 	z-index: 2000;
 	margin-top: -42px;
+	border-top:none;
+	border-left:1px solid #191919;
+	border-bottom:1px solid #191919;
+	border-right:1px solid #191919;
 }
-#toggle-job-info .fa-info-circle{
-	font-size:25px;	
+.hide-job-info{
+	border-color:#191919;	
+}
+.job-info-btn .fa{
+	font-size: 24px;
+}
+.job-info-btn .fa-minus-square-o{
+	margin-right: 5px;		
+}
+.job-info-btn-bg{
+	background-color: #191919;	
+	border:none !important;
 }
 
 .gallery{
@@ -637,9 +663,11 @@ p.contact-us{
 	margin:2px !important;	
 }
 .gallery-img-wrap{
-	background-color:#dcd9d7;
+	background-color:#fcfcfc;
 }
-
+.gallery-img-wrap img{
+	width:auto;	
+}
 h2.block-title-2, 
 .formBox h3, 
 .block-title-2{
@@ -789,7 +817,7 @@ span.add2cart{
 }
 .btn-primary{
 	background-color: #fff !important;
-	border-color: #2e3838 !important;
+	border-color: #fff !important;
 	border-width: 1px;
 	border-style: solid;
 }
@@ -1366,6 +1394,9 @@ tr.CartProduct td{
 	.mob-nav-box{
 		margin-top:15px;	
 	}
+	.mob-navbar-collapse .navbar-nav{
+		border-top:1px solid #1a1a1a;	
+	}
 	.mob-navbar-collapse .navbar-nav > li > a{
 		font-size: 26px;
 		line-height: 26px;	
@@ -1451,7 +1482,9 @@ tr.CartProduct td{
 	.offset{
 		margin-top:0;
 	}	
-	
+	.gallery-img-wrap img{
+		width:100%;	
+	}
 }
 
 
