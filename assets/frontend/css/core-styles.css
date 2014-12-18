@@ -47,6 +47,7 @@ p span,
 .tiles-caption h4,
 .form-group label{
 	font-family: 'PT Serif', serif;
+	text-transform:none;
 }
 
 /** Text Colors */
