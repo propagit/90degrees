@@ -11,7 +11,6 @@ html{
 }
 /** Font Family */
 a,
-a:hover,
 span,
 input,select,textarea,
 table,td,th,tr,
@@ -68,7 +67,9 @@ span.slogan,
 .share-icons a,
 .tiles a,
 .tiles a:hover,
-.primary-color{
+.primary-color,
+a,
+a:hover{
   color:#1a1a1a;
 }
 
