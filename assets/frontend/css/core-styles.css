@@ -326,7 +326,7 @@ p.contact-us{
 
 /** Mob Nav */
 .mob-nav-btn{
-	padding: 7px 15px !important;
+	padding: 7px 0 !important;
 	font-size: 26px;
 	margin:0;
 }
