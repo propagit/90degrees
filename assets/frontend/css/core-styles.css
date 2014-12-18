@@ -28,6 +28,7 @@ h1,h2,h4,h3,h5,h6,
 .pagination-alt > li > span,
 .footer{
 	font-family:'Dharma', sans-serif;
+	text-transform:uppercase;
 }
 
 body,
@@ -734,7 +735,7 @@ input[type="email"]{
 .pagination-alt > li > a, 
 .pagination-alt > li > span{
 	border: none;
-	color: #2e3838;
+	color: #1a1a1a;
 	box-shadow: none;
 	padding: 6px;
 	font-size: 18px;
@@ -743,7 +744,7 @@ input[type="email"]{
 
 /** TEXT COLORS */
 .text-success{
-	color:#2e3838;
+	color:#1a1a1a;
 }
 .site-color{
 	color:#71bf44 !important;	
@@ -755,7 +756,7 @@ p.success div.success{
 
 /** BUTTONS AND ICONS */
 .btn{
-	color: #2e3838;
+	color: #1a1a1a;
 }
 .btn-addcart{
 	width: 205px;
@@ -784,20 +785,20 @@ p.success div.success{
 }
 .cart-actions .wishlist:hover,
 .btn-checkout:hover{
-	color:#2e3838;	
+	color:#1a1a1a;	
 }
 .cart-actions button:hover{
-	color:#2e3838;	
+	color:#1a1a1a;	
 }
 .action-control a,
 .action-control a:hover, 
 .action-control a.active{
 	background-color:#71bf44;
 	border-color:#71bf44;
-	color:#2e3838;
+	color:#1a1a1a;
 }
 span.add2cart{
-	color: #2e3838;
+	color: #1a1a1a;
 	font-size: 14px;
 	font-weight: 700;
 }
@@ -808,13 +809,13 @@ span.add2cart{
 }
 .btn-success{
 	background-color:#fff !important;
-	border-color:#2e3838 !important;
+	border-color:#1a1a1a !important;
 	border-style: solid;
 	border-width: 1px;
 }
 .btn-primary{
 	background-color: #fff !important;
-	border-color: #fff !important;
+	border-color: #1a1a1a !important;
 	border-width: 1px;
 	border-style: solid;
 }
@@ -929,7 +930,10 @@ span.add2cart{
 .category-top{
 	padding-bottom:50px;	
 }
-
+.panel .nav-stacked.tree > li a:hover{
+	font-weight:100;
+	color:#1a1a1a;
+}
 /** TABLES */
 .cartTable{
 	border-top:none;	
@@ -987,7 +991,7 @@ tr.CartProduct td{
 	width:164px !important;	
 }
 .price{
-	color: #2e3838;
+	color: #1a1a1a;
 	font-size: 30px;
 	margin-bottom: 10px;
 	font-weight: 700;
@@ -1195,15 +1199,15 @@ tr.CartProduct td{
 }
 .item h4 a{
 	font-style: normal;
-	font-size: 18px;
-	font-weight: 700;
-	color: #2e3838;		
+	font-size: 25px;
+	font-weight: 100;
+	color: #1a1a1a;	
 }
 .description{
 	min-height:70px;	
 }
 .description p{
-	color: #2e3838;
+	color: #1a1a1a;
 	font-size: 18px;
 	min-height: 55px;
 	max-height: 90px;
@@ -1312,6 +1316,10 @@ tr.CartProduct td{
 	}	
 	#scroll-nav-logo img{
 		width:80%;	
+	}
+	.top-nav .nav li a{
+		padding-left:40px;
+		padding-right:40px;	
 	}
 }
 @media (max-width: 1024px){

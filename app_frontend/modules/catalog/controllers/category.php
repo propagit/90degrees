@@ -71,7 +71,7 @@ class Category extends MX_Controller {
 		
 		$this->load->view('common/header', isset($data) ? $data : NULL);
 		$this->load->view('catalog/categories', isset($data) ? $data : NULL);
-		$data['add_js'] = $this->load->view('catalog/js', isset($data) ? $data : NULL, true);
+		$data['add_js'] = $this->load->view('catalog/category_js', isset($data) ? $data : NULL, true);
 		$this->load->view('common/footer', isset($data) ? $data : NULL);
 	}
 		
