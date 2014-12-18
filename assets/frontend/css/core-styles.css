@@ -1380,6 +1380,7 @@ tr.CartProduct td{
 	
 	.top-nav-wrap{
 		padding:10px 0;	
+		border-top:none;
 	}
 	.navbar-brand img{
 		height:51px;
