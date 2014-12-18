@@ -1,14 +1,14 @@
-<div class="container main-container headerOffset"> 
+<div class="container main-container"> 
   
   <!-- Main component call to action -->
   
  <?php #echo $breadcrumb;?>
   
-  <div class="row">
+  <div class="row innerPage">
   
     <div class="col-xs-12">
   	  <div class="w100 clearfix category-top">
-        	<h1> SHOP 90 DEGREES</h1>
+        	<h1 class="title-big"> SHOP 90 DEGREES</h1>
         	<?php echo modules::run('cart/get_mini_cart');?>
       </div><!--/.category-top-->
     </div>
