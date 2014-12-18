@@ -1,4 +1,4 @@
-<div class="container main-container headerOffset">
+<div class="container main-container">
   <?php // echo $breadcrumb;?>
   
   

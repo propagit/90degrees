@@ -279,9 +279,7 @@ p.contact-us{
 #scroll-nav-logo{
 	position: absolute;
 	top: 5px;
-	margin-left:0 !important;
 	display:none;
-	margin-left:4% !important;
 	line-height:63px;
 }
 #scroll-nav-logo img{
@@ -1308,16 +1306,12 @@ tr.CartProduct td{
 	.tiles-bg{
 		min-height:305px;	
 	}	
-	#scroll-nav-logo{
-		margin-left:1% !important;	
-	}
 	#scroll-nav-logo img{
 		width:80%;	
 	}
 }
 @media (max-width: 1024px){
 	#scroll-nav-logo{
-		margin-left:5% !important;	
 		line-height:47px;
 	}
 	#scroll-nav-logo img{
