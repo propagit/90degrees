@@ -1088,6 +1088,18 @@ tr.CartProduct td{
 	line-height:21px;
 	margin-bottom:21px;
 }
+.contact-us p{
+	font-size:17px;	
+}
+.form-label-info p{
+	padding-left:15px;	
+}
+.contact-us  .fa{
+	font-size:22px;	
+}
+.form-contact .form-control{
+	text-transform:none;
+}
 p.sub-title{
 	margin-bottom:10px;	
 }
