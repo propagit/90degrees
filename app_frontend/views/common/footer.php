@@ -83,7 +83,7 @@
 // fix nav
 $(document).scroll(function() {
 	scroll_fix_nav();
-	scroll_fix_mob_nav();
+	//scroll_fix_mob_nav();
 });
 
 $(function(){
