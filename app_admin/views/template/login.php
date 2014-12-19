@@ -72,7 +72,7 @@
                       <label class="label">Username</label>
                       <div class="login-input">
                       <label class="input"> <i class="icon-append fa fa-user"></i>
-                          <input type="text" name="username">
+                          <input class="login-txt" type="text" name="username">
                           <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter your username</b></label>
                       </div>
                   </section>
@@ -81,7 +81,7 @@
                       <label class="label">Password</label>
                       <div class="login-input">
                       <label class="input"> <i class="icon-append fa fa-lock"></i>
-                          <input type="password" name="password">
+                          <input class="login-txt" type="password" name="password">
                           <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b> </label>
                       </div>
                   </section>
@@ -129,7 +129,19 @@
 		<script>
 		$(function(){
 			$('#btn-login').click(function(){
-				$.ajax({
+				login();
+			});
+			
+			$('.login-txt').keypress(function(e){
+				 if(e.keyCode == 13 || e.which == 13) {
+				 	login();
+			  	}
+			});
+
+		});
+		
+		function login(){
+			$.ajax({
 					type: "POST",
 					url: '<?=ajax_url();?>login/validate_admin',
 					data: $('#login-form').serialize(),
@@ -140,10 +152,8 @@
 							window.location.replace('<?=base_url()?>admin');
 						}
 					}
-				});
-			});
-
-		});
+				});	
+		}
 		</script>
 
 	</body>
