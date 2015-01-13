@@ -675,6 +675,11 @@ h2.block-title-2,
 	font-size: 18px;
 	padding-bottom: 5px;
 }
+.cms-services-box{
+	padding-right: 30px;
+	padding-bottom: 30px;	
+}
+
 
 /** FORM ELEMENTS */
 input[type="text"], 
