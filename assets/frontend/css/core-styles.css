@@ -676,9 +676,15 @@ h2.block-title-2,
 	padding-bottom: 5px;
 }
 .cms-services-box{
-	padding-right: 30px;
-	padding-bottom: 30px;	
-	margin-left:-6px;
+	padding-bottom: 30px;
+}
+.cms-services-box:nth-child(odd){
+	padding-right:15px;
+	padding-left:0 !important;
+}
+.cms-services-box:nth-child(even){
+	padding-left:15px !important;
+	padding-right:0 !important;
 }
 
 
