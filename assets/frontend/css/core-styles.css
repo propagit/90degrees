@@ -1526,6 +1526,9 @@ p.sub-title{
 	.gallery-img-wrap img{
 		width:100%;	
 	}
+	.cms-services-box:nth-child(even){
+		margin-left:-4px;	
+	}
 }
 
 
