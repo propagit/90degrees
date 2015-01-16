@@ -14,7 +14,7 @@
               <?=$page['title'];?>
             </span>
           </h1>
-		  
+		  <span class="slogan">graffiti artists for hire <i class="fa fa-map-marker"></i> australia</span>
           <div class="page-content">	
              <?php echo isset($page['content']) ? $page['content'] : ''; ?>
           </div>

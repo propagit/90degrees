@@ -45,7 +45,10 @@ p span,
 .job-info p,
 .banner-caption h4,
 .tiles-caption h4,
-.form-group label{
+.form-group label,
+.custom-page-ul li > span,
+.custom-page-ul h2,
+.custom-page-ul li{
 	font-family: 'PT Serif', serif;
 	text-transform:none;
 }
@@ -584,6 +587,45 @@ p.contact-us{
 }
 .tiles{
 	overflow:hidden;
+}
+.innerPage .slogan{
+	float: left;
+	margin-top: -20px;
+	position: relative;
+	z-index: 100;	
+}
+.custom-page-ul{
+	width:75%;
+	margin-top:22px;
+	
+}
+.custom-page-ul h2{
+	display:inline;
+	font-size:30px !important;
+	font-style:italic !important;
+	text-transform:none !important;
+}
+.custom-page-ul li{
+	margin-left:80px;
+	font-style:italic;
+	font-size:17px;
+	line-height:19px;
+	padding-bottom:55px;	
+}
+.custom-page-ul li > span{
+	width: 47px;
+	height: 47px;
+	border-radius: 50%;
+	background-color: #000;
+	color: #fff;
+	display:inline-block;
+	text-align: center;
+	line-height: 47px;
+	position: absolute;
+	margin-left: -80px;
+	font-style: italic;
+	font-size: 28px;
+	font-weight: 100;
 }
 
 .tiles-bg{
