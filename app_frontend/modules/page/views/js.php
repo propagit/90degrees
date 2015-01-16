@@ -6,7 +6,7 @@
 $(function(){
 
 	// Contact 
-	$('#btn-contac-us').click(function(){
+	/*$('#btn-contac-us').click(function(){
 
 		$.ajax({
 			type: "POST",
@@ -32,8 +32,8 @@ $(function(){
 			}
 		});
 
-	});
-	
+	});*/
+
 	
 	// tiles caption
 	$('.tiles').mouseover(function(){

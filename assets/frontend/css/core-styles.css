@@ -629,7 +629,33 @@ p.contact-us{
 	font-weight: 100;
 	margin-top:-8px;
 }
-
+.innerPage .nav-tabs{
+	border-bottom:1px solid #1a1a1a !important;	
+}
+.innerPage .nav-tabs > li > a{
+	border:1px solid #1a1a1a !important;	
+	font-size: 24px;
+	padding: 10px;
+	line-height: 18px;
+	text-transform:uppercase !important;
+	letter-spacing:normal;
+}
+.innerPage .nav-tabs > li.active > a, 
+.innerPage .nav-tabs > li.active > a:hover, 
+.innerPage .nav-tabs > li.active > a:focus, 
+.innerPage .nav-tabs > li:hover > a{
+	background:#fff !important;
+	color:#1a1a1a !important;	
+	border-bottom:none !important;
+	padding-bottom:11px;
+}
+.innerPage .tab-pane .contact-msg{
+	margin-top: -202px;
+	padding-bottom: 100px;
+}
+.form-label-info{
+	margin-top:90px;	
+}
 .tiles-bg{
 	width:100%;	
 	background-size: cover;
