@@ -604,12 +604,13 @@ p.contact-us{
 	font-size:30px !important;
 	font-style:italic !important;
 	text-transform:none !important;
+	line-height:30px !important;
 }
 .custom-page-ul li{
 	margin-left:80px;
 	font-style:italic;
 	font-size:17px;
-	line-height:19px;
+	line-height:22px;
 	padding-bottom:55px;	
 }
 .custom-page-ul li > span{
