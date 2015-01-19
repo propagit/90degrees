@@ -1,7 +1,5 @@
 <!-- include custom script for only homepage  -->
 <script src="<?=base_url() . ASSETS;?>js/home.js"></script>
-
-
 <script>
 $(function(){
 
@@ -55,6 +53,7 @@ $(function(){
 	
 	
 });	//	Ready
+
 
 
 </script>

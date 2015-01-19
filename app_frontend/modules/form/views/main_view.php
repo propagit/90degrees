@@ -14,13 +14,15 @@
 </div>
 <? } ?>
 
-<button type="button" class="btn btn-primary btn-form-submit" data-form-id="<?=$form['form_id'];?>" onclick="submit_form()" data-loading-text="Submitting...">Submit</button>
+<button type="button" class="btn btn-primary btn-form-submit" data-form-id="<?=$form['form_id'];?>" onclick="submit_form('<?=$form['form_id']?>')" data-loading-text="Submitting...">Submit</button>
 </form>
 
 <script>
-function submit_form() {
-    ajax_submit_form('form-<?=$form['form_id'];?>', '<?=base_url();?>form/form_ajax/submit', function(e){
-        alert(e);
+function submit_form(form_id) {
+    ajax_submit_form('form-'+form_id, '<?=base_url();?>form/form_ajax/submit', function(e){
+        //alert(e);
+		$('#site-msg').html('Thank you for your enquiry.<br>We will get back to you shortly');
+		$('#ModalSiteMsg').modal('show');
     });
 }
 </script>

@@ -47,5 +47,9 @@ class Form extends MX_Controller {
         $this->session->set_userdata('captcha_word', $captcha['word']);
         return $captcha;
     }
-
+	
+	function submit()
+	{
+		print_r($_POST);
+	}
 }

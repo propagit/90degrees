@@ -59,6 +59,9 @@
     };
 </script>
 <script src="<?=base_url() . ASSETS;?>js/pace.min.js"></script>
+
+<!-- this wont work if put in footer -->
+<script src="<?=base_url() . ASSETS;?>js/plupload/plupload.full.min.js"></script>
 </head>
 
 <body>

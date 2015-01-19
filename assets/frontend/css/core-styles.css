@@ -1472,6 +1472,9 @@ p.sub-title{
 	.tiles-bg{
 		min-height:280px;	
 	}
+	.innerPage .tab-pane .contact-msg{
+		margin-top:-260px;	
+	}
 	
 	
 }
@@ -1598,6 +1601,12 @@ p.sub-title{
 	}
 	.cms-services-box:nth-child(even){
 		margin-left:-4px;	
+	}
+	.innerPage .tab-contact-wrap{
+		margin-top:202px;	
+	}
+	.innerPage .tab-pane .contact-msg{
+		margin-top:-202px;	
 	}
 }
 

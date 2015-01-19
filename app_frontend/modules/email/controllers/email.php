@@ -180,7 +180,7 @@ class Email extends MX_Controller {
 		  'smtp_host' => 'ssl://smtp.googlemail.com',
 		  'smtp_port' => 465,
 		  'smtp_user' => 'propagate.au@gmail.com', // change it to yours
-		  'smtp_pass' => 'morem0n3y', // change it to yours
+		  'smtp_pass' => 'm0r3m0n3Y', // change it to yours
 		  'mailtype' => 'html',
 		  'charset' => 'iso-8859-1',
 		  'wordwrap' => TRUE
@@ -247,13 +247,27 @@ class Email extends MX_Controller {
 			
 			
 		if($attachment){
-			$this->email->attach($attachment);
+			if(is_array($attachment)){
+				foreach($attachment as $attach){
+					$this->email->attach($attach);
+				}
+			}else{
+				$this->email->attach($attachment);	
+			}
 		}
+		/*if($attachment){
+			$this->email->attach('./uploads/forms/o_19c097fppdjd1uel4q21ntach9c.jpg');	
+		}*/
 		if($this->email->send()){
 		  	echo 'Email sent.';
 		}else{
 			show_error($this->email->print_debugger());
 		} 
+	}
+	
+	function test()
+	{
+		echo realpath(dirname(__FILE__));	
 	}
 	
 	

@@ -1,4 +1,4 @@
-<div class="form-group">
+ <div class="form-group">
     <label for="field-<?=$field['field_id'];?>">
         <?=$field['label'];?>
         <? if($field['required']) { ?><span class="text-danger">*</span><? } ?>
