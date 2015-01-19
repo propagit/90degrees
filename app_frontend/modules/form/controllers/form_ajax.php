@@ -55,7 +55,7 @@ class Form_ajax extends MX_Controller {
             return;
         }
 
-       /* $captcha_word = $this->session->userdata('captcha_word');
+        $captcha_word = $this->session->userdata('captcha_word');
         if ($captcha_word != $input['field-captcha']) {
             # User input error
             $errors[] = array('field' => 'field-captcha', 'msg' => 'Wrong code');
@@ -64,7 +64,7 @@ class Form_ajax extends MX_Controller {
                 'errors' => $errors
             ));
             return;
-        }*/
+        }
 
 
         if ($form['storing']) {
