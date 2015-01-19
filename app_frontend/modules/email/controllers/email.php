@@ -153,7 +153,13 @@ class Email extends MX_Controller {
 			$email_signature = $this->load->view('email_signature', isset($data) ? $data : NULL,true);
 			$this->email->message($message .'<br />' . $email_signature);
 			if($attachment){
-				$this->email->attach($attachment);
+				if(is_array($attachment)){
+					foreach($attachment as $attach){
+						$this->email->attach($attach);
+					}
+				}else{
+					$this->email->attach($attachment);	
+				}
 			}
 			$this->email->send();
 			$this->email->clear(true);	
