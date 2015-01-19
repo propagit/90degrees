@@ -22,6 +22,7 @@ function ajax_submit_form(form_id, post_url, callback) {
 					$('#' + form_id).find('[name="' + e.field + '"]').parent().addClass('has-error');
 					msg += e.msg+'<br>';
 				});
+				$('#' + form_id).removeClass('has-error');
 				$('#site-errors').html(msg);
 				$('#ModalSiteErrors').modal('show');
 
