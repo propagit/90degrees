@@ -14,8 +14,28 @@ class Form_ajax extends MX_Controller {
         $captcha = modules::run('form/generate_captcha');
         echo $captcha['image'];
     }
+	
+	function submit()
+	{
+		
+		$input = $this->input->post();
+        $form_id = $input['form_id'];
+        $form = $this->form_model->get_form($form_id);
+        $fields = $this->form_model->get_fields($form_id);
+		 
+		$captcha_word = $this->session->userdata('captcha_word');
+        if ($captcha_word != $input['field-captcha']) {
+            # User input error
+            $errors[] = array('field' => 'field-captcha', 'msg' => 'Wrong code');
+            echo json_encode(array(
+                'ok' => false,
+                'errors' => $errors
+            ));
+            return;
+        }	
+	}
 
-    function submit()
+    function _submit()
     {
         $input = $this->input->post();
         $form_id = $input['form_id'];
@@ -65,8 +85,7 @@ class Form_ajax extends MX_Controller {
             ));
             return;
         }
-
-
+		
         if ($form['storing']) {
             # Save to database
         }

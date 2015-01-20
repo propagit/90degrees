@@ -891,6 +891,7 @@ span.add2cart{
 	text-transform:uppercase;
 	line-height:1;
 	border-radius:8px;	
+	font-style:normal;
 }
 .btn-success{
 	background-color:#fff !important;

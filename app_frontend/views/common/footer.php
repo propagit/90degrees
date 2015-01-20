@@ -243,7 +243,18 @@ function delete_item_minicart(rowid){
 function scroll_top(){
 	$('html,body').animate({scrollTop:0},300);	
 }
+// custom function for forms that are in tab panels and has captcha
+$(function(){
+	refresh_captcha_on_active_tab();
+});
 
+function refresh_captcha_on_active_tab(){
+	var active_tab = $('.flare-cms-tab-content').children('.active');
+	var html_form_id = active_tab.find('form').attr('id');
+	var arr = html_form_id.split('-');
+	var db_form_id = arr[1];
+	refresh_captcha(db_form_id);	
+}
 </script>
 
 <!-- Modal Login start -->
