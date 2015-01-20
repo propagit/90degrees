@@ -15,7 +15,7 @@ class Form_ajax extends MX_Controller {
         echo $captcha['image'];
     }
 	
-	function submit()
+	/*function submit()
 	{
 		
 		$input = $this->input->post();
@@ -33,9 +33,9 @@ class Form_ajax extends MX_Controller {
             ));
             return;
         }	
-	}
+	}*/
 
-    function _submit()
+    function submit()
     {
         $input = $this->input->post();
         $form_id = $input['form_id'];
