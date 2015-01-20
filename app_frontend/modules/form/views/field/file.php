@@ -16,7 +16,7 @@
 </div>
 <input type="hidden" name="field-<?=$field['field_id'];?>" />
 <p class="up_file" id="uploaded_file_<?=$field['field_id'];?>" class="text-muted" style="margin:0;"></p>
-					
+<div style="clear:both;"></div>					
 <script>
 var uploader_<?=$field['field_id'];?> = new plupload.Uploader({
 	runtimes : 'html5,flash,silverlight,html4',

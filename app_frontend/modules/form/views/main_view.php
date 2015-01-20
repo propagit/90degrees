@@ -7,8 +7,8 @@
     <label for="field-captcha">CAPTCHA</label>
 
     <div class="row">
-        <div class="captcha" id="captcha-img"><? echo $captcha['image'];?></div>
-        <div class="btn btn-default btn-refresh-captcha" onclick="refresh_captcha()"><i class="fa fa-refresh"></i></div>
+        <div class="captcha" id="captcha-img-<?=$form['form_id'];?>"><? echo $captcha['image'];?></div>
+        <div class="btn btn-default btn-refresh-captcha" onclick="refresh_captcha(<?=$form['form_id'];?>)"><i class="fa fa-refresh"></i></div>
         <div class="input-captcha"><input id="field-captcha" name="field-captcha" class="form-control" placeholder="* Enter code to submit message" /></div>
     </div>
 </div>

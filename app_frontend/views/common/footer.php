@@ -161,12 +161,12 @@ $(function(){
 	});
 
 })
-function refresh_captcha() {
+function refresh_captcha(form_id) {
     $.ajax({
         type: "POST",
         url: "<?=base_url();?>form/form_ajax/refresh_captcha",
         success: function(html) {
-            $('#captcha-img').html(html);
+            $('#captcha-img-'+form_id).html(html);
         }
     })
 }
