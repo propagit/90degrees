@@ -3412,3 +3412,6 @@ h1.x2large {
 	width: 290px;
 	float: left;
 }
+.form-radio-checkbox label{
+	display:block;	
+}

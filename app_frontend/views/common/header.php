@@ -178,10 +178,11 @@
               <img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
           </a>
         </div>
-        <div class="col-md-8 col-sm-8 remove-gutters">
-          <h1 class="slogan">ART - MURALS - EVENTS</h1>
-            <span class="slogan">graffiti artists for hire  -  events, retail, residential and corporate street art</span>
-          <div class="header-social">
+        <div class="col-md-8 col-sm-8 remove-gutters slogan-wrap">
+          <span class="slogan">90 DEGREES / GRAFFITI ARTISTS FOR HIRE</span>
+          <h1 class="slogan">MURALS - ART - EVENTS</h1>
+            
+          <div class="header-social hide">
               <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
               <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
             </div>

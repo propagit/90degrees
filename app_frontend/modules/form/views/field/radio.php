@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group form-radio-checkbox">
 	<label><?=$field['label'];?></label>
 
 	<?php $options = json_decode($field['options']);
