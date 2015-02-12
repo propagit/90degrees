@@ -182,9 +182,9 @@ class Tiles_ajax extends MX_Controller {
 	{
 		$tile_id = $this->input->post('tile_id');
 		$tile = $this->tiles_model->get_tile($tile_id);
-		$home_page_status = $tile['home_page'] ? 0 : 1;
+		$new_home_page_status = $tile['home_page'] ? 0 : 1;
 		
-		$updated = $this->tiles_model->update_tile($tile_id,array('home_page' => $new_status));
+		$updated = $this->tiles_model->update_tile($tile_id,array('home_page' => $new_home_page_status));
 		
 		if ($updated === true)
 		{
