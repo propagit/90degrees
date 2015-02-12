@@ -13,8 +13,9 @@ class Tiles_model extends CI_Model {
 		}
 	}	
 	
-	function get_tiles(){
+	function get_tiles($home_page = 1){
 		$this->db->where('status > ', 0);
+		$this->db->where('home_page',$home_page);
 		$query = $this->db->get('cms_tiles');
 		return $query->result_array();
 	}

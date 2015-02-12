@@ -66,4 +66,28 @@ class Common extends MX_Controller {
 		$data['params'] = $params;
 		$this->load->view('dd_action_pallet',isset($data) ? $data : NULL);
 	}
+	
+	function dd_action_palet_general($params)
+	{
+		# current fields - update per requirements
+		/*$params = array(
+					'status' => 'required',
+					'obj_id' => 'required',
+					'obj_type' => 'required - this is the table name'
+					'ul_class' => '',
+					'links' => array(
+								'label' => '',
+								'url' => '',
+								'id' => '',
+								'class' => '',
+								'attrs' => '',
+								'data' => ''
+								),
+					);*/
+		# the links parameter is now optional which is used to populate any additional action pallete
+		
+		$data['params'] = $params;
+		$this->load->view('dd_action_pallet_general',isset($data) ? $data : NULL);
+	}
+	
 }

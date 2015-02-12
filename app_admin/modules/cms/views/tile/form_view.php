@@ -118,7 +118,7 @@
                                             <section class="col col-6">
                                                 <label class="select">
                                                 <label class="input">
-													<input type="text" name="short_desc" maxlength="255" value="<?=(isset($tile)) ? $tile['short_desc'] : '';?>" />
+													<input type="text" name="short_desc" maxlength="255" value="<?=(isset($tile)) ? $tile['short_desc'] : '';?>" placeholder="location e.g. St Kilda Road" />
 												</label>
                                                 <div class="note">
 													<strong>Max characters</strong> 255

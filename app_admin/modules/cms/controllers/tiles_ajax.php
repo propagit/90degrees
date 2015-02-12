@@ -178,5 +178,23 @@ class Tiles_ajax extends MX_Controller {
 		}
 	}
 	
+	function update_home_visibility()
+	{
+		$tile_id = $this->input->post('tile_id');
+		$tile = $this->tiles_model->get_tile($tile_id);
+		$home_page_status = $tile['home_page'] ? 0 : 1;
+		
+		$updated = $this->tiles_model->update_tile($tile_id,array('home_page' => $new_status));
+		
+		if ($updated === true)
+		{
+			echo 'ok';
+		}
+		else
+		{
+			echo 'failed';
+		}
+	}
+	
 	
 }

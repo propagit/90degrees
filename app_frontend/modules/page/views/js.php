@@ -2,7 +2,7 @@
 <script src="<?=base_url() . ASSETS;?>js/home.js"></script>
 <script>
 $(function(){
-
+	<?php if(0){ ?>
 	// Contact 
 	/*$('#btn-contac-us').click(function(){
 
@@ -34,11 +34,13 @@ $(function(){
 
 	
 	// tiles caption
-	$('.tiles').mouseover(function(){
+	
+	/*$('.tiles').mouseover(function(){
 		$(this).children().children().children('.tiles-caption').addClass('fadein');
 	}).mouseout(function(){
 		$(this).children().children().children('.tiles-caption').removeClass('fadein');
-	});
+	});*/
+	<?php } ?>
 	
 	//toggle job info
 	// tiles caption

@@ -67,6 +67,7 @@
 									<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Name</th>
 									<th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Tile URL</th>
 									<th>New Window</th>
+                                    <th>Homepage</th>
 									<th data-hide="phone,tablet">Status</th>
 									
 									<th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i> Last Updated</th>
@@ -80,13 +81,28 @@
 														'obj_id' => $tile['tile_id'],
 														'obj_type' => 'cms_tiles'
 														);
-									
+									# config drop down for published unbublished
+									$dd_params_home = array(
+														'status' => $tile['home_page'],
+														'obj_id' => $tile['tile_id'],
+														'obj_type' => 'cms_tiles',
+														'btn_label' => $tile['home_page'] ? 'Published' : 'Not Publish',
+														'links' => array(
+																		  array(
+																		  'label' => $tile['home_page'] ? 'Un Publish' : 'Publish',
+																		  'class' => 'home-page-status', 
+																		  'data' => $tile['tile_id'], 
+																		  'fa' => $tile['home_page'] ? 'fa-thumbs-o-down' : 'fa-thumbs-o-up'
+																		  )
+																	  )
+														);
 								?>
 								<tr>
 									<td><?=$tile['tile_id'];?></td>
 									<td><a href="#<?=ajax_url();?>tiles/edit/<?=$tile['tile_id'];?>"><?=$tile['name'];?></a></td>
 									<td><a href="<?=$tile['tile_uri'];?>" target="_blank"><?=$tile['tile_uri'];?></a></td>
                                     <td><?=$tile['new_window'] ? 'Opens in new window' : 'Opens in same window';?></td>
+                                    <td><?=modules::run('common/dd_action_palet_general',$dd_params_home);?></td>
 									<td><?=modules::run('common/dd_action_palet',$dd_params);?></td>
 									<td><?=date('d/m/Y h:i A', strtotime($tile['updated_on']));?></td>
 								</tr>
@@ -116,11 +132,11 @@
 <!-- end widget grid -->
 
 <!-- ui-dialog -->
-<div id="confirm-modal" title="Dialog Simple Title">
+<!--<div id="confirm-modal" title="Dialog Simple Title">
 	<p>
 		Confirm Trash? You will be able to undo this action from Trash.
 	</p>
-</div>
+</div>-->
 
 <script type="text/javascript">
 
@@ -166,6 +182,20 @@
 		// TRASH
 		$('.trash').click(function(){
 			trash('<?=ajax_url();?>','<?=ajax_url();?>tiles',$(this));
+		});
+		
+		// Publish From Home or Unbublish form Home
+		$('.home-page-status').click(function(){
+			 $this = $(this);
+			 $.ajax({
+				  type: "POST",
+				  url: '<?=ajax_url();?>cms/tiles_ajax/update_home_visibility',
+				  data: {tile_id:$this.attr('data')},
+				  success: function(html) {
+					  window.location.hash = '<?=ajax_url();?>tiles' + '/#' + (new Date).getTime();
+				  }
+				  
+			  });	
 		});
 		
 		/** CONVERT DIALOG TITLE TO HTML

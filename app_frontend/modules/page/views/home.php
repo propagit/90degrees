@@ -12,7 +12,8 @@
           </ul>
           <!-- prev/next links --> 
           
-          <span class="prevControl sliderControl"> <i class="fa fa-angle-left fa-3x "></i></span> <span class="nextControl sliderControl"> <i class="fa fa-angle-right fa-3x "></i></span>
+          <!--<span class="prevControl sliderControl"> <i class="fa fa-angle-left fa-3x "></i></span> 
+          <span class="nextControl sliderControl"> <i class="fa fa-angle-right fa-3x "></i></span>-->
           <div class="slider slider-v1" 
           data-cycle-swipe=true
           data-cycle-prev=".prevControl"
@@ -66,7 +67,7 @@
                 	<span class="hidden-xs">&nbsp;</span>
                 	<img class="visible-xs" src="<?=base_url() . 'uploads/thumbnails/' . $tile_image['file_name'];?>" >
                 </div>
-                <div class="tiles-caption fadeout">
+                <div class="tiles-caption">
                     <h1><?=$tile['name'];?></h1>
                     <h4><?=$tile['short_desc'];?> <i class="fa fa-map-marker"></i></h4>
                 </div>
