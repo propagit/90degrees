@@ -60,7 +60,7 @@ Examples:
 
 ATTENTION: The trailing slash is required.
 */
-$baseUrl = 'http://localhost/klop/uploads/';
+$baseUrl = 'http://localhost/90degrees/uploads/';
 
 /*
 $baseDir : the path to the local directory (in the server) which points to the
@@ -80,7 +80,7 @@ Examples:
 ATTENTION: The trailing slash is required.
 */
 #$baseDir = resolveUrl($baseUrl);
-$baseDir = '/Users/kaushtuvgurung/Projects/klop/uploads/';
+$baseDir = '/Users/kaushtuvgurung/Projects/90degrees/uploads/';
 
 /*
  * ### Advanced Settings

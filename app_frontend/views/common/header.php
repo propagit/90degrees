@@ -182,7 +182,7 @@
           <span class="slogan">90 DEGREES / GRAFFITI ARTISTS FOR HIRE</span>
           <h1 class="slogan">MURALS - ART - EVENTS</h1>
             
-          <div class="header-social hide">
+          <div class="header-social">
               <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
               <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
             </div>
