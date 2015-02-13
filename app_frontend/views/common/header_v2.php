@@ -49,7 +49,7 @@
 <link href="<?=base_url() . ASSETS;?>css/flare.css" rel="stylesheet">
 
 <!-- Core stylesheet -->
-<link href="<?=base_url() . ASSETS;?>css/core-styles.css" rel="stylesheet">
+<link href="<?=base_url() . ASSETS;?>css/core-styles-v2.css" rel="stylesheet">
 
 <?=(isset($add_css)) ? $add_css : '';?>
 
@@ -172,7 +172,7 @@
 
 
   <header>
-    <div id="header" class="container hidden-xs">
+    <div id="header" class="container hidden-xs fw header-v2">
       <div class="col-md-4 col-sm-4 remove-gutters">
           <a class="remove-left-gutter" href="<?=base_url();?>">
               <img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
@@ -190,20 +190,18 @@
     </div>
 
     <div id="top-navbar" class="hidden-xs">
-    	<div class="container">
+    	<div class="container fw remove-gutters">
             <div class="top-nav-wrap">
-            	<div class="row">
-              		  <div class="container">
+              	<div class="container fw">
                     <div class="navbar-collapse collapse">
                         <a id="scroll-nav-logo" class="remove-left-gutter" href="<?=base_url();?>">
                             <img src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
                         </a>
                         <!-- top-menu -->
-                        <div class="top-nav">
+                        <div class="top-nav fw">
                             <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => current_url()));?>
                         </div>
                     </div><!--/.nav-collapse -->
-                </div>
                 </div>
             </div>
         </div>

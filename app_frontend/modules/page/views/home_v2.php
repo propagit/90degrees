@@ -32,7 +32,7 @@
                 <a <?=$banner['banner_uri'] ? 'href="' . $banner['banner_uri'] . '"' : '';?> <?=$banner['new_window'] ? 'target="_blank"' : '';?>><img src="<?=base_url() . $banner_image['full_path'];?>" data-upload-id="<?=$banner_image['upload_id'];?>" data-img="<?=base_url() . $banner_image['full_path'];?>" alt="<?=$banner_image['orig_name'];?>" title="<?=$banner_image['orig_name'];?>" class="superbox-img"></a>
                 
                 <div class="container">
-                    <div class="col-xs-6 banner-caption hidden-xs">
+                    <div class="col-xs-12 banner-caption hidden-xs">
                         <h1><?=$banner['name'];?></h1>
                         <h4><?=$banner['caption'];?> <i class="fa fa-map-marker"></i></h4>
                     </div>
@@ -49,7 +49,7 @@
     <!--/.banner style1-->
 </div>
 
-<div class="container main-container"> 
+<div class="container main-container fw"> 
   
   <!-- Main component call to action -->
   
@@ -64,7 +64,7 @@
 				# if image has not been uploaded yet don't show this tile.
 				if($tile_image){
 	 	 ?>
-         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 remove-gutters tiles">
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 tiles">
          	<div class="col-xs-12 remove-gutters">
         	<a <?=$tile['tile_uri'] ? 'href="' . base_url() . 'our-work/' . $tile['tile_uri'] . '"' : '';?> <?=$tile['new_window'] ? 'target="_blank"' : '';?>>
                 <div class="tiles-bg" style="background-image: url('<?=base_url() . 'uploads/thumbnails/' . $tile_image['file_name'];?>');">

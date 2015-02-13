@@ -29,10 +29,10 @@ class Page extends MX_Controller {
 		$data['banners'] = $this->banner_model->get_banners();
 		$data['tiles'] = $this->tiles_model->get_tiles();
 
-		$this->load->view('common/header');
+		$this->load->view('common/header_v2');
 		$this->load->view('home_v2', isset($data) ? $data : NULL);
 		$data['add_js'] = $this->load->view('page/js', isset($data) ? $data : NULL, true);
-		$this->load->view('common/footer', isset($data) ? $data : NULL);	
+		$this->load->view('common/footer_v2', isset($data) ? $data : NULL);	
 	}
 
 	function get_banner_first_image($banner_id)

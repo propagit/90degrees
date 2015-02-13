@@ -274,13 +274,16 @@ p.contact-us{
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	display: table-row;
+	width:100%;	
+	display:flex;
+	flex-direction:row;
 	white-space: nowrap;
 }
 
 .top-nav .nav li{
 	text-align:center;
 	/*margin-right:96.5px;*/
+	flex:1;
 }
 .top-nav .nav li a .fa{
 	float:left;
@@ -300,9 +303,16 @@ p.contact-us{
 	overflow: hidden;
 	height: 20px;
 }
-	
+.top-nav .nav li:first-child,
 .top-nav .nav li:last-child{
-	margin-right:0;	
+	flex:0.5;	
+}
+.top-nav .nav li:first-child{
+	margin-left:20px;	
+}
+.top-nav .nav li:last-child{
+	margin-right:20px;	
+	text-align:right;
 }
 #scroll-nav-logo{
 	position: absolute;
@@ -311,7 +321,8 @@ p.contact-us{
 	line-height:63px;
 }
 #scroll-nav-logo img{
-	width:90%;		
+	width:90%;	
+	margin-top:-6px;	
 }
 .scroll-logo{
 	width:56px;	
@@ -321,11 +332,12 @@ p.contact-us{
 	background-position:center center;	
 	font-size:30px;
 	font-weight:400;
-	padding-top: 0;
+	/*padding-top: 0;
 	padding-bottom: 0;
 	padding-right: 46px;
-	padding-left: 46px;
+	padding-left: 46px;*/
 	letter-spacing: 1px;
+	padding:0;
 }
 .top-nav-wrap{
 	border-top: 1px solid #1a1a1a;
@@ -566,10 +578,22 @@ p.contact-us{
 	background-color: rgba(255,255,255,0.75);
 	position: absolute;
 	bottom: 0;
-	padding: 12px 20px 15px 39px;
-	left: -15px;
-	height: 78px;
+	/*padding: 12px 20px 15px 20px;*/
+	/*height: 78px;*/
+	left: 0;
+	padding: 0 20px 0 35px;
+	max-height:0;
+	transition-property: all;
+	transition-duration: 0.6s;
+	transition-timing-function: cubic-bezier(0, 1, 0.6, 1);
 }
+.banner:hover .banner-caption{
+	padding-top:12px;
+	padding-bottom:15px;
+	max-height:78px;		
+}
+
+
 .tiles-caption h1,
 .banner-caption h1{
 	font-size:40px;	
@@ -701,14 +725,14 @@ p.contact-us{
 .tiles-wrap .tiles{
 	margin-bottom:30px;
 }
-.tiles:nth-child(odd){
+/*.tiles:nth-child(odd){
 	padding-left: 0px;
 	padding-right: 15px;
 }
 .tiles:nth-child(even){
 	padding-left: 15px;
 	padding-right: 0px;
-}
+}*/
 .job-info{
 	padding-top:40px;	
 }
@@ -1459,6 +1483,11 @@ p.sub-title{
 	overflow:hidden;	
 }
 
+/* Header v2 - full width*/
+.header-v2{
+	padding-left:50px;
+	padding-right:50px;	
+}
 
 
 /* custom responsive */
@@ -1734,6 +1763,9 @@ p.sub-title{
   border-top:1px solid #1a1a1a !important;
 
 }
+
+
+
 
 
 
