@@ -9,21 +9,16 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="row userInfo">
         <div class="col-xs-12 col-sm-12">
-          <h1 class="title-big">
-              <?=$work['name'];?>
-          </h1>
-          <span class="slogan push-txt"><?=$work['short_desc'];?> <i class="fa fa-map-marker"></i></span>
-
-
-		 	<!--gallery-->
          
 
+		 	<!--gallery-->
             <div class="banner gallery">
                 <div class="slider-content">
                   <!-- prev/next links --> 
                   <span class="prevControl sliderControl"> <i class="fa fa-angle-left fa-3x "></i></span> <span class="nextControl sliderControl"> <i class="fa fa-angle-right fa-3x "></i></span>
                   <div class="slider slider-v1" 
                   data-cycle-swipe=true
+                  data-cycle-pause-on-hover="true" 
                   data-cycle-prev=".prevControl"
                   data-cycle-next=".nextControl" data-cycle-loader="wait">
                   <?php 
@@ -41,12 +36,21 @@
             </div><!--/.banner style1-->
             <ul id="pager2" class="container gallery-pager"></ul>
             
-            <div id="toggle-job-info" class="job-info-btn-bg pointer push">
+            <?php if(0) { ?>
+            <!--<div id="toggle-job-info" class="job-info-btn-bg pointer push">
             	<div class="job-info-btn"><i class="fa fa-info-circle"></i> <h4>JOB INFO</h4></div>
                 <div class="job-info-btn primary-color" style="display:none;"><i class="fa fa-minus-square-o"></i><h4>HIDE</h4></div>
+            </div>-->
+            <?php } # removed toggle function for now ?>
+            
+            <div class="col-xs-12 remove-gutters">
+                 <h1 class="title-big">
+                    <?=$work['name'];?>
+                 </h1>
+                 <span class="slogan push-txt"><?=$work['short_desc'];?> <i class="fa fa-map-marker"></i></span>
             </div>
             
-            <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 remove-gutters job-info hide">
+             <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 remove-gutters job-info">
             
             	<?=$work['content'];?>
                 
@@ -83,4 +87,3 @@
   </div> <!--/.innerPage-->
   <div style="clear:both">  </div>
 </div><!-- /.main-container -->
-

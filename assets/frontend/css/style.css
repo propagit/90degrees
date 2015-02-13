@@ -3413,5 +3413,6 @@ h1.x2large {
 	float: left;
 }
 .form-radio-checkbox label{
-	display:block;	
+	display:block;
+	color:#999;	
 }

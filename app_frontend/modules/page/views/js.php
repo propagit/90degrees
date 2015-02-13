@@ -40,17 +40,24 @@ $(function(){
 	}).mouseout(function(){
 		$(this).children().children().children('.tiles-caption').removeClass('fadein');
 	});*/
-	<?php } ?>
+	
 	
 	//toggle job info
 	// tiles caption
-	$('#toggle-job-info').click(function(){
+	/*$('#toggle-job-info').click(function(){
 		$('#job-info').toggle().removeClass('hide').addClass('fadein');
 		$('.job-info-btn').toggle();
 		$(this).toggleClass('job-info-btn-bg');
 		 $('html, body').animate({
 			scrollTop: $("#job-info").offset().top
 		}, 1000);
+	});*/
+	<?php } ?>
+	// pause slide show
+	$('#pager2 span').hover(function(){
+		$('.slider-v1').cycle('pause');
+	},function(){
+		$('.slider-v1').cycle('resume');
 	});
 	
 	
