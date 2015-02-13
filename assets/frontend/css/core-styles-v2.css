@@ -25,6 +25,15 @@
 	margin-top:-5px;
 }
 
+.tiles:nth-child(odd){
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.tiles:nth-child(even){
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 
 
 
