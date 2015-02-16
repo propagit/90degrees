@@ -62,7 +62,8 @@ p span,
 .custom-page-ul h2,
 .custom-page-ul li,
 span.slogan,
-.icr__text{
+.icr__text,
+.page-content a{
 	font-family: 'PT Serif', serif;
 	text-transform:none;
 }
