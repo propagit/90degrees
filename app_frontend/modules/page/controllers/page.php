@@ -294,13 +294,14 @@ class Page extends MX_Controller {
 		$this->load->view('contact_map');
 	}
 	
-	function set_orders()
+	# function to sync tiles order to same as tile id
+	/*function _set_orders()
 	{
 		$tiles = $this->db->get('cms_tiles')->result_array();
 		foreach($tiles as $tile){
 			$this->db->where('tile_id',$tile['tile_id'])->update('cms_tiles',array('tile_order' => $tile['tile_id']));	
 		}
 			
-	}
+	}*/
 }
 
