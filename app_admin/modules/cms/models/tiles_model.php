@@ -50,7 +50,7 @@ class Tiles_model extends CI_Model {
 	
 	function get_tiles() {
 		$this->db->where('status >',-1)
-				 ->order_by('tile_order','desc');
+				 ->order_by('tile_order','asc');
 		$query = $this->db->get('cms_tiles');
 		return $query->result_array();
 	}
