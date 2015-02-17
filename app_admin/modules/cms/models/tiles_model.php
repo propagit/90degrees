@@ -49,7 +49,8 @@ class Tiles_model extends CI_Model {
 	}
 	
 	function get_tiles() {
-		$this->db->where('status >',-1);
+		$this->db->where('status >',-1)
+				 ->order_by('tile_order','desc');
 		$query = $this->db->get('cms_tiles');
 		return $query->result_array();
 	}
@@ -110,6 +111,53 @@ class Tiles_model extends CI_Model {
 		{
 			return $this->error_message('update_tile', 'There was error while updating this tile.');
 		}
+	}
+	
+	function order_tiles($params)
+	{
+		$tile_id      = $params['id'];
+		$fromPosition = is_array($params['fromPosition']) ? $params['fromPosition'][0] : $params['fromPosition'];
+		$toPosition   = $params['toPosition'];
+		$direction    = $params['direction'];
+		$aPosition    = ($direction === "back") ? $toPosition+1 : $toPosition-1;
+		
+		$sql = "UPDATE cms_tiles 
+				SET tile_order = 0 
+				WHERE tile_order = " . $toPosition ;
+		
+		$this->db->query($sql);
+		
+		$sql = "UPDATE cms_tiles 
+				SET tile_order = $toPosition 
+				WHERE tile_id = " . $tile_id;
+		 
+		$this->db->query($sql);
+	
+		if($direction === "back") {
+			$sql = "UPDATE cms_tiles 
+					SET tile_order = tile_order + 1 
+						WHERE ( $toPosition <= tile_order 
+							AND tile_order <= $fromPosition) 
+						AND tile_id != $tile_id and tile_order != 0 
+						ORDER BY tile_order DESC";   
+			$this->db->query($sql);                  
+		} // backward direction
+		  
+		if($direction === "forward") {    
+			$sql = "UPDATE cms_tiles 
+					SET tile_order = tile_order - 1 
+						WHERE ($fromPosition <= slideshow_ordem 
+							AND tile_order <= $toPosition) 
+						AND tile_id != $tile_id and tile_order != 0 
+						ORDER BY tile_order ASC"; 
+			$this->db->query($sql);                    
+		} // Forward Direction
+		 
+					 
+		$sql = "UPDATE cms_tiles 
+				SET tile_order = $aPosition 
+					WHERE tile_order = 0";
+		$this->db->query($sql);  
 	}
 
 }

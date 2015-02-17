@@ -196,5 +196,10 @@ class Tiles_ajax extends MX_Controller {
 		}
 	}
 	
+	function update_order()
+	{
+		echo $this->tiles_model->order_tiles($_POST);
+	}
+	
 	
 }

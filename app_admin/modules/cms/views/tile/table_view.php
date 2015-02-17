@@ -63,6 +63,7 @@
 						<table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
 							<thead>                
 								<tr>
+                                	<th data-hide="phone">Tile Order</th>
 									<th data-hide="phone">Tile ID</th>
 									<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Name</th>
 									<th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Tile URL</th>
@@ -97,7 +98,8 @@
 																	  )
 														);
 								?>
-								<tr>
+								<tr id="<?=$tile['tile_id']?>">
+                                	<td><?=$tile['tile_order'];?></td>
 									<td><?=$tile['tile_id'];?></td>
 									<td><a href="#<?=ajax_url();?>tiles/edit/<?=$tile['tile_id'];?>"><?=$tile['name'];?></a></td>
 									<td><a href="<?=$tile['tile_uri'];?>" target="_blank"><?=$tile['tile_uri'];?></a></td>
@@ -160,6 +162,7 @@
 				"<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
 			"autoWidth" : true,
 			"iDisplayLength":50,
+			 "aaSorting": [[ 0, "desc" ]], 
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
@@ -172,7 +175,14 @@
 			"drawCallback" : function(oSettings) {
 				responsiveHelper_dt_basic.respond();
 			}
+		}).rowReordering({
+			'sURL': '<?=ajax_url();?>cms/tiles_ajax/update_order', 
+  			'sRequestType': "POST"
 		});
+		// with row ordering
+		// http://jquery-datatables-row-reordering.googlecode.com/svn/trunk/index.html
+		// https://code.google.com/p/jquery-datatables-row-reordering/wiki/Index
+		
 		/* END BASIC */	
 		
 		// CHANGE STATUS
@@ -217,10 +227,12 @@
 	// load related plugins
 	
 	loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/datatables/jquery.dataTables.min.js", function(){
-		loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/datatables/dataTables.colVis.min.js", function(){
-			loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/datatables/dataTables.tableTools.min.js", function(){
-				loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/datatables/dataTables.bootstrap.min.js", function(){
-					loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/datatable-responsive/datatables.responsive.min.js", pagefunction)
+		loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/datatables/jquery.dataTables.rowReordering.js", function(){
+			loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/datatables/dataTables.colVis.min.js", function(){
+				loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/datatables/dataTables.tableTools.min.js", function(){
+					loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/datatables/dataTables.bootstrap.min.js", function(){
+						loadScript("<?=base_url() . ASSETS_PATH;?>js/plugin/datatable-responsive/datatables.responsive.min.js", pagefunction)
+					});
 				});
 			});
 		});

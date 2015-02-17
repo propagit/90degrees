@@ -16,6 +16,7 @@ class Tiles_model extends CI_Model {
 	function get_tiles($home_page = 1){
 		$this->db->where('status > ', 0);
 		$this->db->where('home_page',$home_page);
+		$this->db->order_by('tile_order','desc');
 		$query = $this->db->get('cms_tiles');
 		return $query->result_array();
 	}

@@ -1,0 +1,1 @@
+ALTER TABLE `cms_tiles` ADD `tile_order` INT NOT NULL AFTER `home_page`;
