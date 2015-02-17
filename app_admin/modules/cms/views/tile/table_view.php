@@ -159,6 +159,7 @@
 				"t"+
 				"<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
 			"autoWidth" : true,
+			"iDisplayLength":50,
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
