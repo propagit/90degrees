@@ -857,6 +857,7 @@ h2.block-title-2,
 .cms-services-box{
 	margin-bottom: 30px;
 	overflow:hidden;
+	cursor:pointer;
 	/*padding-left:15px !important;*/
 }
 .cms-services-box img{
@@ -874,7 +875,6 @@ h2.block-title-2,
 	padding-top:20px;
 	float: left;
 	min-height:100px;
-	
 }
 
 .cms-caption h1,
