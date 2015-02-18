@@ -33,8 +33,8 @@ $(document).ready(function () {
         slides: '.slider-item',
         timeout: 5000, // set time for nex slide 
         speed: 1200,
-        easeIn: 'easeInOutExpo', // easing 
-        easeOut: 'easeInOutExpo',
+      /*  easeIn: 'easeInOutExpo', // easing 
+        easeOut: 'easeInOutExpo',*/
         pager: '#pager2', //Selector for element to use as pager container 
     });
 

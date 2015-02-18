@@ -8,9 +8,10 @@ class Tiles extends MX_Controller {
 		$this->load->model('tiles_model');
 	}
 	
-	function index()
+	function index($order_mode = 'disabled')
 	{
 		$data['tiles'] = $this->tiles_model->get_tiles();
+		$data['order_mode'] = false;
 		$this->load->view('tile/table_view', isset($data) ? $data : NULL);
 	}
 	
@@ -31,6 +32,13 @@ class Tiles extends MX_Controller {
 		$data['tab'] = $tab;
 		$this->load->view('tile/form_view', isset($data) ? $data : NULL);
 	}
+	
+	function order_position()
+	{
+		$data['tiles'] = $this->tiles_model->get_tiles();
+		$data['order_mode'] = true;
+		$this->load->view('tile/table_view', isset($data) ? $data : NULL);
+	}	
 	
 	
 }

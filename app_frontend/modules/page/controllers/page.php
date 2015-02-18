@@ -244,7 +244,7 @@ class Page extends MX_Controller {
 
 	function footer_quicklinks()
 	{
-		$menu = $this->menu(3);
+		$menu = $this->menu(2);
 		$html = '<ul>';
 		foreach($menu as $url) {
 			$html .= $this->rec_footer_menu($url);

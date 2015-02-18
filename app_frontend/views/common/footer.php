@@ -1,21 +1,26 @@
 <footer>
+<hr class="alt-hr">
   <div class="footer" id="footer">
+    <div class="container fw remove-gutters">
 
-    <div class="container">
-
-      <hr class="alt-hr">
+     
 
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-3">
         	<div id="back-to-top">
             	<span>TOP</span>
             </div>
         </div>
         
-        <div class="col-xs-6">
-         	<span id="quick-links" class="pull">
-            	FAST LINK MENU <i class="fa fa-plus-square-o"></i>
+        <div class="col-xs-9">
+         	<span id="quick-links" class="pointer">
+            	FAST LINK MENU 
+                <i class="fa fa-plus-square-o quick-links-fa"></i>
+                <i class="fa fa-minus-square-o quick-links-fa" style="display:none;"></i>
          	</span>
+            <div id="footer-ql" class="footer-quick-links">
+            <? echo modules::run('page/footer_quicklinks');?>
+            </div>
         </div>
 
       </div>
@@ -97,6 +102,14 @@ $(function(){
 		scroll_top();
 	});
 	
+	$('#quick-links').click(function(){
+		$('.quick-links-fa').toggle();
+		$('#footer-ql').toggle(200,function(){
+			$("html, body").animate({ scrollTop: $(document).height() },300);
+			return false;
+		});
+	});
+	
 	menu_cart();
 	menu_cart_items();
 
@@ -159,6 +172,7 @@ $(function(){
 			}
 		});
 	});
+	
 
 })
 function refresh_captcha(form_id) {
@@ -204,9 +218,11 @@ function scroll_fix_nav(){
 	if (y >= header_height) {
 		$('#top-navbar').addClass('fixed').children().removeClass('container');
 		$('#scroll-nav-logo').show();
+		$('.top-nav .fa-home').hide();
 	} else {
 		$('#top-navbar').removeClass('fixed').children().addClass('container');
 		$('#scroll-nav-logo').hide();
+		$('.top-nav .fa-home').show();
 	}
 }
 

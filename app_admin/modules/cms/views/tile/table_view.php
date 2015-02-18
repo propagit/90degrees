@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+	<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 		<h1 class="page-title txt-color-blueDark">
 			<i class="fa fa-table fa-fw "></i> 
 				CMS
@@ -9,11 +9,16 @@
 		</h1>
 	</div>
 	
-	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-		
+	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+		 
 		<a href="#<?=ajax_url();?>tiles/create" class="btn btn-success btn-lg pull-right header-btn hidden-mobile">
 			<i class="fa fa-circle-arrow-up fa-lg"></i> 
 			Create New Showcase 
+		</a>
+        
+        <a href="#<?=ajax_url();?>tiles<?=$order_mode ? '' : '/order_position';?>" class="btn btn-success btn-lg pull-right header-btn hidden-mobile" style="margin-right:15px;">
+			<i class="fa fa-circle-arrow-up fa-lg"></i> 
+			<?=$order_mode ? 'Back To List View' : 'Manage Order';?>
 		</a>
 	</div>
 </div>
@@ -174,10 +179,15 @@
 			"drawCallback" : function(oSettings) {
 				responsiveHelper_dt_basic.respond();
 			}
-		}).rowReordering({
+		})
+		<?php if($order_mode){ ?>
+		.rowReordering({
 			'sURL': '<?=ajax_url();?>cms/tiles_ajax/update_order', 
   			'sRequestType': "POST"
-		});
+		})
+		<?php } ?>
+		;
+		
 		// with row ordering
 		// http://jquery-datatables-row-reordering.googlecode.com/svn/trunk/index.html
 		// https://code.google.com/p/jquery-datatables-row-reordering/wiki/Index

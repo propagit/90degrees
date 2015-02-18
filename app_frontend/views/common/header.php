@@ -47,7 +47,6 @@
 
 <!-- Custom styles for this template -->
 <link href="<?=base_url() . ASSETS;?>css/flare.css" rel="stylesheet">
-
 <!-- Core stylesheet -->
 <link href="<?=base_url() . ASSETS;?>css/core-styles.css" rel="stylesheet">
 
@@ -172,14 +171,14 @@
 
 
   <header>
-    <div id="header" class="container hidden-xs">
-      <div class="col-md-4 col-sm-4 remove-gutters">
+    <div id="header" class="container hidden-xs fw">
+        <div class="col-md-4 col-sm-4 remove-gutters logo-wrap">
           <a class="remove-left-gutter" href="<?=base_url();?>">
               <img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
           </a>
         </div>
         <div class="col-md-8 col-sm-8 remove-gutters slogan-wrap">
-          <span class="slogan">90 DEGREES / GRAFFITI ARTISTS FOR HIRE</span>
+          <span class="slogan">90 DEGREES GRAFFITI ARTISTS FOR HIRE</span>
           <h1 class="slogan">MURALS - ART - EVENTS</h1>
             
           <div class="header-social">
@@ -190,20 +189,18 @@
     </div>
 
     <div id="top-navbar" class="hidden-xs">
-    	<div class="container">
+    	<div class="container fw remove-gutters">
             <div class="top-nav-wrap">
-            	<div class="row">
-              		  <div class="container">
-                    <div class="navbar-collapse collapse">
+              	<div class="container fw remove-gutters">
+                    <div class="navbar-collapse collapse remove-gutters">
                         <a id="scroll-nav-logo" class="remove-left-gutter" href="<?=base_url();?>">
                             <img src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
                         </a>
                         <!-- top-menu -->
-                        <div class="top-nav">
+                        <div class="top-nav fw">
                             <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => current_url()));?>
                         </div>
                     </div><!--/.nav-collapse -->
-                </div>
                 </div>
             </div>
         </div>
@@ -212,7 +209,7 @@
     <div id="top-navbar-mob" class="visible-xs">
        <div class="container top-nav-wrap">
               <!-- top-menu -->
-              <div class="col-xs-12">
+              <div class="col-xs-12 mob-nav-wrap">
                   <a class="remove-left-gutter push" href="<?=base_url();?>">
                       <img class="mob-logo" src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
                   </a>
@@ -221,7 +218,7 @@
                   </button>
               </div>
               <div class="mob-navbar-collapse collapse col-xs-12">
-                  <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => base_url() . substr($this->uri->uri_string(),1)));?>
+                  <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => current_url()));?>
               </div>
         </div>
 
