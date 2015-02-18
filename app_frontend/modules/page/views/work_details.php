@@ -75,12 +75,15 @@
                     <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
                     <a href="http://pinterest.com/pin/create/bookmarklet/?media=<?=$share_img_uri;?>&url=<?=$share_url;?>&is_video=false&description=<?=$title;?>" target="_blank"><i class="fa fa-pinterest-square"></i></a>
                     <a href="mailto:info@<?=$domain;?>"><i class="fa fa-envelope"></i></a>
+                    
+      				
                 </div>
+                
+                <?php if(!$work['home_page']){ ?>
+                	<a href="<?=base_url();?>our-services.html" class="btn btn-primary back-to-service-btn">Back To Services</a>
+                <?php } ?>
             </div>
 
-        
-        
-        
         </div>
       </div>  <!--/row end-->
     </div>
