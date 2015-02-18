@@ -873,6 +873,7 @@ h2.block-title-2,
 .cms-caption{
 	padding-top:20px;
 	float: left;
+	min-height:100px;
 	
 }
 
@@ -1623,7 +1624,11 @@ p.sub-title{
 	span.slogan{
 		font-size:15px;	
 	}
-	
+	.cms-services-box:nth-child(odd),
+	.cms-services-box:nth-child(even){
+		padding-left:0 !important;
+		padding-right:0 !important
+	}
 }
 @media (max-width: 979px){
 	.container{
@@ -1792,11 +1797,7 @@ p.sub-title{
 		content:"";
 		padding:0;
 	}
-	.cms-services-box:nth-child(odd),
-	.cms-services-box:nth-child(even){
-		padding-left:0 !important;
-		padding-right:0 !important
-	}
+	
 }
 
 
