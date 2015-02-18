@@ -36,7 +36,8 @@ h1,h2,h4,h3,h5,h6,
 	text-transform:uppercase;
 }
 h1.title-big,
-h1.title-big span
+h1.title-big span,
+.cms-caption h1 a
 {
 	font-family:'Dharma-reg', sans-serif;
 	text-transform:uppercase;	
