@@ -1792,6 +1792,11 @@ p.sub-title{
 		content:"";
 		padding:0;
 	}
+	.cms-services-box:nth-child(odd),
+	.cms-services-box:nth-child(even){
+		padding-left:0 !important;
+		padding-right:0 !important
+	}
 }
 
 
