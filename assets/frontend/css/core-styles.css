@@ -35,6 +35,7 @@ h1,h2,h4,h3,h5,h6,
 	font-family:'Dharma', sans-serif;
 	text-transform:uppercase;
 }
+.btn-back,
 h1.slogan,
 .instagram-wrap h1,
 h1.title-big,
@@ -1082,6 +1083,11 @@ span.add2cart{
 	color: #1a1a1a;
 	box-shadow: none !important;
 } 
+.btn-back{
+	float:left;
+	font-size:40;
+	margin-top:25px;	
+}
 .back-to-service-btn{
 	background-color: #000 !important;
 	color: #fff;
