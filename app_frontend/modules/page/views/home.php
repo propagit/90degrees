@@ -49,7 +49,7 @@
     <!--/.banner style1-->
 </div>
 
-<div class="container main-container fw"> 
+<div class="container"> 
   
   <!-- Main component call to action -->
   
