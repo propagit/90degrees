@@ -217,12 +217,12 @@ function scroll_fix_nav(){
 	var y = $(this).scrollTop();
 	if (y >= header_height) {
 		$('#top-navbar').addClass('fixed').children().removeClass('container');
-		$('#scroll-nav-logo').show();
-		$('.top-nav .fa-home').hide();
+		//$('#scroll-nav-logo').show();
+		//$('.top-nav .fa-home').hide();
 	} else {
 		$('#top-navbar').removeClass('fixed').children().addClass('container');
-		$('#scroll-nav-logo').hide();
-		$('.top-nav .fa-home').show();
+		//$('#scroll-nav-logo').hide();
+		//$('.top-nav .fa-home').show();
 	}
 }
 

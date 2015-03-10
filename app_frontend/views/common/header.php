@@ -172,18 +172,21 @@
 
   <header>
     <div id="header" class="container hidden-xs fw">
-        <div class="col-md-4 col-sm-4 remove-gutters logo-wrap">
-          <a class="remove-left-gutter" href="<?=base_url();?>">
-              <img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
-          </a>
-        </div>
-        <div class="col-md-8 col-sm-8 remove-gutters slogan-wrap">
-          <span class="slogan">90 DEGREES GRAFFITI ARTISTS FOR HIRE</span>
-          <h1 class="slogan">MURALS - ART - EVENTS</h1>
-            
-          <div class="header-social">
-              <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
-              <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+        <div class="header-box">
+        	<div class="logo-wrap inline">
+              <a class="remove-left-gutter" href="<?=base_url();?>">
+                  <img src="<?=base_url() . ASSETS;?>images/logo-lg.png" alt="logo.png">
+              </a>
+            </div>
+            <div class="slogan-wrap inline">
+              <span class="slogan">90 DEGREES GRAFFITI</span>
+              <h1 class="slogan">MURALS - ART - EVENTS</h1>
+               <?php if(0){ ?>
+                <div class="header-social">
+                  <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                  <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+               <?php } ?>
             </div>
         </div>
     </div>

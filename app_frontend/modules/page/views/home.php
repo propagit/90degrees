@@ -64,12 +64,12 @@
 				# if image has not been uploaded yet don't show this tile.
 				if($tile_image){
 	 	 ?>
-         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 tiles">
+         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 tiles">
          	<div class="col-xs-12 remove-gutters">
         	<a <?=$tile['tile_uri'] ? 'href="' . base_url() . 'our-work/' . $tile['tile_uri'] . '"' : '';?> <?=$tile['new_window'] ? 'target="_blank"' : '';?>>
                 <div class="tiles-bg" style="background-image: url('<?=base_url() . 'uploads/thumbnails/' . $tile_image['file_name'];?>');">
-                	<span class="hidden-xs">&nbsp;</span>
-                	<img class="visible-xs" src="<?=base_url() . 'uploads/thumbnails/' . $tile_image['file_name'];?>" >
+                	<span class="hidden-xs hidden-sm">&nbsp;</span>
+                	<img class="visible-sm visible-xs" src="<?=base_url() . 'uploads/thumbnails/' . $tile_image['file_name'];?>" >
                 </div>
                 <div class="tiles-caption">
                     <h1><?=$tile['name'];?></h1>

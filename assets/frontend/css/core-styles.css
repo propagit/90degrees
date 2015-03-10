@@ -35,6 +35,7 @@ h1,h2,h4,h3,h5,h6,
 	font-family:'Dharma', sans-serif;
 	text-transform:uppercase;
 }
+h1.slogan,
 .instagram-wrap h1,
 h1.title-big,
 h1.title-big span,
@@ -155,9 +156,9 @@ table,td,th,tr{
 	color:#1a1a1a;	
 }
 p{
-	font-size:16px;
-	line-height:21px;
-	font-style:italic;	
+	font-size:17px;
+	line-height:22px;
+	/*font-style:italic;	*/
 	font-weight:100;
 	margin-bottom: 21px;
 }
@@ -209,39 +210,53 @@ h6{
 	padding-left:50px;
 	padding-right:50px;	
 }
+#header{
+	background-color:#1f1f1f;	
+	/*height:175px;*/
+}
+.header-box{
+	max-width:505px;
+	margin:auto;	
+}
 .slogan{
-	text-align:right;
+	/*text-align:right;*/
 	display:block;	
 }
+#header .slogan{
+	color:#fff;	
+}
 h1.slogan{
-	margin-top:30px;	
+	/*margin-top:30px;	*/
 }
 .logo-wrap{
 	padding-top:15px;
 	padding-bottom:12px;	
+	float:left;
 }
 span.slogan{
 	font-size: 17px;
 	font-style: italic;	
-	margin-top:-14px;
-	margin-bottom:5px;
+	/*margin-top:-14px;
+	margin-bottom:5px;*/
 }
 
 .slogan-wrap{
-	margin-top:21px;	
+	margin-top:35px;
+	padding-left:20px;	
+	float:left;
 }
 .slogan-wrap .slogan{
 	/*opacity:0.5;*/
 }
 .slogan-wrap h1.slogan{
-	font-size: 60px;
-	line-height: 60px;
-	margin-top: -5px;
+	font-size: 57.4px;
+  	line-height: 54px;
+	/*margin-top: -5px;*/
 }
 .slogan-wrap span.slogan{
-	font-size: 35.2px;
-	font-style:normal;
-	line-height:33px;
+	font-size: 70.8px;
+  	font-style: normal;
+  	line-height: 54px;
 	margin-bottom:0;
 	margin-top:0;
 }
@@ -271,7 +286,7 @@ p.contact-us{
 	padding-right:50px;	
 }
 #top-navbar{
-	padding-top:5px;	
+	/*padding-top:5px;	*/
 }
 
 .offset{
@@ -298,12 +313,13 @@ p.contact-us{
 
 .top-nav .nav{
 	list-style: none;
-	margin: 0;
+	margin:auto;
 	padding: 0;
-	width:100%;	
-	display:flex;
-	flex-direction:row;
+	width:1000px;	
+	/*display:flex;
+	flex-direction:row;*/
 	white-space: nowrap;
+	float:none;
 }
 
 .top-nav .nav li{
@@ -329,7 +345,7 @@ p.contact-us{
 	overflow: hidden;
 	height: 20px;
 }
-
+/*
 .top-nav .nav li:first-child a.active:after{
 	left:5px;
 	right:auto;
@@ -337,33 +353,34 @@ p.contact-us{
 .top-nav .nav li:last-child a.active:after{
 	left:auto;
 	right:26px;
-}
+}*/
 .top-nav .nav li:first-child,
 .top-nav .nav li:last-child{
-	flex:0.5;	
+	/*flex:0.5;	*/
 }	
 .top-nav .nav li:first-child{
 	/*margin-left:20px;*/
-	text-align:left;	
+	/*text-align:left;	*/
 }
 .top-nav .nav li:last-child{
 	/*margin-right:20px;	*/
-	text-align:right;
+	/*text-align:right;*/
 }
-.top-nav .nav li:first-child a{
+/*.top-nav .nav li:first-child a{
 	padding-left:0;	
 }
 .top-nav .nav li:last-child a{
 	padding-right:0;	
-}
+}*/
 #scroll-nav-logo{
 	position: absolute;
-	top: 5px;
+	top: 2px;
 	display:none;
 	line-height:63px;
+	left:15%;
 }
 #scroll-nav-logo img{
-	width:90%;		
+	width:65%;		
 }
 .scroll-logo{
 	width:56px;	
@@ -394,7 +411,7 @@ p.contact-us{
 }
 
 .fixed .top-nav .nav li a.active:after{
-	top:15px;	
+	/*top:15px;*/	
 }
 
 
@@ -768,7 +785,7 @@ p.contact-us{
 .tiles-bg{
 	width:100%;	
 	background-size: cover;
-	min-height: 400px;
+	min-height: 30vw;
 }
 .tiles-wrap{
 	float:left;	
@@ -1314,8 +1331,8 @@ tr.CartProduct td{
 }
 .page-content p{
 	width:65%;	
-	font-size:16px;
-	line-height:21px;
+	/*font-size:16px;
+	line-height:21px;*/
 	margin-bottom:21px;
 }
 .contact-us p{
@@ -1612,9 +1629,9 @@ p.sub-title{
 	}
 }
 @media(max-width:1199px){
-	.tiles-bg{
+	/*.tiles-bg{
 		min-height:305px;	
-	}	
+	}	*/
 	#scroll-nav-logo img{
 		width:80%;	
 	}
@@ -1685,12 +1702,18 @@ p.sub-title{
 		text-align:center;	
 	}
 	.tiles-bg{
-		min-height:280px;	
+		min-height:inherit;	
+		background-image:none !important;
+	}
+	.tiles-bg img{
+		width:100%;	
 	}
 	.innerPage .tab-pane .contact-msg{
 		margin-top:-260px;	
 	}
-	
+	.top-nav .nav{
+		width:664px;	
+	}
 	
 }
 @media (max-width: 767px) {
@@ -1720,6 +1743,7 @@ p.sub-title{
 	.navbar{
 		min-height:156px;	
 	}
+	
 	.mob-nav-box{
 		margin-top:15px;	
 	}
@@ -1799,16 +1823,11 @@ p.sub-title{
 	.tiles-wrap{
 		margin-top:10px;	
 	}
-	.tiles-bg{
-		min-height:0;	
-		background-image:none !important;
-	}
+	
 	.tiles-wrap .tiles{
 		margin-bottom:15px;	
 	}
-	.tiles-bg img{
-		width:100%;	
-	}
+	
 	.offset{
 		margin-top:0;
 	}	
@@ -1908,6 +1927,7 @@ p.sub-title{
   border-top:1px solid #1a1a1a !important;
 
 }
+
 
 
 
