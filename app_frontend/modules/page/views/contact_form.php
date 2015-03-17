@@ -37,13 +37,7 @@
   <div class="col-lg-12 col-md-12 col-sm-12 text-center">
   		<p class="contact-us">
         	<strong>GET IN TOUCH THE OLD FASHIONED WAY</strong><br><br>
-            
-            Klop Australia Pty Ltd<br>
-            1098 High St<br>
-            Armadale<br>
-            Victoria 3143<br>
-            Australia<br>
-            (ABN 13 132 608 158)
+
         </p>
   </div>
   

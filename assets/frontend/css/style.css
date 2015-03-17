@@ -3387,7 +3387,7 @@ h1.x2large {
 
 }
 .form-contact label {
-	display: none;
+	/*display: none;*/
 }
 .form-contact .form-control {
 	font-family: "PT Serif",serif;
