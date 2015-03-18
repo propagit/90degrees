@@ -3408,10 +3408,12 @@ h1.x2large {
 	border: 1px solid #ccc;
 	background: #fff;
 	color: #000;
+	margin-bottom:45px;
 }
 .input-captcha {
 	width: 290px;
 	float: left;
+	margin-left:15px;
 }
 .form-radio-checkbox label{
 	display:block;

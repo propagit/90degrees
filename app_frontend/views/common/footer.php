@@ -6,26 +6,25 @@
      
 
       <div class="row">
-        <div class="col-xs-3">
-        	<div id="back-to-top">
+        <div class="col-xs-12 center">
+        	<div id="back-to-top" class="push inline">
             	<span>TOP</span>
             </div>
-        </div>
-        
-        <div class="col-xs-9">
-        	<div class="col-xs-12 remove-gutters">
-                <span id="quick-links" class="pointer">            	
-                    FAST LINK MENU 
-                    <i class="fa fa-plus-square-o quick-links-fa"></i>
-                    <i class="fa fa-minus-square-o quick-links-fa" style="display:none;"></i>
-                </span>
-                <div class="footer-social">
-                  <a href="<?=FACEBOOK;?>" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                  <a href="<?=INSTAGRAM;?>" target="_blank"><i class="fa fa-instagram"></i></a>
+            
+            <span id="quick-links" class="pointer">            	
+                FAST LINK MENU 
+                <i class="fa fa-plus-square-o quick-links-fa"></i>
+                <i class="fa fa-minus-square-o quick-links-fa" style="display:none;"></i>
+            </span>
+            <div class="footer-social">
+              <a href="<?=FACEBOOK;?>" target="_blank"><i class="fa fa-facebook-square"></i></a>
+              <a href="<?=INSTAGRAM;?>" target="_blank"><i class="fa fa-instagram"></i></a>
+            </div>
+            
+            <div class="col-xs-12 remove-gutters">
+                <div id="footer-ql" class="footer-quick-links">
+                	<? echo modules::run('page/footer_quicklinks');?>
                 </div>
-         	</div>
-            <div id="footer-ql" class="footer-quick-links">
-            <? echo modules::run('page/footer_quicklinks');?>
             </div>
         </div>
 

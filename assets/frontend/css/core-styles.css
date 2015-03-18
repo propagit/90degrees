@@ -1613,8 +1613,11 @@ p.sub-title{
 	display: inline-block;
 	text-align:right;
 	margin-right:25px;
-	float:right;
+	/*float:right;*/
 	margin-top:15px;
+}
+.footer-social > a{
+	padding-right:20px;	
 }
 .footer-social > a > i{
 	/*color:#9a9a9a;	*/
