@@ -1969,6 +1969,7 @@ h5.parallaxSubtitle {
 	padding-left: 0;
 	margin-top: 15px;
 	color: #7F8C8D;
+	float:right;
 }
 .footer ul li a {
 	padding: 0 0 5px 0;

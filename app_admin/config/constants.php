@@ -59,8 +59,8 @@ define('LIVE_SERVER',FALSE);
 define('DEBUG_MODE', TRUE);
 
 # Social Links
-define('FACEBOOK','https://www.facebook.com');
-define('INSTAGRAM','http://www.enjoygram.com');
+define('FACEBOOK','https://www.facebook.com/pages/90Degrees-graffiti-artists-for-hire/442798812463295');
+define('INSTAGRAM','https://instagram.com/dan_90degrees');
 define('TWITTER','');
 
 # Company Emails

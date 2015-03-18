@@ -126,10 +126,10 @@ a:hover{
 	width: 21px;	
 }
 #quick-links{
-	display:block;
+	display:inline-block;
 	margin-top:16px;
 	float:right;
-	width:100%;
+	/*width:100%;*/
 	text-align:right;	
 }
 #quick-links .fa{
@@ -425,6 +425,8 @@ p.contact-us{
 	font-size: 21px;
 	margin-left: 4px;
 }
+
+
 
 /** Mob Nav */
 .mob-nav-btn{
@@ -881,22 +883,34 @@ h2.block-title-2,
 	font-size: 18px;
 	padding-bottom: 5px;
 }
+.cms-services{
+	display:flex !important;
+	flex-wrap:wrap;
+}
 .cms-services-box{
 	margin-bottom: 30px;
 	overflow:hidden;
 	cursor:pointer;
+	min-height:348px;
 	/*padding-left:15px !important;*/
+	flex:1;
+	padding-right:15px;
+	min-width:350px;
+	max-width:350px;
 }
 .cms-services-box img{
 	width:100%;	
 }
+.cms-services-box:last-child{
+	/*padding-right:0;*/	
+}
 .cms-services-box:nth-child(odd){
-	padding-left:0;
-	padding-right:15px !important
+	/*padding-left:0;*/
+	/*padding-right:15px !important*/
 }
 .cms-services-box:nth-child(even){
-	padding-right:0;
-	padding-left:15px !important
+	/*padding-right:0;*/
+	/*padding-left:15px !important*/
 }
 .cms-caption{
 	padding-top:20px;
@@ -1597,12 +1611,14 @@ p.sub-title{
 }
 .footer-social{
 	display: inline-block;
-	float: left;
-	margin-top: 54px;
-	margin-left: 15px;
+	text-align:right;
+	margin-right:25px;
+	float:right;
+	margin-top:15px;
 }
-.footer-social a{
-	color:#9a9a9a;	
+.footer-social > a > i{
+	/*color:#9a9a9a;	*/
+	font-size:26px !important;
 }
 .subscribe-slogan{
 	font-size:14px;
@@ -1628,6 +1644,7 @@ p.sub-title{
 .footer-quick-links{
 	display:none;
 	float:right;
+	width:100%;
 }
 
 .footer-quick-links li a{
@@ -1696,8 +1713,8 @@ p.sub-title{
 	}
 	.cms-services-box:nth-child(odd),
 	.cms-services-box:nth-child(even){
-		padding-left:0 !important;
-		padding-right:0 !important
+		/*padding-left:0 !important;
+		padding-right:0 !important*/
 	}
 }
 @media (max-width: 979px){
@@ -1850,8 +1867,13 @@ p.sub-title{
 	.gallery-img-wrap img{
 		width:100%;	
 	}
-	.cms-services-box:nth-child(even){
+	/*.cms-services-box:nth-child(even){
 		margin-left:-4px;	
+	}*/
+	.cms-services-box{
+		min-width:100%;
+		max-width:100%;
+		padding:0;	
 	}
 	.innerPage .tab-contact-wrap{
 		margin-top:202px;	
