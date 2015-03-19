@@ -196,7 +196,7 @@
             <div class="top-nav-wrap">
               	<div class="container fw remove-gutters">
                     <div class="navbar-collapse collapse remove-gutters">
-                        <a id="scroll-nav-logo" class="remove-left-gutter" href="<?=base_url();?>">
+                        <a id="scroll-nav-logo" class="remove-left-gutter hidden-sm" href="<?=base_url();?>">
                             <img src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
                         </a>
                         <!-- top-menu -->
