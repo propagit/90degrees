@@ -1659,10 +1659,9 @@ p.sub-title{
 /* custom responsive */
 @media (max-width:1399px){
 	.cms-services-box .cms-caption h1{
-		font-size:50px;	
+		font-size:46px;	
 	}
 }
-
 @media(min-width:1200px){
 	.container{
 		width:1200px;	
@@ -1686,13 +1685,9 @@ p.sub-title{
 	.tiles-bg{
 		min-height: 30vw;	
 	}
-	.cms-services-box .cms-caption h1{
+	/*.cms-services-box .cms-caption h1{
 		font-size:60px;	
-	}
-	.cms-services-box{
-		min-width:350px;
-		max-width:350px;	
-	}
+	}*/
 }
 @media (max-width: 1024px){
 	#scroll-nav-logo{
@@ -1706,8 +1701,8 @@ p.sub-title{
 	}
 	.top-nav .nav li a{
 		font-size:25px;	
-		padding-left:26px;
-		padding-right:26px;
+		padding-left:24px;
+		padding-right:24px;
 	}
 	.navbar-brand img{
 		width:100%;	
@@ -1740,6 +1735,7 @@ p.sub-title{
 		max-width:979px !important;	
 	}
 }
+
 @media (max-width: 991px) {
 
 	.cart-action-wrap{
@@ -1765,7 +1761,16 @@ p.sub-title{
 	.top-nav .nav{
 		width:664px;	
 	}
+	.cms-services-box{
+		min-width:350px;
+		max-width:350px;	
+	}
 	
+}
+@media (max-width:991px){
+	.cms-services-box .cms-caption h1{
+		font-size:60px;	
+	}	
 }
 @media (max-width: 767px) {
 	#header{
