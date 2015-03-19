@@ -895,8 +895,8 @@ h2.block-title-2,
 	/*padding-left:15px !important;*/
 	flex:1;
 	padding-right:15px;
-	min-width:350px;
-	max-width:350px;
+	/*min-width:350px;
+	max-width:350px;*/
 }
 .cms-services-box img{
 	width:100%;	
@@ -1660,6 +1660,7 @@ p.sub-title{
 	.container{
 		width:1200px;	
 	}
+	
 }
 @media(max-width:1199px){
 	/*.tiles-bg{
@@ -1677,6 +1678,10 @@ p.sub-title{
 	}
 	.tiles-bg{
 		min-height: 30vw;	
+	}
+	.cms-services-box{
+		min-width:350px;
+		max-width:350px;	
 	}
 }
 @media (max-width: 1024px){
@@ -1718,7 +1723,7 @@ p.sub-title{
 	.cms-services-box:nth-child(even){
 		/*padding-left:0 !important;
 		padding-right:0 !important*/
-	}
+	}	
 }
 @media (max-width: 979px){
 	.container{
