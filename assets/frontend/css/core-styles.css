@@ -1657,6 +1657,12 @@ p.sub-title{
 
 
 /* custom responsive */
+@media (max-width:1399px){
+	.cms-services-box .cms-caption h1{
+		font-size:50px;	
+	}
+}
+
 @media(min-width:1200px){
 	.container{
 		width:1200px;	
@@ -1679,6 +1685,9 @@ p.sub-title{
 	}
 	.tiles-bg{
 		min-height: 30vw;	
+	}
+	.cms-services-box .cms-caption h1{
+		font-size:60px;	
 	}
 	.cms-services-box{
 		min-width:350px;
