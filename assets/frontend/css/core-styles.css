@@ -884,7 +884,11 @@ h2.block-title-2,
 	padding-bottom: 5px;
 }
 .cms-services{
-	display:flex !important;
+	display: -webkit-box !important;      /* OLD - iOS 6-, Safari 3.1-6 */
+  	display: -moz-box !important;         /* OLD - Firefox 19- (buggy but mostly works) */
+  	display: -ms-flexbox !important;      /* TWEENER - IE 10 */
+ 	display: -webkit-flex !important;     /* NEW - Chrome */
+  	display: flex;  
 	flex-wrap:wrap;
 	margin-top:100px;	
 }
@@ -894,7 +898,12 @@ h2.block-title-2,
 	cursor:pointer;
 	min-height:348px;
 	/*padding-left:15px !important;*/
-	flex:1;
+	-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+  	-moz-box-flex: 1;         /* OLD - Firefox 19- */
+ 	width: 20%;               /* For old syntax, otherwise collapses. */
+ 	-webkit-flex: 1;          /* Chrome */
+ 	-ms-flex: 1;              /* IE 10 */
+ 	flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 	padding-right:15px;
 	/*min-width:350px;
 	max-width:350px;*/
@@ -1761,13 +1770,18 @@ p.sub-title{
 	.top-nav .nav{
 		width:664px;	
 	}
+	.cms-services{
+		display:block !important;	
+	}
 	.cms-services-box{
 		min-width:350px;
 		max-width:350px;	
+		display:inline-block;
 	}
 	
 }
 @media (max-width:991px){
+
 	.cms-services-box .cms-caption h1{
 		font-size:60px;	
 	}	
