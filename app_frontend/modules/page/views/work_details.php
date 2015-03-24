@@ -80,7 +80,7 @@
                 </div>
                 
                 <?php if(!$work['home_page']){ ?>
-                	<a href="<?=base_url();?>our-services.html" class="btn-back"><i class="fa fa-arrow-left"></i> Back</a>
+                	<a href="<?=base_url();?>our-services.html" class="btn-back"><img src="<?=base_url();?>assets/frontend/images/back-btn.png" alt="back-btn.png" title="Back To Services"></a>
                 <?php } ?>
             </div>
 
