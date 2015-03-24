@@ -1119,6 +1119,9 @@ span.add2cart{
 	font-size:40px;
 	margin-top:25px;	
 }
+.btn-back img{
+	max-width:120px;	
+}
 .back-to-service-btn{
 	background-color: #000 !important;
 	color: #fff;
