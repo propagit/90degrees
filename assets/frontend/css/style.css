@@ -3335,13 +3335,19 @@ h1.x2large {
 .breadcrumb > li {
 	font-size: 12px;
 }
+.innerPage .tab-pane .contact-msg{
+	margin-top:-215px !important;	
+}
+.page-content p{
+	width:100% !important;	
+}
 }
  @media (max-width: 400px) {
 #pager a {
 	font-size: 10px;
 }
 .container {
-	min-width: 310px;
+	min-width: 290px;
 }
 .cartFooter .box-footer div {
 	width: 100%;
@@ -3370,11 +3376,14 @@ h1.x2large {
 .checkoutReview th {
 	font-size: 13px;
 }
+.footer-social{
+	margin-right:0 !important;	
+}
 }
  @media (max-width: 320px) {
 .container {
 	width: 100% !important;
-	max-width: 320px !important;
+	max-width: 290px !important;
 }
 .banner {
 	width: 100% !important;

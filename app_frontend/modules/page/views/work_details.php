@@ -10,7 +10,7 @@
       <div class="row userInfo">
         <div class="col-xs-12 col-sm-12">
          
-
+			<?php if(0){ ?>
 		 	<!--gallery-->
             <div class="banner gallery">
                 <div class="slider-content">
@@ -35,6 +35,40 @@
                 </div><!--/.slider-content--> 
             </div><!--/.banner style1-->
             <ul id="pager2" class="container gallery-pager"></ul>
+            <?php } ?>
+            
+            <div id="work-banners" class="work-gallery carousel slide" data-ride="carousel" data-interval="false">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <?php
+						$counter = 0;
+						$pager = '';
+                        foreach($work_gallery as $gallery){
+							$pager .= '<li data-target="#work-banners" data-slide-to="' . $counter . '" ' . (!$counter ? 'class="active"' : '') . '></li>';
+                    ?>
+                    <!-- rest of the banners -->
+                    <div class="item <?=!$counter ? 'active' : '';?>">
+                          <img src="<?=base_url() . $gallery['full_path'];?>" title="<?=$gallery['orig_name'];?>">
+                    </div>
+                    <?php $counter++;} ?>
+                   
+                    
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#work-banners" role="button" data-slide="prev">
+                    <span class="slide-btn"><i class="fa fa-angle-left"></i></span>
+                </a>
+                <a class="right carousel-control" href="#work-banners" role="button" data-slide="next">
+                    <span class="slide-btn"><i class="fa fa-angle-right"></i></span>
+                </a>
+                
+                 <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <?php echo $pager; ?>
+                </ol>
+        </div>
+            
+            
             
             <?php if(0) { ?>
             <!--<div id="toggle-job-info" class="job-info-btn-bg pointer push">

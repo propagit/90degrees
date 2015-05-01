@@ -208,8 +208,8 @@ h6{
 }
 #footer,
 #header{
-	padding-left:50px;
-	padding-right:50px;	
+	padding-left:15px;
+	padding-right:15px;	
 }
 #header{
 	background-color:#1f1f1f;	
@@ -283,8 +283,8 @@ p.contact-us{
 	/*padding-bottom:5px;*/
 }
 .mob-nav-wrap{
-	padding-left:50px;
-	padding-right:50px;	
+	/*padding-left:50px;
+	padding-right:50px;	*/
 }
 #top-navbar{
 	/*padding-top:5px;	*/
@@ -316,7 +316,7 @@ p.contact-us{
 	list-style: none;
 	margin:auto;
 	padding: 0;
-	width:1000px;	
+	width:940px;	
 	/*display:flex;
 	flex-direction:row;*/
 	white-space: nowrap;
@@ -360,7 +360,7 @@ p.contact-us{
 	/*flex:0.5;	*/
 }	
 .top-nav .nav li:first-child{
-	/*margin-left:20px;*/
+	margin-left:40px;
 	/*text-align:left;	*/
 }
 .top-nav .nav li:last-child{
@@ -855,7 +855,66 @@ p.contact-us{
 	background-color: #191919;	
 	border:none !important;
 }
+.work-gallery{
+	overflow:hidden;
+}
 
+.work-gallery .carousel-inner > .item{
+	height:inherit;	
+	text-align:center;
+	margin-bottom:60px;
+}
+.work-gallery .carousel-inner > .item > img, 
+.work-gallery .carousel-inner > .item > a > img{
+	display:inline;
+}
+
+.carousel .slide-btn {
+    height: 71px;
+    display: block;
+    width: 71px;
+    position: absolute;
+    font-size: 20px;
+    line-height: 71px;
+    top: 40%;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    .carousel .slide-btn .fa {
+      font-size: 48px;
+	  padding:0 5px;
+	  background:#fff;
+	  border-radius:3px;
+      color: #1f1f1f;
+      text-shadow: none; }
+  .carousel:hover a.left .slide-btn {
+    left: 0; }
+  .carousel:hover a.right .slide-btn {
+    right: 0; }
+  .carousel a.left .slide-btn {
+    left: -71px; }
+  .carousel a.right .slide-btn {
+    right: -71px; }
+  .carousel .left, .carousel .right {
+    background-image: none;
+    background-color: transparent; }
+/*.carousel-indicators{
+	bottom: -20px !important;	
+}*/
+.carousel-indicators li{
+	 border: none;
+ 	 background: #dcd9d7 !important;	
+	 width:12px;
+	 height:12px;
+	 margin:2px !important;
+}
+.carousel-indicators .active{
+	background:	#1f1f1f !important;
+	border: none;
+}
 .gallery{
 	/*margin-top:70px !important;	*/
 }
@@ -1712,6 +1771,9 @@ p.sub-title{
 	.top-nav-wrap{
 		padding:24px 50px 8px;	
 	}
+	.top-nav .nav{
+		width:664px;	
+	}
 	.top-nav .nav li a{
 		font-size:25px;	
 		padding-left:24px;
@@ -1781,9 +1843,6 @@ p.sub-title{
 	.innerPage .tab-pane .contact-msg{
 		margin-top:-260px;	
 	}
-	.top-nav .nav{
-		width:664px;	
-	}
 	.cms-services{
 		display:block !important;	
 	}
@@ -1823,7 +1882,10 @@ p.sub-title{
 	h1.slogan{
 		margin-top:10px;	
 	}
-	
+	.main-container{
+		padding-left:15px;
+		padding-right:15px;	
+	}
 	.top-nav-wrap{
 		padding:10px 0;	
 		border-top:none;
@@ -1849,7 +1911,13 @@ p.sub-title{
 		font-size: 26px;
 		line-height: 26px;	
 		padding-bottom: 4px;
-		padding-left:50px;
+		padding-left:15px;
+	}
+	.cms-services{
+		margin-top:0;	
+	}
+	.custom-page-ul{
+		width:100%;	
 	}
 	.mob-navbar-collapse .navbar-nav > li > a.active{
 		background:#dcd9d7;	
@@ -1922,7 +1990,9 @@ p.sub-title{
 	.tiles-wrap .tiles{
 		margin-bottom:15px;	
 	}
-	
+	.form-label-info p{
+		padding-left:0;	
+	}
 	.offset{
 		margin-top:0;
 	}	
@@ -1938,7 +2008,7 @@ p.sub-title{
 		padding:0;	
 	}
 	.innerPage .tab-contact-wrap{
-		margin-top:150px;	
+		margin-top:90px;	
 	}
 	.flare-cms-tabs{
 		margin-top:60px;	
@@ -1958,6 +2028,13 @@ p.sub-title{
 		padding:0;
 	}
 	
+	.banner, 
+	.slider-content, 
+	.slider, 
+	.slider-v2{
+		  max-height:none !important;	
+	}
+
 	
 }
 
