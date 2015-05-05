@@ -41,16 +41,31 @@ class Form_ajax extends MX_Controller {
         $form_id = $input['form_id'];
         $form = $this->form_model->get_form($form_id);
         $fields = $this->form_model->get_fields($form_id);
-
-
+		#echo '<pre>'.print_r($fields,true).'</pre>';return;exit;
+		#echo '<pre>'.print_r($input,true).'</pre>';return;exit;
         $rules = array();
         foreach($fields as $field) {
             if ($field['required']) {
-                $rules[] = array(
-                    'field' => 'field-' . $field['field_id'],
-                    'label' => $field['label'],
-                    'rules' => 'required'
-                );
+				  switch($field['type']){
+						case 'radio':
+							if(!isset($input['fields'][$field['field_id']])){
+								$rules[] = array(
+									  'field' => 'field-' . $field['field_id'],
+									  'label' => $field['label'],
+									  'rules' => 'required'
+								  );
+							}
+						break;
+						
+						default:
+							 $rules[] = array(
+								  'field' => 'field-' . $field['field_id'],
+								  'label' => $field['label'],
+								  'rules' => 'required'
+							  );
+						break;  
+				  }
+				 
             }
         }
         if ($form['captcha']) {
@@ -60,7 +75,8 @@ class Form_ajax extends MX_Controller {
                 'rules' => 'required'
             );
         }
-
+			
+		#echo '<pre>'.print_r($rules,true).'</pre>';return;exit;
 
         # Validat user data
         $errors =  modules::run('common/validate_input', $input, $rules);
@@ -218,10 +234,10 @@ class Form_ajax extends MX_Controller {
 		}
 		
 		// Create target thumb dir
-		if (!file_exists($targetThumbDir)) {
+		/*if (!file_exists($targetThumbDir)) {
 			@mkdir($targetThumbDir);
 		}
-
+*/
 		// Get a file name
 		if (isset($_REQUEST["name"])) {
 			$fileName = $_REQUEST["name"];

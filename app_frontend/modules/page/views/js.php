@@ -54,12 +54,13 @@ $(function(){
 	});*/
 	<?php } ?>
 	// pause slide show
-	$('#pager2 span').hover(function(){
+	/*$('#pager2 span').hover(function(){
 		$('.slider-v1').cycle('pause');
 	},function(){
 		$('.slider-v1').cycle('resume');
-	});
+	});*/
 	
+
 	
 });	//	Ready
 

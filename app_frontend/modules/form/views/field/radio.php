@@ -1,5 +1,7 @@
 <div class="form-group form-radio-checkbox">
-	<label><?=$field['label'];?></label>
+	<label><?=$field['label'];?>
+    <? if($field['required']) { ?><span class="text-danger">*</span><? } ?>
+    </label>
 
 	<?php $options = json_decode($field['options']);
     if ($options) {
