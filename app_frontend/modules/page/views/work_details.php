@@ -55,10 +55,10 @@
                     
                 </div>
                 <!-- Controls -->
-                <a class="left carousel-control" href="#work-banners" role="button" data-slide="prev">
+                <a class="left carousel-control hidden-xs" href="#work-banners" role="button" data-slide="prev">
                     <span class="slide-btn"><i class="fa fa-angle-left"></i></span>
                 </a>
-                <a class="right carousel-control" href="#work-banners" role="button" data-slide="next">
+                <a class="right carousel-control hidden-xs" href="#work-banners" role="button" data-slide="next">
                     <span class="slide-btn"><i class="fa fa-angle-right"></i></span>
                 </a>
                 
