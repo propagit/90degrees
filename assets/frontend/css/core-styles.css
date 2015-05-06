@@ -966,7 +966,8 @@ h2.block-title-2,
 	max-width:350px;*/
 }
 .cms-services-box img{
-	width:100%;	
+	width:100% !important;
+	height:auto !important;	
 }
 .cms-services-box:last-child{
 	/*padding-right:0;*/	
