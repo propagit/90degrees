@@ -66,7 +66,12 @@
                 <ol class="carousel-indicators">
                   <?php echo $pager; ?>
                 </ol>
+                
+                <div class="col-xs-12 swipe-icon visible-xs">
+            		<img src="<?=base_url() . ASSETS;?>images/swipe.png">
+            	</div>
         </div>
+        	
             
             
             

@@ -62,11 +62,13 @@ $(function(){
 	});*/
 
 	$('#work-banners').swiperight(function() {  
-      		$('#work-banners').carousel('prev');  
-		 });  
-		 $('#work-banners').swipeleft(function() {  
-			$('#work-banners').carousel('next');  
-		 });
+		$('#work-banners').carousel('prev'); 
+		$('.swipe-icon').html(''); 
+	 });  
+	 $('#work-banners').swipeleft(function() {  
+		$('#work-banners').carousel('next'); 
+		$('.swipe-icon').html(''); 
+	 });
 	
 });	//	Ready
 

@@ -972,6 +972,13 @@ h2.block-title-2,
 .cms-services-box:last-child{
 	/*padding-right:0;*/	
 }
+.swipe-icon{
+	  position: absolute;
+	  top: 27%;
+	  text-align: center;
+	  width: 100%;
+	  opacity: 0.7;	
+}
 .cms-services-box:nth-child(odd){
 	/*padding-left:0;*/
 	/*padding-right:15px !important*/
