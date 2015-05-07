@@ -216,6 +216,10 @@
                   <a class="remove-left-gutter push" href="<?=base_url();?>">
                       <img class="mob-logo" src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
                   </a>
+                  <div class="slogan-wrap inline">
+                    <span class="slogan">90 DEGREES GRAFFITI</span>
+                    <h1 class="slogan">MURALS - ART - EVENTS</h1>
+                  </div>
                   <button type="button" class="navbar-toggle btn-primary mob-nav-btn pull" data-toggle="collapse" data-target=".mob-navbar-collapse" style="border-color:#fff !important;">
                       <i class="fa fa-bars"></i>
                   </button>

@@ -1888,6 +1888,24 @@ p.sub-title{
 	h1.slogan{
 		margin-top:10px;	
 	}
+	
+	
+	.slogan-wrap{
+		padding-left:0;	
+		float:left;
+		margin-top: 5px;
+  		margin-left: -15px;
+	}
+	.slogan-wrap h1.slogan{
+		font-size: 26px;
+		line-height: 20px;
+		margin-top:5px;
+	}
+	.slogan-wrap span.slogan{
+		font-size: 32px;
+		line-height: 20px;
+	}
+	
 	.main-container{
 		padding-left:15px;
 		padding-right:15px;	
