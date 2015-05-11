@@ -45,6 +45,8 @@
 <!-- include pace script for automatic web page progress bar  -->
 
 
+<link href="<?=base_url() . ASSETS;?>/swipe-box/css/swipebox.css" rel="stylesheet">
+
 <!-- Custom styles for this template -->
 <link href="<?=base_url() . ASSETS;?>css/flare.css" rel="stylesheet">
 <!-- Core stylesheet -->
@@ -62,7 +64,6 @@
 <!-- this wont work if put in footer -->
 <script src="<?=base_url() . ASSETS;?>js/plupload/plupload.full.min.js"></script>
 </head>
-
 <body>
 
 <!-- Modal Login start -->
@@ -213,13 +214,15 @@
        <div class="container top-nav-wrap">
               <!-- top-menu -->
               <div class="col-xs-12 mob-nav-wrap">
-                  <a class="remove-left-gutter push" href="<?=base_url();?>">
-                      <img class="mob-logo" src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
-                  </a>
                   <a href="<?=base_url();?>">
-                  <div class="slogan-wrap inline">
-                    <span class="slogan">90 DEGREES GRAFFITI</span>
-                    <h1 class="slogan">MURALS - ART - EVENTS</h1>
+                  <div class="slogan-wrap">
+                  	<div class="mob-logo-wrap">
+                    	<img class="mob-logo" src="<?=base_url() . ASSETS;?>images/logo-sml.png" alt="logo.png">
+                    </div>
+                    <div class="mob-slogan">
+                    	<span class="slogan">90 DEGREES GRAFFITI</span>
+                    	<h1 class="slogan">MURALS - ART - EVENTS</h1>
+                    </div>
                   </div>
                   </a>
                   <button type="button" class="navbar-toggle btn-primary mob-nav-btn pull" data-toggle="collapse" data-target=".mob-navbar-collapse" style="border-color:#fff !important;">

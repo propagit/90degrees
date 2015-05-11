@@ -1,6 +1,7 @@
 <!-- include custom script for only homepage  -->
 <script src="<?=base_url() . ASSETS;?>js/home.js"></script>
 <script src="<?=base_url() . ASSETS;?>js/jquery/touch/jquery.mobile.custom.min.js"></script>
+<script src="<?=base_url() . ASSETS;?>/swipe-box/js/jquery.swipebox.js"></script>
 <script>
 $(function(){
 	<?php if(0){ ?>
@@ -60,6 +61,8 @@ $(function(){
 	},function(){
 		$('.slider-v1').cycle('resume');
 	});*/
+	
+	$( '.swipebox' ).swipebox();
 
 	$('#work-banners').swiperight(function() {  
 		$('#work-banners').carousel('prev'); 

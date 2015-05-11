@@ -10,34 +10,8 @@
       <div class="row userInfo">
         <div class="col-xs-12 col-sm-12">
          
-			<?php if(0){ ?>
-		 	<!--gallery-->
-            <div class="banner gallery">
-                <div class="slider-content">
-                  <!-- prev/next links --> 
-                  <span class="prevControl sliderControl"> <i class="fa fa-angle-left fa-3x "></i></span> <span class="nextControl sliderControl"> <i class="fa fa-angle-right fa-3x "></i></span>
-                  <div class="slider slider-v1" 
-                  data-cycle-swipe=true
-                  data-cycle-pause-on-hover="true" 
-                  data-cycle-prev=".prevControl"
-                  data-cycle-next=".nextControl" data-cycle-loader="wait">
-                  <?php 
-                    if($work_gallery){ 
-                        $increment = 1;
-                        foreach($work_gallery as $gallery){  
-                  ?>
-                    <div class="slider-item slider-item-img<?=$increment++;?> gallery-img-wrap text-center">
-                        <img src="<?=base_url() . $gallery['full_path'];?>" title="<?=$gallery['orig_name'];?>">
-                    </div>
-                    
-                  <?php }} ?>
-                  </div><!--/.slider slider-v1--> 
-                </div><!--/.slider-content--> 
-            </div><!--/.banner style1-->
-            <ul id="pager2" class="container gallery-pager"></ul>
-            <?php } ?>
             
-            <div id="work-banners" class="work-gallery carousel slide" data-ride="carousel" data-interval="false">
+            <div id="work-banners" class="work-gallery carousel slide hidden-xs" data-ride="carousel" data-interval="false">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <?php
@@ -67,12 +41,23 @@
                   <?php echo $pager; ?>
                 </ol>
                 
-                <div class="col-xs-12 swipe-icon visible-xs">
+                <div class="col-xs-12 swipe-icon visible-xs hide">
             		<img src="<?=base_url() . ASSETS;?>images/swipe.png">
             	</div>
+                
+                
         </div>
+        
+        <div class="col-xs-12 visible-xs mob-gallery">
+        	<?php
+				$counter = 0; 
+				foreach($work_gallery as $gallery){ ?>
+                <a rel="gallery-1" href="<?=base_url() . $gallery['full_path'];?>" class="swipebox <?=$counter ? 'hide' : ''; ?>">
+                    <img src="<?=base_url() . $gallery['full_path'];?>" alt="image">
+                </a>
+			<?php $counter++;} ?>
         	
-            
+          </div>  
             
             
             <?php if(0) { ?>

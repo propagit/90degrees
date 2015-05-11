@@ -435,7 +435,8 @@ p.contact-us{
 	margin:0;
 }
 .mob-logo{
-	width:64%;	
+	width:48px;	
+	vertical-align:text-bottom;
 }
 
 
@@ -1732,6 +1733,13 @@ p.sub-title{
 .footer-quick-links li a{
 	font-size:30px;	
 }
+.mob-gallery{
+	text-align:center;
+	margin-bottom:30px;	
+}
+.mob-gallery img{
+	width:100%;	
+}
 
 
 /* custom responsive */
@@ -1889,11 +1897,25 @@ p.sub-title{
 		margin-top:10px;	
 	}
 	
-	
+	.mob-logo-wrap{
+		display:inline-block;
+		margin-right:8px;
+		width:48px;
+	}
+	.mob-slogan{
+		display:inline-block;
+		margin-top:5px;
+		width:175px;	
+		text-align:left;
+	}
 	.slogan-wrap{
+		text-align:center;
+		width:100%;
+		position:absolute;
 		padding-left:0;	
 		float:left;
-		margin-top: 5px;
+		margin-top: 1px;
+		display:block !important;
   		margin-left: -15px;
 	}
 	.slogan-wrap h1.slogan{
