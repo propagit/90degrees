@@ -108,6 +108,7 @@
 										</div>
 										<div class="row">
                                             <section class="col col-6">
+                                            	<label class="label">&nbsp;</label>
                                                 <label class="select">
                                                 <select name="new_window">
                                                     <option value="0" <?=isset($tile) ? ($tile['new_window'] == 0 ?' selected="selected"' : '') : '';?>>Open in Same Window</option>
@@ -116,7 +117,7 @@
                                             </section>
                                             
                                             <section class="col col-6">
-                                                <label class="select">
+                                                <label class="label">Location</label>
                                                 <label class="input">
 													<input type="text" name="short_desc" maxlength="255" value="<?=(isset($tile)) ? $tile['short_desc'] : '';?>" placeholder="location e.g. St Kilda Road" />
 												</label>
@@ -124,6 +125,30 @@
 													<strong>Max characters</strong> 255
 												</div>
                                             </section>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <section class="col col-6">
+                                                <label class="label">Meta Title</label>
+                                                <label class="textarea">
+                                                    <textarea maxlength="255" class="custom-scroll" name="meta_title" rows="3"><?=(isset($tile)) ? $tile['meta_title'] : '';?></textarea>
+                                                </label>
+                                                <div class="note">
+                                                	<div class="note">
+                                                        <strong>Max characters</strong> 255
+                                                    </div>
+                                                </div>								
+                                            </section>
+                                            
+                                            <section class="col col-6">
+                                                <label class="label">Meta Description</label>
+                                                <label class="textarea">
+                                                    <textarea class="custom-scroll" name="meta_description" rows="3"><?=(isset($tile)) ? $tile['meta_description'] : '';?></textarea>
+                                                </label>
+                                                <div class="note"></div>								
+                                            </section>
+                                            
+                                            
                                         </div>
                                         
                                         <section>
@@ -228,6 +253,11 @@
 			});
 		});
 		
+		<?php 
+			if(!isset($tile)){ 
+			#if(1){
+		?>
+		
 		$('#name').on('keyup',function(){
 			var uri = slugify($('#name').val());
 			$('#uri-path').val(uri);
@@ -236,6 +266,7 @@
 		$('#uri-path').on('keyup',function(){
 			force_lower('#uri-path');
 		});
+		<?php } ?>
 		
 		<? if(isset($tile)) { ?>
 			load_tile_images(<?=$tile['tile_id'];?>);

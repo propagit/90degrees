@@ -33,7 +33,9 @@ class Tiles_ajax extends MX_Controller {
 			'tile_uri' => $input['tile_uri'],
 			'new_window' => $input['new_window'],
 			'content' => $input['content_text'],
-			'short_desc' => $input['short_desc']
+			'short_desc' => $input['short_desc'],
+			'meta_title' => $input['meta_title'],
+			'meta_description' => $input['meta_description']
 		);
 		$tile_id = $this->tiles_model->insert_tile($tile_data);
 		
@@ -81,7 +83,9 @@ class Tiles_ajax extends MX_Controller {
 			'tile_uri' => $input['tile_uri'],
 			'new_window' => $input['new_window'],
 			'content' => $input['content_text'],
-			'short_desc' => $input['short_desc']
+			'short_desc' => $input['short_desc'],
+			'meta_title' => $input['meta_title'],
+			'meta_description' => $input['meta_description'],
 		);
 		
 		$updated = $this->tiles_model->update_tile($input['tile_id'], $tile_data);

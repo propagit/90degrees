@@ -102,6 +102,16 @@
 									</section>
 								</div>
 								<div class="row">
+                                	<section class="col col-6">
+										<label class="label">Meta Title</label>
+										<label class="textarea">
+											<textarea maxlength="255" class="custom-scroll" name="meta_title" rows="3"><?=(isset($page)) ? $page['meta_title'] : '';?></textarea>
+										</label>
+										<div class="note">
+                                        	<strong>Max characters</strong> 255
+                                        </div>								
+									</section>
+                                    
 									<section class="col col-6">
 										<label class="label">Meta Description</label>
 										<label class="textarea">
@@ -110,13 +120,7 @@
 										<div class="note"></div>								
 									</section>
 									
-									<section class="col col-6">
-										<label class="label">Meta Keywords</label>
-										<label class="textarea">
-											<textarea class="custom-scroll" name="meta_keywords" rows="3"><?=(isset($page)) ? $page['meta_keywords'] : '';?></textarea>
-										</label>
-										<div class="note"></div>								
-									</section>
+									
 								</div>
 								
 								<section>
@@ -197,6 +201,10 @@
 				}, 2000);*/
 			});
 		})
+		<?php 
+			if(!isset($page)){ 
+			#if(1){
+		?>
 		$('#title').on('keyup',function(){
 			var uri = slugify($('#title').val());
 			$('#uri-path').val(uri);
@@ -205,6 +213,7 @@
 		$('#uri-path').on('keyup',function(){
 			force_lower('#uri-path');
 		});
+		<?php } ?>
 	};
 	
 	pagefunction();

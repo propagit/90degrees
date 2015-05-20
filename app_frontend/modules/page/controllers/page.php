@@ -23,7 +23,7 @@ class Page extends MX_Controller {
 		$this->load->view('common/footer', isset($data) ? $data : NULL);
 	}
 	
-	function home_v2()
+	/*function home_v2()
 	{
 		$data['new_products'] = modules::run('catalog/product/new_products');
 		$data['banners'] = $this->banner_model->get_banners();
@@ -33,7 +33,7 @@ class Page extends MX_Controller {
 		$this->load->view('home_v2', isset($data) ? $data : NULL);
 		$data['add_js'] = $this->load->view('page/js', isset($data) ? $data : NULL, true);
 		$this->load->view('common/footer_v2', isset($data) ? $data : NULL);	
-	}
+	}*/
 
 	function get_banner_first_image($banner_id)
 	{
@@ -66,7 +66,7 @@ class Page extends MX_Controller {
 		}
 		#$data['images'] = $this->page_model->get_images($page['page_id']);
 
-		$data['title'] = $page['title'];
+		$data['title'] = $page['meta_title'];
 		$data['meta_desc'] = $page['meta_description'];
 		$data['meta_keywords'] = $page['meta_keywords'];
 
@@ -274,8 +274,8 @@ class Page extends MX_Controller {
 			show_404();
 		}
 
-		$data['title'] = $work['name'];
-		$data['meta_desc'] = '';
+		$data['title'] = $work['meta_title'];
+		$data['meta_desc'] = $work['meta_description'];
 		$data['meta_keywords'] = '';
 
 		$data['work'] = $work;

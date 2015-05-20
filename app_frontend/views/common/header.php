@@ -10,8 +10,7 @@
 <link rel="apple-touch-icon-precomposed" href="<?=base_url() . ASSETS;?>ico/apple-touch-icon-57-precomposed.png">
 <!--<link rel="shortcut icon" href="<?=base_url() . ASSETS;?>ico/favicon.png">-->
 <meta name="description" content="<?=(isset($meta_desc)) ? $meta_desc : '';?>">
-<meta name="keywords" content="<?=(isset($meta_keywords)) ? $meta_keywords : '';?>">
-<title><?=(isset($title)) ? $title : SITE_NAME;?></title>
+<title><?=(isset($title) && $title != '') ? $title : SITE_NAME;?></title>
 <!-- Bootstrap core CSS -->
 <link href="<?=base_url() . ASSETS;?>bootstrap/css/bootstrap.css" rel="stylesheet">
 
