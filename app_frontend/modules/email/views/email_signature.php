@@ -4,7 +4,7 @@
     	<tr>
         	<td colspan="2">
             <br>
-            67 North St Richmond, Vic 3121<br>
+            PO Box 5288, Middle Park Vic 3206<br>
             </td>
         </tr>
         <tr>

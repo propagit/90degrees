@@ -864,6 +864,7 @@ p.contact-us{
 	height:inherit;	
 	text-align:center;
 	margin-bottom:60px;
+	background-color:#f0f0f0;
 }
 .work-gallery .carousel-inner > .item > img, 
 .work-gallery .carousel-inner > .item > a > img{
@@ -1746,6 +1747,23 @@ p.sub-title{
 @media (max-width:1399px){
 	.cms-services-box .cms-caption h1{
 		font-size:46px;	
+	}
+	
+	.work-gallery .carousel-inner > .item{
+		 height: 0;
+		 padding: 50% 0 0 0;
+	}
+	.work-gallery .carousel-inner > .item > img, 
+	.work-gallery .carousel-inner > .item > a > img{
+		  position: absolute;
+		  display: block;
+		  max-width: 100%;
+		  max-height: 100%;
+		  left: 0;
+		  right: 0;
+		  top: 0;
+		  bottom: 0;
+		  margin: auto;
 	}
 }
 @media(min-width:1200px){
