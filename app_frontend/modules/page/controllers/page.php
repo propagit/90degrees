@@ -16,8 +16,12 @@ class Page extends MX_Controller {
 		$data['new_products'] = modules::run('catalog/product/new_products');
 		$data['banners'] = $this->banner_model->get_banners();
 		$data['tiles'] = $this->tiles_model->get_tiles();
+		
+		$data['title'] = '90 Degrees - Graffiti artists for hire | Mural - Art - Events';
+		$data['meta_desc'] = '90degrees graffiti artists for hire. Enhance your office, studio space, outer walls, cafes, restaurants with original artwork. Contact us for a Free Quote';
+	
 
-		$this->load->view('common/header');
+		$this->load->view('common/header',isset($data) ? $data : NULL);
 		$this->load->view('home', isset($data) ? $data : NULL);
 		$data['add_js'] = $this->load->view('page/js', isset($data) ? $data : NULL, true);
 		$this->load->view('common/footer', isset($data) ? $data : NULL);
