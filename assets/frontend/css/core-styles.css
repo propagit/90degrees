@@ -1869,6 +1869,8 @@ p.sub-title{
 		font-size:25px;	
 		/*padding-left:24px;
 		padding-right:24px;*/
+		padding-left:15%;
+		padding-right:15%;
 	}
 	.navbar-brand img{
 		width:100%;	
