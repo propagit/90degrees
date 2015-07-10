@@ -1,0 +1,22 @@
+# Files
+
+	- assets/frontend/css/core-style.css
+	
+	
+# modules
+	- page
+		- views/work_details	
+		- views/details
+		- views/js
+		- controllers/page.php - top menu
+			- page form
+	- form
+		- views/main_view	
+		
+# views
+	frontend
+		- commmon/header
+		
+		
+	
+			

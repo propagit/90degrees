@@ -18,25 +18,12 @@
 </form>
 
 <script>
-function submit_form(form_id) {	
+function submit_form(form_id) {
     ajax_submit_form('form-'+form_id, '<?=base_url();?>form/form_ajax/submit', function(e){
         //alert(e);
 		$('#form-'+form_id)[0].reset();
 		$('#site-msg').html('Thank you for your enquiry.<br>We will get back to you shortly');
 		$('#ModalSiteMsg').modal('show');
-		reload_page();
     });
-}
-var timer = 10;
-function reload_page() {
-    setTimeout(function () {
-        if(timer <= 1){
-			location.reload();
-		}
-		timer--;
-		$('#timer').html(timer);
-		//console.log(timer);
-        reload_page();
-    }, 1000);
 }
 </script>

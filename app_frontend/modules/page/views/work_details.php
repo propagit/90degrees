@@ -2,7 +2,6 @@
   
 </div>
 <!-- /.parallax -->
-
 <div class="container main-container ">
   
   <div class="row innerPage">
@@ -68,14 +67,24 @@
             <?php } # removed toggle function for now ?>
             
             <div class="col-xs-12 remove-gutters">
+            	
+                <?php 
+				#if(0){
+				if(!$work['home_page']){ ?>
+                <div class="col-xs-12 remove-gutters">
+                	<a href="<?=base_url();?>our-services.html" class="btn-back"><img src="<?=base_url();?>assets/frontend/images/back-btn.png" alt="back-btn.png" title="Back To Services"></a>
+                </div>
+                <?php } ?>
+            	
+            
                  <h1 class="title-big">
                     <?=$work['name'];?>
                  </h1>
                  <span class="slogan push-txt"><?=$work['short_desc'];?> <i class="fa fa-map-marker"></i></span>
             </div>
             
-             <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 remove-gutters job-info">
-            
+            <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 remove-gutters job-info">
+            	
             	<?=$work['content'];?>
                 
                 <div class="share-icons">
@@ -103,12 +112,24 @@
       				
                 </div>
                 
-                <?php if(!$work['home_page']){ ?>
+                <?php 
+				if(0){
+				#if(!$work['home_page']){ ?>
                 	<a href="<?=base_url();?>our-services.html" class="btn-back"><img src="<?=base_url();?>assets/frontend/images/back-btn.png" alt="back-btn.png" title="Back To Services"></a>
                 <?php } ?>
             </div>
 
         </div>
+        
+          
+         <?php 
+		 	$page_form = modules::run('page/get_page_form','project-page-contact-form');
+			if(isset($page_form['page']['content'])){
+		 ?> 
+         <div class="col-xs-12 col-sm-12 work-tab-wrap">
+         	<?php  echo $page_form['page']['content'];?>
+         </div>
+         <?php } ?>
       </div>  <!--/row end-->
     </div>
   </div> <!--/.innerPage-->

@@ -15,7 +15,9 @@ class Tiles_model extends CI_Model {
 	
 	function prepare_data($data) {
 		if($data['tile_uri'] == '') {
-			$data['tile_uri'] = url_title(strtolower($data['name']));
+			if(isset($data['name'])){
+				$data['tile_uri'] = url_title(strtolower($data['name']));
+			}
 		}
 		$data['updated_on'] = date('Y-m-d H:i:s');
 		return $data;

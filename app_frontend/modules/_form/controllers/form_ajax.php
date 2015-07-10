@@ -109,7 +109,7 @@ class Form_ajax extends MX_Controller {
         if ($form['email']) {
             # Send email
             $message = '';
-		    $attachments = array();
+			$attachments = array();
 			$from_email = '';
             foreach($fields as $field) {
                 $field_name = 'field-' . $field['field_id'];
@@ -123,7 +123,7 @@ class Form_ajax extends MX_Controller {
 					}else{
 						$message .= '<p>' . $field['label'] . ': ' . $input[$field_name] . '</p>';		
 					}
-
+					
 					# check for email field and use this to set the from field
 					if(!$from_email){
 						if (filter_var($input[$field_name], FILTER_VALIDATE_EMAIL)) {
@@ -146,7 +146,7 @@ class Form_ajax extends MX_Controller {
 				'attachment' => $attachments
                 ));
         }
-
+	
         echo json_encode(array(
             'ok' => true,
             'success' => true,
