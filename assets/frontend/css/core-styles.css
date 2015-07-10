@@ -371,6 +371,7 @@ p.contact-us{
 	margin-left:0 !important;
 	text-align:left;	
 	float:left;
+	width:100%;
 }
 .top-nav .nav li > ul li a{
 	padding-left:20px;
