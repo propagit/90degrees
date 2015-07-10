@@ -80,7 +80,7 @@
                  <h1 class="title-big">
                     <?=$work['name'];?>
                  </h1>
-                 <span class="slogan push-txt"><?=$work['short_desc'];?> <i class="fa fa-map-marker"></i></span>
+                 <span class="slogan push-txt"><?=$work['short_desc'];?> <?php if($work['home_page']){ ?><i class="fa fa-map-marker"></i><?php } ?></span>
             </div>
             
             <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 remove-gutters job-info">
