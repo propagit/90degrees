@@ -1,8 +1,10 @@
+App Frontend
+
 # Files
 
 	- assets/frontend/css/core-style.css
 	
-	
+
 # modules
 	- page
 		- views/work_details	
@@ -13,10 +15,25 @@
 	- form
 		- views/main_view	
 		
+	
+		
 # views
 	frontend
 		- commmon/header
 		
 		
 	
-			
+
+
+App Backend
+
+ALTER TABLE `uploads` ADD `description` TEXT NOT NULL ;	
+
+
+# modules
+	- cms
+		views/tile/images_view	
+		controller/tiles_ajax
+		
+	- upload
+		- controller/update_upload	

@@ -22,6 +22,9 @@
                     <!-- rest of the banners -->
                     <div class="item <?=!$counter ? 'active' : '';?>">
                           <img src="<?=base_url() . $gallery['full_path'];?>" title="<?=$gallery['orig_name'];?>">
+                          <div class="carousel-caption">
+         					<h1><?=$gallery['description'];?></h2>
+                          </div>
                     </div>
                     <?php $counter++;} ?>
                    
@@ -80,7 +83,7 @@
                  <h1 class="title-big">
                     <?=$work['name'];?>
                  </h1>
-                 <span class="slogan push-txt"><?=$work['short_desc'];?> <?php if($work['home_page']){ ?><i class="fa fa-map-marker"></i><?php } ?></span>
+                 <?php if($work['home_page']){ ?><span class="slogan push-txt"><?=$work['short_desc'];?> <i class="fa fa-map-marker"></i></span><?php } ?>
             </div>
             
             <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 remove-gutters job-info">
