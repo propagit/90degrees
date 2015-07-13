@@ -22,9 +22,11 @@
                     <!-- rest of the banners -->
                     <div class="item <?=!$counter ? 'active' : '';?>">
                           <img src="<?=base_url() . $gallery['full_path'];?>" title="<?=$gallery['orig_name'];?>">
+                          <?php if(trim($gallery['description'])){ ?>
                           <div class="carousel-caption">
          					<h1><?=$gallery['description'];?></h2>
                           </div>
+                          <?php } ?>
                     </div>
                     <?php $counter++;} ?>
                    
