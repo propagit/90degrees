@@ -13,7 +13,8 @@ App Frontend
 		- controllers/page.php - top menu
 			- page form
 	- form
-		- views/main_view	
+		- views/main_view
+		- controller/ added auto reply	
 		
 	
 		

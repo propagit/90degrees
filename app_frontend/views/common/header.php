@@ -179,8 +179,9 @@
               </a>
             </div>
             <div class="slogan-wrap inline">
+              <a href="<?=base_url();?>">
               <span class="slogan">90 DEGREES GRAFFITI</span>
-              <h1 class="slogan">MURALS - ART - EVENTS</h1>
+              <h1 class="slogan">MURALS - ART - EVENTS</h1></a>
                <?php if(0){ ?>
                 <div class="header-social">
                   <a href="<?=FACEBOOK;?>" target="_blank"><i class="fa fa-facebook-square"></i></a>

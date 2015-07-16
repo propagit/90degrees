@@ -78,11 +78,11 @@ class Email extends MX_Controller {
 	*/
 	function send_email($data)
 	{
-		if(LIVE_SERVER){
-			$this->send_email_live($data);
-		}else{
+		#if(LIVE_SERVER){
+		#	$this->send_email_live($data);
+		#}else{
 			$this->send_email_localhost($data);
-		}
+		#}
 	}
 
 	/**

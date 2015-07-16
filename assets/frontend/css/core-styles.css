@@ -819,21 +819,33 @@ p.contact-us{
 }
 .innerPage .nav-tabs > li > a{
 	border:1px solid #1f1f1f !important;	
-	font-size: 28px;
+	font-size: 32px;
 	padding: 10px 10px 6px 10px;
 	line-height: 24px;
 	text-transform:uppercase !important;
 	letter-spacing:normal;
+	color:#fff;
+	background:#1f1f1f;
+	font-family:'Dharma-reg', sans-serif;
+	letter-spacing:0.5px;
 }
 .innerPage .nav-tabs > li.active > a, 
 .innerPage .nav-tabs > li.active > a:hover, 
 .innerPage .nav-tabs > li.active > a:focus, 
 .innerPage .nav-tabs > li:hover > a{
-	background:#1f1f1f !important;
-	color:#fff !important;	
-	/*border-bottom:none !important;*/
+	background:#fff !important;
+	color:#1f1f1f !important;	
+	border-bottom:1px solid #fff !important;
 	/*padding-bottom:11px;*/
 	outline:none;
+}
+.innerPage .tab-msg-pane{
+	min-height:140px;	
+}
+.innerPage .tab-msg-pane p{
+	width:100%;	
+	font-size:19px;
+	font-style:italic;
 }
 .innerPage .tab-pane .contact-msg{
 	margin-top: -170px;
@@ -1302,6 +1314,16 @@ span.add2cart{
 .cart-btn{
 	color:#fff;
 	display:block;	
+}
+.btn-app{
+	font-size: 14px;
+    font-family: 'PT Serif', serif;
+    padding: 10px;
+	color:#1f1f1f;	
+}
+.btn-app:hover{
+	color:#fff;
+	background-color:#1f1f1f !important;
 }
 
 /** BACKGROUND */
@@ -2220,7 +2242,9 @@ p.sub-title{
 		  max-height:none !important;	
 	}
 
-	
+	.btn-back img{
+		max-width:70px;	
+	}
 }
 
 
