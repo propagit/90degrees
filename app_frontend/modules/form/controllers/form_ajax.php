@@ -150,7 +150,7 @@ class Form_ajax extends MX_Controller {
 			if($from_email){
 				$auto_reply_message = 'Thank you for contacting us. <br><br> 
 				
-									  We will get back to you as soon as possible.';
+									  We will get back to you as soon as possible.<br><br>';
 									   
 									   
 									   
