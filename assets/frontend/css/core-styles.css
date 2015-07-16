@@ -1835,7 +1835,12 @@ p.sub-title{
 .mob-gallery img{
 	width:100%;	
 }
-
+.mob-more-image-hint{
+	font-size: 13px;
+  	font-style: italic;
+  	padding-top: 8px;
+  	opacity: 0.75;	
+}
 
 /* custom responsive */
 @media (max-width:1399px){

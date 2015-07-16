@@ -60,7 +60,9 @@
                     <img src="<?=base_url() . $gallery['full_path'];?>" alt="image">
                 </a>
 			<?php $counter++;} ?>
-        	
+            <?php if($counter > 1){ ?>
+        	<div class="col-xs-12 mob-more-image-hint">Tap on the image to view more.</div>
+            <?php } ?>
           </div>  
             
             

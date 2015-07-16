@@ -3,6 +3,7 @@ App Frontend
 # Files
 
 	- assets/frontend/css/core-style.css
+	- assets/frontend/images/email-signature.jpg
 	
 
 # modules
@@ -15,6 +16,9 @@ App Frontend
 	- form
 		- views/main_view
 		- controller/ added auto reply	
+	
+	- email
+		- views/email_signagure
 		
 	
 		
