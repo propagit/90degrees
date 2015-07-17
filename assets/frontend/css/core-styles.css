@@ -2133,6 +2133,7 @@ p.sub-title{
 	}
 	.mob-navbar-collapse .caret{
 		margin-left:5px;	
+		display:none;
 	}
 	.cms-services{
 		margin-top:0;	
