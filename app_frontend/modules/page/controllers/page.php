@@ -119,14 +119,14 @@ class Page extends MX_Controller {
 		$html = '<ul class="nav navbar-nav">';
 		foreach($menu as $url) {
 			$is_social = (($total - $count) > 0) ? false : true; 
-			$html .= $this->rec_top_menu($url,$grid,$current_page, $is_social);
+			$html .= $this->rec_top_menu($url,$grid,$current_page, $is_social , isset($params['mob_class']) ? $params['mob_class'] : '');
 			$count++;
 		}
 		$html .= '</ul>';
 		echo $html;
 	}
 
-	function rec_top_menu($url,$grid,$current_page, $is_social)
+	function rec_top_menu($url,$grid,$current_page, $is_social,$mob_class)
 	{
 		$target = '';
 		# New window icon
@@ -147,14 +147,14 @@ class Page extends MX_Controller {
 						<a data-toggle="dropdown" class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
 							$url['label'] . '<b class="caret"> </b>
 						</a>';*/
-			$html = '<li class="dropdown">
+			$html = '<li class="dropdown ' . $mob_class .'">
 						<a class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
 							$url['label'] . '<b class="caret"> </b>
 						</a>';
 			$html .= '<ul class="dropdown-menu">';
 			foreach($url['children'] as $child)
 			{
-				$html .= $this->rec_top_menu($child,$grid,$current_page,$is_social);
+				$html .= $this->rec_top_menu($child,$grid,$current_page,$is_social,$mob_class);
 			}
 			$html .= '</ul>';
 		}
