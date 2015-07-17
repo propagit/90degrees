@@ -1562,7 +1562,9 @@ p.sub-title{
    font-size: 17px !important;
    font-style: italic !important;
    text-transform: none !important;
-   line-height: 30px !important;
+   line-height: 18px !important;
+   font-family: 'PT Serif', serif;
+   font-weight: 600;
 }
 
 .up_file{
