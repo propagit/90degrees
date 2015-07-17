@@ -1559,7 +1559,10 @@ p.sub-title{
 	text-transform:uppercase;
 }
 .faq-wrap h2{
-	text-transform:none !important;	
+   font-size: 17px !important;
+   font-style: italic !important;
+   text-transform: none !important;
+   line-height: 30px !important;
 }
 
 .up_file{
