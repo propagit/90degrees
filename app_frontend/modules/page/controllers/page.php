@@ -143,14 +143,14 @@ class Page extends MX_Controller {
 
 		if (isset($url['children']))
 		{
-			$html = '<li class="dropdown">
+			/*$html = '<li class="dropdown">
 						<a data-toggle="dropdown" class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
 							$url['label'] . '<b class="caret"> </b>
-						</a>';
-			/*$html = '<li class="dropdown">
+						</a>';*/
+			$html = '<li class="dropdown">
 						<a class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
 							$url['label'] . '<b class="caret"> </b>
-						</a>';*/
+						</a>';
 			$html .= '<ul class="dropdown-menu">';
 			foreach($url['children'] as $child)
 			{

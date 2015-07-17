@@ -942,7 +942,7 @@ p.contact-us{
 .work-gallery .carousel-inner > .item{
 	height:inherit;	
 	text-align:center;
-	margin-bottom:60px;
+	margin-bottom:48px;
 	/*background-color:#f0f0f0;*/
 	overflow:hidden;
 }
@@ -1262,13 +1262,13 @@ span.add2cart{
 	box-shadow: none !important;
 } 
 .btn-back{
-	float:left;
-	font-size:40px;
-	/*margin-top:25px;	*/
-	margin-bottom:25px;
+	float: left;
+    font-size: 40px;
+    margin-top: 11px;
+  /* margin-bottom: 25px; */
 }
 .btn-back img{
-	max-width:100px;	
+	max-width:55px;	
 }
 .back-to-service-btn{
 	background-color: #000 !important;
@@ -2256,9 +2256,9 @@ p.sub-title{
 		  max-height:none !important;	
 	}
 
-	.btn-back img{
+	/*.btn-back img{
 		max-width:70px;	
-	}
+	}*/
 }
 
 

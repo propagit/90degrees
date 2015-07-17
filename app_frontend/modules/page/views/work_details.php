@@ -3,12 +3,19 @@
 </div>
 <!-- /.parallax -->
 <div class="container main-container ">
-  
+  <?php 
+  #if(0){
+  if(!$work['home_page']){ ?>
+  <div class="col-xs-12 remove-gutters">
+	  <a href="<?=base_url();?>our-services.html" class="btn-back"><img src="<?=base_url();?>assets/frontend/images/back-btn.jpg" alt="back-btn.png" title="Back To Services"></a>
+  </div>
+  <?php } ?>
   <div class="row innerPage">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="row userInfo">
         <div class="col-xs-12 col-sm-12">
-         
+         	
+		    
             
             <div id="work-banners" class="work-gallery carousel slide hidden-xs" data-ride="carousel" data-interval="false">
                 <!-- Wrapper for slides -->
@@ -74,16 +81,6 @@
             <?php } # removed toggle function for now ?>
             
             <div class="col-xs-12 remove-gutters">
-            	
-                <?php 
-				#if(0){
-				if(!$work['home_page']){ ?>
-                <div class="col-xs-12 remove-gutters">
-                	<a href="<?=base_url();?>our-services.html" class="btn-back"><img src="<?=base_url();?>assets/frontend/images/back-btn.png" alt="back-btn.png" title="Back To Services"></a>
-                </div>
-                <?php } ?>
-            	
-            
                  <h1 class="title-big">
                     <?=$work['name'];?>
                  </h1>
