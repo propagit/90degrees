@@ -13,7 +13,7 @@
               <?=$page['title'];?>
             </span>
           </h1>
-		  <span class="slogan">graffiti artists for hire australia</span>
+		  <span class="slogan"><?=$page['sub_title'];?></span>
           <div class="page-content">	
              <?php echo isset($page['content']) ? $page['content'] : ''; ?>
           </div>

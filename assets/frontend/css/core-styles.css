@@ -1558,6 +1558,9 @@ p.sub-title{
 	margin-bottom: 18px;
 	text-transform:uppercase;
 }
+.faq-wrap h2{
+	text-transform:none !important;	
+}
 
 .up_file{
 	float: left;

@@ -31,6 +31,7 @@ class Page_ajax extends MX_Controller {
 		}
 		$page_data = array(
 			'title' => $input['title'],
+			'sub_title' => $input['sub_title'],
 			'uri_path' => $input['uri_path'],
 			'meta_title' => $input['meta_title'],
 			'meta_description' => $input['meta_description'],
@@ -75,6 +76,7 @@ class Page_ajax extends MX_Controller {
 		
 		$page_data = array(
 			'title' => $input['title'],
+			'sub_title' => $input['sub_title'],
 			'uri_path' => $input['uri_path'],
 			'meta_title' => $input['meta_title'],
 			'meta_description' => $input['meta_description'],

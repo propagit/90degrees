@@ -33,12 +33,15 @@ App Frontend
 App Backend
 
 ALTER TABLE `uploads` ADD `description` TEXT NOT NULL ;	
-
+ALTER TABLE `cms_pages` ADD `sub_title` VARCHAR(255) NOT NULL AFTER `title`;
 
 # modules
 	- cms
 		views/tile/images_view	
 		controller/tiles_ajax
+		
+		view/page/form_view
+		controller/page_ajax
 		
 	- upload
 		- controller/update_upload	
