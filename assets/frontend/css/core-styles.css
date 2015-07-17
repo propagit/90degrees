@@ -1565,6 +1565,7 @@ p.sub-title{
    line-height: 18px !important;
    font-family: 'PT Serif', serif;
    font-weight: 600;
+   margin-bottom:8px;
 }
 
 .up_file{
