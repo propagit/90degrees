@@ -1525,7 +1525,9 @@ tr.CartProduct td{
 	margin-top:20px;	
 }
 .page-content p a{
-	text-decoration:underline;	
+	text-decoration:none;
+        text-transform: capitalize;
+        font-weight: 600;
 }
 .page-content [class*='col-']{
 	padding-left:0;	

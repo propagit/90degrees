@@ -1,0 +1,7 @@
+css:
+
+.page-content p a{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 600;
+}	
