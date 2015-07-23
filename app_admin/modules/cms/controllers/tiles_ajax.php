@@ -205,5 +205,29 @@ class Tiles_ajax extends MX_Controller {
 		echo $this->tiles_model->order_tiles($_POST);
 	}
 	
+	function get_image_caption()
+	{
+		$upload_id = $this->input->post('upload_id');
+		$upload = modules::run('upload/get_upload',$upload_id);
+		if($upload){
+			echo $upload['description'];	
+			return;
+		}
+		echo '';
+	}
+	
+	function add_image_caption()
+	{
+		$input = $this->input->post();	
+		$upload = modules::run('upload/update_upload',$input['upload_id'],array('description' => $input['description']));
+		if($upload){
+			echo 'successful';
+			return;
+		}
+		echo 'failed';
+	}
+	
+	
+	
 	
 }

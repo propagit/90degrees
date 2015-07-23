@@ -1,3 +1,9 @@
+<?php
+  $active_tab = 'quote';
+  if(isset($_SERVER['QUERY_STRING'])){
+	 $active_tab = $_SERVER['QUERY_STRING']; 
+  }
+?>
 <!-- include custom script for only homepage  -->
 <script src="<?=base_url() . ASSETS;?>js/home.js"></script>
 <script src="<?=base_url() . ASSETS;?>js/jquery/touch/jquery.mobile.custom.min.js"></script>
@@ -72,9 +78,15 @@ $(function(){
 		$('#work-banners').carousel('next'); 
 		$('.swipe-icon').html(''); 
 	 });
+	 
+	 make_tab_active();
 	
 });	//	Ready
-
+	
+function make_tab_active(){
+	$('.flare-cms-tabs a[href="#<?=$active_tab;?>"]').tab('show');
+	$('.flare-cms-tabs a[href="#<?=$active_tab . '_msg';?>"]').tab('show');
+}
 
 
 </script>

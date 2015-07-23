@@ -2,14 +2,20 @@
   
 </div>
 <!-- /.parallax -->
-
 <div class="container main-container ">
-  
+  <?php 
+  #if(0){
+  if(!$work['home_page']){ ?>
+  <div class="col-xs-12 remove-gutters">
+	  <a href="<?=base_url();?>our-services.html" class="btn-back"><img src="<?=base_url();?>assets/frontend/images/back-btn.jpg" alt="back-btn.png" title="Back To Services"></a>
+  </div>
+  <?php } ?>
   <div class="row innerPage">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="row userInfo">
         <div class="col-xs-12 col-sm-12">
-         
+         	
+		    
             
             <div id="work-banners" class="work-gallery carousel slide hidden-xs" data-ride="carousel" data-interval="false">
                 <!-- Wrapper for slides -->
@@ -23,6 +29,11 @@
                     <!-- rest of the banners -->
                     <div class="item <?=!$counter ? 'active' : '';?>">
                           <img src="<?=base_url() . $gallery['full_path'];?>" title="<?=$gallery['orig_name'];?>">
+                          <?php if(trim($gallery['description'])){ ?>
+                          <div class="carousel-caption">
+         					<h1><?=$gallery['description'];?></h2>
+                          </div>
+                          <?php } ?>
                     </div>
                     <?php $counter++;} ?>
                    
@@ -56,7 +67,9 @@
                     <img src="<?=base_url() . $gallery['full_path'];?>" alt="image">
                 </a>
 			<?php $counter++;} ?>
-        	
+            <?php if($counter > 1){ ?>
+        	<div class="col-xs-12 mob-more-image-hint">Tap on the image to view more.</div>
+            <?php } ?>
           </div>  
             
             
@@ -71,11 +84,11 @@
                  <h1 class="title-big">
                     <?=$work['name'];?>
                  </h1>
-                 <span class="slogan push-txt"><?=$work['short_desc'];?> <i class="fa fa-map-marker"></i></span>
+                 <?php if($work['home_page']){ ?><span class="slogan push-txt"><?=$work['short_desc'];?> <i class="fa fa-map-marker"></i></span><?php } ?>
             </div>
             
-             <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 remove-gutters job-info">
-            
+            <div id="job-info" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 remove-gutters job-info">
+            	
             	<?=$work['content'];?>
                 
                 <div class="share-icons">
@@ -103,12 +116,24 @@
       				
                 </div>
                 
-                <?php if(!$work['home_page']){ ?>
+                <?php 
+				if(0){
+				#if(!$work['home_page']){ ?>
                 	<a href="<?=base_url();?>our-services.html" class="btn-back"><img src="<?=base_url();?>assets/frontend/images/back-btn.png" alt="back-btn.png" title="Back To Services"></a>
                 <?php } ?>
             </div>
 
         </div>
+        
+          
+         <?php 
+		 	$page_form = modules::run('page/get_page_form','project-page-contact-form');
+			if(isset($page_form['page']['content'])){
+		 ?> 
+         <div class="col-xs-12 col-sm-12 work-tab-wrap">
+         	<?php  echo $page_form['page']['content'];?>
+         </div>
+         <?php } ?>
       </div>  <!--/row end-->
     </div>
   </div> <!--/.innerPage-->

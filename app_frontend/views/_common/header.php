@@ -179,14 +179,13 @@
               </a>
             </div>
             <div class="slogan-wrap inline">
-              <a href="<?=base_url();?>">
               <span class="slogan">90 DEGREES GRAFFITI</span>
-              <h1 class="slogan">MURALS - ART - EVENTS</h1></a>
+              <h1 class="slogan">MURALS - ART - EVENTS</h1>
                <?php if(0){ ?>
-                <div class="header-social">
-                  <a href="<?=FACEBOOK;?>" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                  <a href="<?=INSTAGRAM;?>" target="_blank"><i class="fa fa-instagram"></i></a>
-                </div>
+                <!--<div class="header-social">
+                  <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                  <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>-->
                <?php } ?>
             </div>
         </div>
@@ -230,7 +229,7 @@
                   </button>
               </div>
               <div class="mob-navbar-collapse collapse col-xs-12">
-                  <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => current_url(),'mob_class' => 'open'));?>
+                  <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => current_url()));?>
               </div>
         </div>
 

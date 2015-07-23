@@ -15,7 +15,9 @@ class Page_model extends CI_Model {
 	
 	function prepare_page_data($data) {
 		if($data['uri_path'] == '') {
-			$data['uri_path'] = url_title($data['title']);
+			if(isset($data['title'])){
+				$data['uri_path'] = url_title($data['title']);
+			}
 		}
 		$data['updated_on'] = date('Y-m-d H:i:s');
 		return $data;

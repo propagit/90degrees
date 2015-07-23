@@ -101,6 +101,21 @@
 										</div>
 									</section>
 								</div>
+                                <div class="row">
+									<section class="col col-6">
+										<label class="label">Page Sub Title</label>
+										<label class="input">
+											<input id="sub-title" type="text" name="sub_title" maxlength="255" value="<?=(isset($page)) ? $page['sub_title'] : '';?>" />
+										</label>
+										<div class="note">
+											<strong>Max characters</strong> 255
+										</div>
+									</section>
+									
+									<section class="col col-6">
+										&nbsp;
+									</section>
+								</div>
 								<div class="row">
                                 	<section class="col col-6">
 										<label class="label">Meta Title</label>

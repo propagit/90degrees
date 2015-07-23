@@ -55,7 +55,7 @@ define('SALT','flare-');
 define('DEV_CK_TOOLS',"['Bold', 'Italic', 'Underline', 'Strike'],[ 'NumberedList', 'BulletedList','-','JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],['Link', 'Unlink'],['Font'],['FontSize' ],[ 'TextColor', 'BGColor'],['Source']");
 define('LIVE_CK_TOOLS',"['Bold', 'Italic', 'Underline', 'Strike'],[ 'NumberedList', 'BulletedList','-','JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],['Link', 'Unlink'],['Font'],['FontSize' ],[ 'TextColor', 'BGColor']");
 
-define('LIVE_SERVER',FALSE);
+define('LIVE_SERVER',TRUE);
 define('DEBUG_MODE', TRUE);
 
 # Social Links
@@ -64,10 +64,10 @@ define('INSTAGRAM','https://instagram.com/dan_90degrees');
 define('TWITTER','');
 
 # Company Emails
-define('TEAM_EMAIL','team@propagate.com.au');
-define('NO_REPLY_EMAIL','team@propagate.com.au');
-define('INFO_EMAIL','team@propagate.com.au');
-define('SALES_EMAIL','team@propagate.com.au');
+define('TEAM_EMAIL','info@90degrees.graffitiartistsforhire.com.au');
+define('NO_REPLY_EMAIL','info@90degrees.graffitiartistsforhire.com.au');
+define('INFO_EMAIL','info@90degrees.graffitiartistsforhire.com.au');
+define('SALES_EMAIL','info@90degrees.graffitiartistsforhire.com.au');
 
 
 

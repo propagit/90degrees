@@ -1,0 +1,47 @@
+App Frontend
+
+# Files
+
+	- assets/frontend/css/core-style.css
+	- assets/frontend/images/email-signature.jpg
+	
+
+# modules
+	- page
+		- views/work_details	
+		- views/details
+		- views/js
+		- controllers/page.php - top menu
+			- page form
+	- form
+		- views/main_view
+		- controller/ added auto reply	
+	
+	- email
+		- views/email_signagure
+		
+	
+		
+# views
+	frontend
+		- commmon/header
+		
+		
+	
+
+
+App Backend
+
+ALTER TABLE `uploads` ADD `description` TEXT NOT NULL ;	
+ALTER TABLE `cms_pages` ADD `sub_title` VARCHAR(255) NOT NULL AFTER `title`;
+
+# modules
+	- cms
+		views/tile/images_view	
+		controller/tiles_ajax
+		
+		view/page/form_view
+		controller/page_ajax
+		
+	- upload
+		- controller/update_upload	

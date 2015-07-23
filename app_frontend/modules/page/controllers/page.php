@@ -98,6 +98,15 @@ class Page extends MX_Controller {
 
 	function top_menu($params)
 	{
+		
+		/**
+			Client request two social icons in the links bunched together 
+			- hence this hack was introduced
+			- If you are maintaining this project and can think of 
+			  a better way to do it in a given time frame by all means do it
+			- the social icons will always be the last one
+		*/
+		
 		$grid = '';
 		if($params['add_grid'] == 'yes'){
 			$grid = 'col-lg-3 col-md-3 col-sm-3 col-xs-3 remove-gutters';
@@ -105,15 +114,19 @@ class Page extends MX_Controller {
 		$current_page = $params['cur_page'];
 
 		$menu = $this->menu(1);
+		$total = count($menu) - 2;
+		$count = 0;
 		$html = '<ul class="nav navbar-nav">';
 		foreach($menu as $url) {
-			$html .= $this->rec_top_menu($url,$grid,$current_page);
+			$is_social = (($total - $count) > 0) ? false : true; 
+			$html .= $this->rec_top_menu($url,$grid,$current_page, $is_social , isset($params['mob_class']) ? $params['mob_class'] : '');
+			$count++;
 		}
 		$html .= '</ul>';
 		echo $html;
 	}
 
-	function rec_top_menu($url,$grid,$current_page)
+	function rec_top_menu($url,$grid,$current_page, $is_social,$mob_class)
 	{
 		$target = '';
 		# New window icon
@@ -130,20 +143,24 @@ class Page extends MX_Controller {
 
 		if (isset($url['children']))
 		{
-			$html = '<li class="dropdown">
+			/*$html = '<li class="dropdown">
 						<a data-toggle="dropdown" class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
+							$url['label'] . '<b class="caret"> </b>
+						</a>';*/
+			$html = '<li class="dropdown ' . $mob_class .'">
+						<a class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
 							$url['label'] . '<b class="caret"> </b>
 						</a>';
 			$html .= '<ul class="dropdown-menu">';
 			foreach($url['children'] as $child)
 			{
-				$html .= $this->rec_top_menu($child,$grid,$current_page);
+				$html .= $this->rec_top_menu($child,$grid,$current_page,$is_social,$mob_class);
 			}
 			$html .= '</ul>';
 		}
 		else
 		{
-			$html = '<li class="' . $grid . '"><a ' . ($address == $current_page ? 'class="active"' : '') . ' href="' . $address . '"' . $target . '>' . $url['label'] . '</a>';
+			$html = '<li class="' . $grid . ' ' . ($is_social ? 'nav-social-link' : '') . '"><a ' . ($address == $current_page ? 'class="active"' : '') . ' href="' . $address . '"' . $target . '>' . $url['label'] . '</a>';
 		}
 
 		$html .= '</li>';
@@ -307,5 +324,27 @@ class Page extends MX_Controller {
 		}
 			
 	}*/
+	
+	function get_page_form($slug = '')
+	{
+		$page = $this->page_model->get_page_by_slug($slug);
+		if($page){
+			
+			# Rending forms
+			$form_patterns = '/\[\bform id=\b\d+\]/';
+			preg_match_all($form_patterns, $page['content'], $matches);
+			foreach($matches[0] as $form_pattern) {
+				$s = explode('=', $form_pattern);
+				$form_id = $s[1]; $form_id = str_replace(']', '', $form_id);
+				$form_view = modules::run('form/index', $form_id);
+				$content = str_replace($form_pattern, $form_view, $page['content']);
+				$page['content'] = $content;
+			}
+	
+			$data['page'] = $page;
+			
+			return $data;
+		}
+	}
 }
 

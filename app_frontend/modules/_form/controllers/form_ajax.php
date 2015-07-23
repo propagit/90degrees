@@ -109,7 +109,7 @@ class Form_ajax extends MX_Controller {
         if ($form['email']) {
             # Send email
             $message = '';
-		    $attachments = array();
+			$attachments = array();
 			$from_email = '';
             foreach($fields as $field) {
                 $field_name = 'field-' . $field['field_id'];
@@ -123,7 +123,7 @@ class Form_ajax extends MX_Controller {
 					}else{
 						$message .= '<p>' . $field['label'] . ': ' . $input[$field_name] . '</p>';		
 					}
-
+					
 					# check for email field and use this to set the from field
 					if(!$from_email){
 						if (filter_var($input[$field_name], FILTER_VALIDATE_EMAIL)) {
@@ -145,25 +145,8 @@ class Form_ajax extends MX_Controller {
                 'message' => $message,
 				'attachment' => $attachments
                 ));
-			
-			// send auto reply
-			if($from_email){
-				$auto_reply_message = 'Thank you for contacting us. <br><br> 
-				
-									  We will get back to you as soon as possible.<br><br>';
-									   
-									   
-									   
-				modules::run('email/send_email', array(
-					'to' => $from_email,
-					'from' => NO_REPLY_EMAIL,
-					'from_text' => SITE_NAME,
-					'subject' => $form['name'],
-					'message' => $auto_reply_message
-					));
-			}
         }
-
+	
         echo json_encode(array(
             'ok' => true,
             'success' => true,
