@@ -4,4 +4,10 @@ css:
     text-decoration: none;
     text-transform: capitalize;
     font-weight: 600;
+}
+
+.page-content a{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 600;
 }	
