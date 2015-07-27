@@ -18,7 +18,8 @@ class Page extends MX_Controller {
 		$data['tiles'] = $this->tiles_model->get_tiles();
 		
 		$data['title'] = '90 Degrees - Graffiti artists for hire | Mural - Art - Events';
-		$data['meta_desc'] = '90degrees graffiti artists for hire. Enhance your office, studio space, outer walls, cafes, restaurants with original artwork. Contact us for a Free Quote';
+		// $data['meta_desc'] = '90degrees graffiti artists for hire. Enhance your office, studio space, outer walls, cafes, restaurants with original artwork. Contact us for a Free Quote';
+                $data['meta_desc'] = '90 Degrees Graffiti Artists for Hire, Graffiti and Street Artists for Events, Commercial & Residential Projects. Contact Us for a Quote';
 	
 
 		$this->load->view('common/header',isset($data) ? $data : NULL);
