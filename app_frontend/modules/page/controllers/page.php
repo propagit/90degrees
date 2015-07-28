@@ -120,14 +120,14 @@ class Page extends MX_Controller {
 		$html = '<ul class="nav navbar-nav">';
 		foreach($menu as $url) {
 			$is_social = (($total - $count) > 0) ? false : true; 
-			$html .= $this->rec_top_menu($url,$grid,$current_page, $is_social , isset($params['mob_class']) ? $params['mob_class'] : '');
+			$html .= $this->rec_top_menu($url,$grid,$current_page, $is_social , isset($params['is_mob']) ? $params['is_mob'] : false);
 			$count++;
 		}
 		$html .= '</ul>';
 		echo $html;
 	}
 
-	function rec_top_menu($url,$grid,$current_page, $is_social,$mob_class)
+	function rec_top_menu($url,$grid,$current_page, $is_social,$is_mob)
 	{
 		$target = '';
 		# New window icon
@@ -144,18 +144,31 @@ class Page extends MX_Controller {
 
 		if (isset($url['children']))
 		{
-			/*$html = '<li class="dropdown">
-						<a data-toggle="dropdown" class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
-							$url['label'] . '<b class="caret"> </b>
-						</a>';*/
-			$html = '<li class="dropdown ' . $mob_class .'">
-						<a class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
-							$url['label'] . '<b class="caret"> </b>
-						</a>';
+			if($is_mob){
+				$html = '<li class="dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="' . $address . '"' . $target . '>' .
+								$url['label'] . '<b class="caret"> </b>
+							</a>';
+			}else{
+				$html = '<li class="dropdown">
+							<a href="' . $address . '"' . $target . '>' .
+								$url['label'] . '<b class="caret"> </b>
+							</a>';
+			}
+			
 			$html .= '<ul class="dropdown-menu">';
+			
+			if($is_mob){
+				# a hack for services page
+				# feel free to modify this
+				if(strtolower($url['label']) == 'our services'){
+					$html .= '<li class="' . $grid . '"><a ' . ($address == $current_page ? 'class="active"' : '') . ' href="' . $address . '"' . $target . '>All</a>';	
+				}
+			}
+			
 			foreach($url['children'] as $child)
 			{
-				$html .= $this->rec_top_menu($child,$grid,$current_page,$is_social,$mob_class);
+				$html .= $this->rec_top_menu($child,$grid,$current_page,$is_social,$is_mob);
 			}
 			$html .= '</ul>';
 		}

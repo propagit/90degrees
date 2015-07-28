@@ -230,7 +230,7 @@
                   </button>
               </div>
               <div class="mob-navbar-collapse collapse col-xs-12">
-                  <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => current_url(),'mob_class' => 'open'));?>
+                  <? echo modules::run('page/top_menu',array('add_grid' => 'no', 'cur_page' => current_url(),'is_mob' => true));?>
               </div>
         </div>
 
