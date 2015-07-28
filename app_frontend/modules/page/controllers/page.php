@@ -162,7 +162,7 @@ class Page extends MX_Controller {
 				# a hack for services page
 				# feel free to modify this
 				if(strtolower($url['label']) == 'our services'){
-					$html .= '<li class="' . $grid . '"><a ' . ($address == $current_page ? 'class="active"' : '') . ' href="' . $address . '"' . $target . '>All</a>';	
+					$html .= '<li class="' . $grid . '"><a ' . ($address == $current_page ? 'class="active"' : '') . ' href="' . $address . '"' . $target . '>Services Home</a>';	
 				}
 			}
 			
