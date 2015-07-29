@@ -2289,8 +2289,14 @@ p.sub-title{
 	.nav-social-link{
 		display:inline-block !important;	
 	}
+	.nav-social-link:hover{
+		background:none !important;	
+	}
 	.nav-social-link a{
 		padding-right:0 !important;	
+	}
+	.nav-social-link a{
+		background:none !important;
 	}
 }
 .normal-link{
