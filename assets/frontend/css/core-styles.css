@@ -2280,8 +2280,16 @@ p.sub-title{
     /*.btn-back img{
             max-width:70px;	
     }*/
+	
+	.innerPage .nav-tabs > li > a{
+		font-size: 20px;
+		padding: 8px 6px 6px;
+	}
 }
-
+.normal-link{
+	text-transform:none !important;
+	font-weight:100 !important;	
+}
 
 /** HELPERS */
 .pull{
