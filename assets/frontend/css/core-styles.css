@@ -2285,6 +2285,13 @@ p.sub-title{
 		font-size: 20px;
 		padding: 8px 6px 6px;
 	}
+	
+	.nav-social-link{
+		display:inline-block !important;	
+	}
+	.nav-social-link a{
+		padding-right:0 !important;	
+	}
 }
 .normal-link{
 	text-transform:none !important;
