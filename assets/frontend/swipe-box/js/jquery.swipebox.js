@@ -176,7 +176,7 @@
 				}
 
 				if ( isMobile && plugin.settings.removeBarsOnMobile ) {
-					$( '#swipebox-bottom-bar, #swipebox-top-bar' ).remove();
+					//$( '#swipebox-bottom-bar, #swipebox-top-bar' ).remove();
 				}
 
 				$.each( elements,  function() {
