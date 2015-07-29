@@ -68,9 +68,9 @@ $(function(){
 		$('.slider-v1').cycle('resume');
 	});*/
 	
-	$( '.swipebox' ).swipebox();
+	$( '.swipebox' ).swipebox({hideBarsDelay : 60000});
 	
-	$('.mob-gallery-pager').swipebox();
+	$('.mob-gallery-pager').swipebox({hideBarsDelay : 60000});
 
 
 	$('#work-banners').swiperight(function() {  
