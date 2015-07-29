@@ -1018,6 +1018,20 @@ p.contact-us{
 .gallery-img-wrap img{
     width:auto;	
 }
+
+.mob-gallery-pager{
+	width:10px;
+	height:10px;
+	border-radius:50%;
+	background:#dcd9d7;
+	display: inline-block;
+    margin: 0 2px;
+	cursor:pointer;
+}
+.mob-gallery-pager.active{
+	background:#1f1f1f;	
+}
+
 h2.block-title-2, 
 .formBox h3, 
 .block-title-2{

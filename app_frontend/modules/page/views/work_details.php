@@ -59,17 +59,22 @@
                 
         </div>
         
-        <div class="col-xs-12 visible-xs mob-gallery">
+        <div class="col-xs-12 visible-xs mob-gallery remove-gutters">
         	<?php
 				$counter = 0; 
+				$mob_pager = '';
+				$total = count($work_gallery);
 				foreach($work_gallery as $gallery){ ?>
-                <a rel="gallery-1" href="<?=base_url() . $gallery['full_path'];?>" class="swipebox <?=$counter ? 'hide' : ''; ?>">
+                <a rel="gallery-1" href="<?=base_url() . $gallery['full_path'];?>" class="swipebox <?=$counter ? 'hide' : ''; ?>" title="<?=($counter + 1 .' / '. $total);?>">
                     <img src="<?=base_url() . $gallery['full_path'];?>" alt="image">
                 </a>
-			<?php $counter++;} ?>
-            <?php if($counter > 1){ ?>
-        	<div class="col-xs-12 mob-more-image-hint">Tap on the image to view more.</div>
-            <?php } ?>
+			<?php 
+				$mob_pager .= '<a href="' . base_url() . $gallery['full_path'] . '" class="mob-gallery-pager ' . ( $counter ? '' : 'active' ) . '" data-index="' . $counter . '" title="'. ($counter + 1 .' / '. $total) . '"> </a>';
+				$counter++;
+				
+				} 
+			?>
+        	<div class="col-xs-12 mob-more-image-hint"><?=$mob_pager;?></div>
           </div>  
             
             

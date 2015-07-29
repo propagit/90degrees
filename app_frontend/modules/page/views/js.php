@@ -69,6 +69,9 @@ $(function(){
 	});*/
 	
 	$( '.swipebox' ).swipebox();
+	
+	$('.mob-gallery-pager').swipebox();
+
 
 	$('#work-banners').swiperight(function() {  
 		$('#work-banners').carousel('prev'); 
