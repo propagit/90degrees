@@ -2038,6 +2038,9 @@ p.sub-title{
     .cms-services-box .cms-caption h1{
         font-size:60px;	
     }	
+     .innerPage .nav-tabs > li > a{
+    	font-size:25px;
+    }
 }
 @media(max-width:920px){
     .mob-logo-wrap{
